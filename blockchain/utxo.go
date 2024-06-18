@@ -3,18 +3,48 @@ package blockchain
 import (
 	"bytes"
 	"encoding/hex"
+	er "golang-blockchain/err"
 	"log"
 
 	"github.com/dgraph-io/badger"
 )
 
 var (
-	utxoPrefix   = []byte("utxo-")
-	prefixLength = len(utxoPrefix)
+	utxoPrefix = []byte("utxo-")
 )
 
 type UTXOSet struct {
 	Blockchain *BlockChain
+}
+
+func (u UTXOSet) FindUnspentTransactions(pubKeyHash []byte) []TxOutput {
+	var UTXOs []TxOutput
+
+	db := u.Blockchain.Database
+
+	err := db.View(func(txn *badger.Txn) error {
+		opts := badger.DefaultIteratorOptions
+
+		it := txn.NewIterator(opts)
+		defer it.Close()
+
+		for it.Seek(utxoPrefix); it.ValidForPrefix(utxoPrefix); it.Next() {
+			item := it.Item()
+			v, err := item.Value()
+			er.Handle(err)
+			outs := DeserializeOutputs(v)
+			for _, out := range outs.Outputs {
+				if out.IsLockedWithKey(pubKeyHash) {
+					UTXOs = append(UTXOs, out)
+				}
+			}
+
+		}
+		return nil
+	})
+	er.Handle(err)
+
+	return UTXOs
 }
 
 func (u UTXOSet) FindSpendableOutputs(pubKeyHash []byte, amount int) (int, map[string][]int) {
@@ -32,7 +62,7 @@ func (u UTXOSet) FindSpendableOutputs(pubKeyHash []byte, amount int) (int, map[s
 			item := it.Item()
 			k := item.Key()
 			v, err := item.Value()
-			Handle(err)
+			er.Handle(err)
 			k = bytes.TrimPrefix(k, utxoPrefix)
 			txID := hex.EncodeToString(k)
 			outs := DeserializeOutputs(v)
@@ -46,7 +76,7 @@ func (u UTXOSet) FindSpendableOutputs(pubKeyHash []byte, amount int) (int, map[s
 		}
 		return nil
 	})
-	Handle(err)
+	er.Handle(err)
 	return accumulated, unspentOuts
 }
 
@@ -64,7 +94,7 @@ func (u UTXOSet) FindUTXO(pubKeyHash []byte) []TxOutput {
 		for it.Seek(utxoPrefix); it.ValidForPrefix(utxoPrefix); it.Next() {
 			item := it.Item()
 			v, err := item.Value()
-			Handle(err)
+			er.Handle(err)
 			outs := DeserializeOutputs(v)
 
 			for _, out := range outs.Outputs {
@@ -76,7 +106,7 @@ func (u UTXOSet) FindUTXO(pubKeyHash []byte) []TxOutput {
 
 		return nil
 	})
-	Handle(err)
+	er.Handle(err)
 
 	return UTXOs
 }
@@ -97,7 +127,7 @@ func (u UTXOSet) CountTransactions() int {
 		return nil
 	})
 
-	Handle(err)
+	er.Handle(err)
 
 	return counter
 }
@@ -118,12 +148,12 @@ func (u UTXOSet) Reindex() {
 			key = append(utxoPrefix, key...)
 
 			err = txn.Set(key, outs.Serialize())
-			Handle(err)
+			er.Handle(err)
 		}
 
 		return nil
 	})
-	Handle(err)
+	er.Handle(err)
 }
 
 func (u *UTXOSet) Update(block *Block) {
@@ -137,10 +167,10 @@ func (u *UTXOSet) Update(block *Block) {
 					updatedOuts := TxOutputs{}
 					inID := append(utxoPrefix, in.ID...)
 					item, err := txn.Get(inID)
-					Handle(err)
+					er.Handle(err)
 
 					v, err := item.Value()
-					Handle(err)
+					er.Handle(err)
 
 					outs := DeserializeOutputs(v)
 					for outIdx, out := range outs.Outputs {
@@ -162,10 +192,7 @@ func (u *UTXOSet) Update(block *Block) {
 			}
 
 			newOutputs := TxOutputs{}
-			for _, out := range tx.Outputs {
-				newOutputs.Outputs = append(newOutputs.Outputs, out)
-			}
-
+			newOutputs.Outputs = append(newOutputs.Outputs, tx.Outputs...)
 			txID := append(utxoPrefix, tx.ID...)
 			if err := txn.Set(txID, newOutputs.Serialize()); err != nil {
 				log.Panic(err)
@@ -174,7 +201,7 @@ func (u *UTXOSet) Update(block *Block) {
 
 		return nil
 	})
-	Handle(err)
+	er.Handle(err)
 }
 
 func (u *UTXOSet) DeleteByPrefix(prefix []byte) {

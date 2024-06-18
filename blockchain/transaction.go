@@ -8,6 +8,7 @@ import (
 	"encoding/gob"
 	"encoding/hex"
 	"fmt"
+	er "golang-blockchain/err"
 	"golang-blockchain/wallet"
 	"log"
 	"math/big"
@@ -27,14 +28,22 @@ func (tx Transaction) Serialize() []byte {
 
 	enc := gob.NewEncoder(&encoded)
 	err := enc.Encode(tx)
-	Handle(err)
+	er.Handle(err)
 
 	return encoded.Bytes()
 }
 
+func DeserializeTransaction(data []byte) Transaction {
+	var transaction Transaction
+
+	decoder := gob.NewDecoder(bytes.NewReader(data))
+	err := decoder.Decode(&transaction)
+	er.Handle(err)
+	return transaction
+}
+
 func (tx *Transaction) Hash() []byte {
 	var hash [32]byte
-
 	txCopy := *tx
 	txCopy.ID = []byte{}
 	hash = sha256.Sum256(txCopy.Serialize())
@@ -47,7 +56,7 @@ func (tx *Transaction) SetID() {
 
 	encode := gob.NewEncoder(&encoded)
 	err := encode.Encode(tx)
-	Handle(err)
+	er.Handle(err)
 
 	hash = sha256.Sum256(encoded.Bytes())
 	tx.ID = hash[:]
@@ -57,7 +66,7 @@ func CoinbaseTx(to, data string) *Transaction {
 	if data == "" {
 		randData := make([]byte, 24)
 		_, err := rand.Read(randData)
-		Handle(err)
+		er.Handle(err)
 		data = fmt.Sprintf("%x", randData)
 	}
 
@@ -70,13 +79,10 @@ func CoinbaseTx(to, data string) *Transaction {
 	return &tx
 }
 
-func NewTransaction(from, to string, amount int, UTXO *UTXOSet) *Transaction {
+func NewTransaction(w *wallet.Wallet, to string, amount int, UTXO *UTXOSet) *Transaction {
 	var inputs []TxInput
 	var outputs []TxOutput
 
-	wallets, err := wallet.CreateWallets()
-	Handle(err)
-	w := wallets.GetWallet(from)
 	PubKeyHash := wallet.PublicKeyHash(w.PublicKey)
 	acc, validOutputs := UTXO.FindSpendableOutputs(PubKeyHash, amount)
 
@@ -86,22 +92,25 @@ func NewTransaction(from, to string, amount int, UTXO *UTXOSet) *Transaction {
 
 	for txid, outs := range validOutputs {
 		txID, err := hex.DecodeString(txid)
-		Handle(err)
+		er.Handle(err)
 		for _, out := range outs {
 			input := TxInput{txID, out, nil, w.PublicKey}
 			inputs = append(inputs, input)
 		}
 	}
 
+	from := string(w.Address())
+
 	outputs = append(outputs, *NewTXOutput(amount, to))
 	if acc > amount {
 		outputs = append(outputs, *NewTXOutput(acc-amount, from))
 	}
+
 	tx := Transaction{nil, inputs, outputs}
 	tx.ID = tx.Hash()
 
 	privateKey, err := BytesToECDSAPrivateKey(w.PrivateKey)
-	Handle(err)
+	er.Handle(err)
 
 	UTXO.Blockchain.SignTransaction(&tx, *privateKey)
 
@@ -116,7 +125,6 @@ func (tx *Transaction) Sign(privKey ecdsa.PrivateKey, prevTXs map[string]Transac
 	if tx.IsCoinbase() {
 		return
 	}
-
 	for _, in := range tx.Inputs {
 		if prevTXs[hex.EncodeToString(in.ID)].ID == nil {
 			log.Panic("Error: Previous transaction is not correct")
@@ -132,7 +140,7 @@ func (tx *Transaction) Sign(privKey ecdsa.PrivateKey, prevTXs map[string]Transac
 		txCopy.Inputs[inId].PubKey = nil
 
 		r, s, err := ecdsa.Sign(rand.Reader, &privKey, txCopy.ID)
-		Handle(err)
+		er.Handle(err)
 		signature := append(r.Bytes(), s.Bytes()...)
 		tx.Inputs[inId].Signature = signature
 	}
@@ -158,9 +166,10 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 	if tx.IsCoinbase() {
 		return true
 	}
+
 	for _, in := range tx.Inputs {
 		if prevTXs[hex.EncodeToString(in.ID)].ID == nil {
-			log.Panic("Previous transaction does not exist")
+			log.Panic("Previous transaction not correct")
 		}
 	}
 
@@ -171,11 +180,10 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 		prevTx := prevTXs[hex.EncodeToString(in.ID)]
 		txCopy.Inputs[inId].Signature = nil
 		txCopy.Inputs[inId].PubKey = prevTx.Outputs[in.Out].PubKeyHash
-		txCopy.ID = txCopy.Hash()
-		txCopy.Inputs[inId].PubKey = nil
 
 		r := big.Int{}
 		s := big.Int{}
+
 		sigLen := len(in.Signature)
 		r.SetBytes(in.Signature[:(sigLen / 2)])
 		s.SetBytes(in.Signature[(sigLen / 2):])
@@ -186,14 +194,18 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 		x.SetBytes(in.PubKey[:(keyLen / 2)])
 		y.SetBytes(in.PubKey[(keyLen / 2):])
 
+		dataToVerify := fmt.Sprintf("%x\n", txCopy)
+
 		rawPubKey := ecdsa.PublicKey{Curve: curve, X: &x, Y: &y}
-		if !ecdsa.Verify(&rawPubKey, txCopy.ID, &r, &s) {
+		if !ecdsa.Verify(&rawPubKey, []byte(dataToVerify), &r, &s) {
 			return false
 		}
+		txCopy.Inputs[inId].PubKey = nil
 	}
 
 	return true
 }
+
 func (tx Transaction) String() string {
 	var lines []string
 

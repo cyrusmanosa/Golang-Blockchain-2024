@@ -8,15 +8,17 @@ import (
 	"os"
 )
 
+const walletFile = "./tmp/wallets_%s.data"
+
 type Wallets struct {
 	Wallets map[string]*Wallet
 }
 
-func CreateWallets() (*Wallets, error) {
+func CreateWallets(nodeId string) (*Wallets, error) {
 	wallets := Wallets{}
 	wallets.Wallets = make(map[string]*Wallet)
 
-	err := wallets.LoadFile()
+	err := wallets.LoadFile(nodeId)
 
 	return &wallets, err
 }
@@ -31,25 +33,27 @@ func (ws *Wallets) AddWallet() string {
 
 func (ws *Wallets) GetAllAddresses() []string {
 	var addresses []string
-
 	for address := range ws.Wallets {
 		addresses = append(addresses, address)
 	}
-
 	return addresses
 }
 
 func (ws Wallets) GetWallet(address string) Wallet {
-	return *ws.Wallets[address]
+	wallet, exists := ws.Wallets[address]
+	if !exists {
+		fmt.Printf("Wallet not found for address: %s\n", address)
+	}
+	return *wallet
 }
 
-func (ws *Wallets) LoadFile() error {
+func (ws *Wallets) LoadFile(nodeId string) error {
+	walletFile := fmt.Sprintf(walletFile, nodeId)
 	if _, err := os.Stat(walletFile); os.IsNotExist(err) {
 		return err
 	}
 
 	var wallets Wallets
-
 	fileContent, err := os.ReadFile(walletFile)
 	if err != nil {
 		return err
@@ -66,8 +70,9 @@ func (ws *Wallets) LoadFile() error {
 	return nil
 }
 
-func (ws *Wallets) SaveFile() {
+func (ws *Wallets) SaveFile(nodeId string) {
 	var content bytes.Buffer
+	walletFile := fmt.Sprintf(walletFile, nodeId)
 
 	encoder := gob.NewEncoder(&content)
 	err := encoder.Encode(ws)
