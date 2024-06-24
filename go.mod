@@ -1,4 +1,4 @@
-module golang-blockchain
+module GolangBlockchain2024
 
 go 1.22.4
 

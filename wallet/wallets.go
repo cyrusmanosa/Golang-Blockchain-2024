@@ -4,8 +4,11 @@ import (
 	"bytes"
 	"encoding/gob"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
+
+	"github.com/btcsuite/btcd/btcec/v2"
 )
 
 const walletFile = "./tmp/wallets_%s.data"
@@ -26,6 +29,7 @@ func CreateWallets(nodeId string) (*Wallets, error) {
 func (ws *Wallets) AddWallet() string {
 	wallet := MakeWallet()
 	address := fmt.Sprintf("%s", wallet.Address())
+
 	ws.Wallets[address] = wallet
 
 	return address
@@ -33,18 +37,16 @@ func (ws *Wallets) AddWallet() string {
 
 func (ws *Wallets) GetAllAddresses() []string {
 	var addresses []string
+
 	for address := range ws.Wallets {
 		addresses = append(addresses, address)
 	}
+
 	return addresses
 }
 
 func (ws Wallets) GetWallet(address string) Wallet {
-	wallet, exists := ws.Wallets[address]
-	if !exists {
-		fmt.Printf("Wallet not found for address: %s\n", address)
-	}
-	return *wallet
+	return *ws.Wallets[address]
 }
 
 func (ws *Wallets) LoadFile(nodeId string) error {
@@ -54,11 +56,13 @@ func (ws *Wallets) LoadFile(nodeId string) error {
 	}
 
 	var wallets Wallets
-	fileContent, err := os.ReadFile(walletFile)
+
+	fileContent, err := ioutil.ReadFile(walletFile)
 	if err != nil {
 		return err
 	}
 
+	gob.Register(btcec.S256())
 	decoder := gob.NewDecoder(bytes.NewReader(fileContent))
 	err = decoder.Decode(&wallets)
 	if err != nil {
@@ -74,13 +78,15 @@ func (ws *Wallets) SaveFile(nodeId string) {
 	var content bytes.Buffer
 	walletFile := fmt.Sprintf(walletFile, nodeId)
 
+	gob.Register(btcec.S256())
+
 	encoder := gob.NewEncoder(&content)
 	err := encoder.Encode(ws)
 	if err != nil {
 		log.Panic(err)
 	}
 
-	err = os.WriteFile(walletFile, content.Bytes(), 0644)
+	err = ioutil.WriteFile(walletFile, content.Bytes(), 0644)
 	if err != nil {
 		log.Panic(err)
 	}

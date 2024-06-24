@@ -1,10 +1,6 @@
 package blockchain
 
-import (
-	er "golang-blockchain/err"
-
-	"github.com/dgraph-io/badger"
-)
+import "github.com/dgraph-io/badger"
 
 type BlockChainIterator struct {
 	CurrentHash []byte
@@ -22,13 +18,13 @@ func (iter *BlockChainIterator) Next() *Block {
 
 	err := iter.Database.View(func(txn *badger.Txn) error {
 		item, err := txn.Get(iter.CurrentHash)
-		er.Handle(err)
+		Handle(err)
 		encodedBlock, err := item.Value()
 		block = Deserialize(encodedBlock)
 
 		return err
 	})
-	er.Handle(err)
+	Handle(err)
 
 	iter.CurrentHash = block.PrevHash
 

@@ -2,6 +2,8 @@ package wallet
 
 import (
 	"bytes"
+	"crypto/ecdsa"
+	"crypto/rand"
 	"crypto/sha256"
 	"log"
 
@@ -15,7 +17,7 @@ const (
 )
 
 type Wallet struct {
-	PrivateKey []byte
+	PrivateKey ecdsa.PrivateKey
 	PublicKey  []byte
 }
 
@@ -31,21 +33,21 @@ func (w Wallet) Address() []byte {
 	return address
 }
 
-func NewKeyPair() ([]byte, []byte) {
-	private, err := btcec.NewPrivateKey()
+func NewKeyPair() (ecdsa.PrivateKey, []byte) {
+	curve := btcec.S256()
+
+	private, err := ecdsa.GenerateKey(curve, rand.Reader)
 	if err != nil {
 		log.Panic(err)
 	}
 
-	privKeyBytes := private.Serialize()
-	pubKeyBytes := private.PubKey().SerializeCompressed()
-
-	return privKeyBytes, pubKeyBytes
+	pub := append(private.PublicKey.X.Bytes(), private.PublicKey.Y.Bytes()...)
+	return *private, pub
 }
 
 func MakeWallet() *Wallet {
 	private, public := NewKeyPair()
-	wallet := Wallet{PrivateKey: private, PublicKey: public}
+	wallet := Wallet{private, public}
 
 	return &wallet
 }
@@ -78,5 +80,5 @@ func ValidateAddress(address string) bool {
 	pubKeyHash = pubKeyHash[1 : len(pubKeyHash)-checksumLength]
 	targetChecksum := Checksum(append([]byte{version}, pubKeyHash...))
 
-	return bytes.Equal(actualChecksum, targetChecksum)
+	return bytes.Compare(actualChecksum, targetChecksum) == 0
 }
