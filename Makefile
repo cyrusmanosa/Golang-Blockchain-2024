@@ -4,3 +4,5 @@ CW :
 PC:
 	go run . printchain
 
+LA:
+	go run . listaddresses

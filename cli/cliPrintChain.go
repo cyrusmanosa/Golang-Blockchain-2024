@@ -13,7 +13,7 @@ func (cli *CommandLine) printChain(nodeID string) {
 
 	for {
 		block := iter.Next()
-
+		fmt.Println("")
 		fmt.Printf("Hash: %x\n", block.Hash)
 		fmt.Printf("Prev. hash: %x\n", block.PrevHash)
 		pow := blockchain.NewProof(block)
