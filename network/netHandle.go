@@ -6,7 +6,7 @@ import (
 	"encoding/gob"
 	"encoding/hex"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net"
 )
@@ -53,7 +53,7 @@ func HandleBlock(request []byte, chain *blockchain.BlockChain) {
 
 		blocksInTransit = blocksInTransit[1:]
 	} else {
-		UTXOSet := blockchain.UTXOSet{chain}
+		UTXOSet := blockchain.UTXOSet{Blockchain: chain}
 		UTXOSet.Reindex()
 	}
 }
@@ -79,7 +79,7 @@ func HandleInv(request []byte, chain *blockchain.BlockChain) {
 
 		newInTransit := [][]byte{}
 		for _, b := range blocksInTransit {
-			if bytes.Compare(b, blockHash) != 0 {
+			if !bytes.Equal(b, blockHash) {
 				newInTransit = append(newInTransit, b)
 			}
 		}
@@ -194,7 +194,7 @@ func HandleVersion(request []byte, chain *blockchain.BlockChain) {
 }
 
 func HandleConnection(conn net.Conn, chain *blockchain.BlockChain) {
-	req, err := ioutil.ReadAll(conn)
+	req, err := io.ReadAll(conn)
 	defer conn.Close()
 
 	if err != nil {
@@ -221,5 +221,4 @@ func HandleConnection(conn net.Conn, chain *blockchain.BlockChain) {
 	default:
 		fmt.Println("Unknown command")
 	}
-
 }

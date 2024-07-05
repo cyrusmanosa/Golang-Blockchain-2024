@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/gob"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 
@@ -28,7 +27,7 @@ func CreateWallets(nodeId string) (*Wallets, error) {
 
 func (ws *Wallets) AddWallet() string {
 	wallet := MakeWallet()
-	address := fmt.Sprintf("%s", wallet.Address())
+	address := string(wallet.Address())
 
 	ws.Wallets[address] = wallet
 
@@ -50,14 +49,14 @@ func (ws Wallets) GetWallet(address string) Wallet {
 }
 
 func (ws *Wallets) LoadFile(nodeId string) error {
+	var wallets Wallets
+
 	walletFile := fmt.Sprintf(walletFile, nodeId)
 	if _, err := os.Stat(walletFile); os.IsNotExist(err) {
 		return err
 	}
 
-	var wallets Wallets
-
-	fileContent, err := ioutil.ReadFile(walletFile)
+	fileContent, err := os.ReadFile(walletFile)
 	if err != nil {
 		return err
 	}
@@ -70,23 +69,19 @@ func (ws *Wallets) LoadFile(nodeId string) error {
 	}
 
 	ws.Wallets = wallets.Wallets
-
 	return nil
 }
 
 func (ws *Wallets) SaveFile(nodeId string) {
 	var content bytes.Buffer
 	walletFile := fmt.Sprintf(walletFile, nodeId)
-
 	gob.Register(btcec.S256())
-
 	encoder := gob.NewEncoder(&content)
 	err := encoder.Encode(ws)
 	if err != nil {
 		log.Panic(err)
 	}
-
-	err = ioutil.WriteFile(walletFile, content.Bytes(), 0644)
+	err = os.WriteFile(walletFile, content.Bytes(), 0644)
 	if err != nil {
 		log.Panic(err)
 	}

@@ -84,7 +84,7 @@ func BytesToCmd(bytes []byte) string {
 		}
 	}
 
-	return fmt.Sprintf("%s", cmd)
+	return string(cmd)
 }
 
 func ExtractCmd(request []byte) []byte {

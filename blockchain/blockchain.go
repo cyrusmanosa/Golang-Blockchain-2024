@@ -34,13 +34,13 @@ func DBexists(path string) bool {
 }
 
 func ContinueBlockChain(nodeId string) *BlockChain {
+	var lastHash []byte
+
 	path := fmt.Sprintf(dbPath, nodeId)
-	if DBexists(path) == false {
+	if !DBexists(path) {
 		fmt.Println("No existing blockchain found, create one!")
 		runtime.Goexit()
 	}
-
-	var lastHash []byte
 
 	opts := badger.DefaultOptions
 	opts.Dir = path
@@ -84,15 +84,11 @@ func InitBlockChain(address, nodeId string) *BlockChain {
 		err = txn.Set(genesis.Hash, genesis.Serialize())
 		Handle(err)
 		err = txn.Set([]byte("lh"), genesis.Hash)
-
 		lastHash = genesis.Hash
-
 		return err
-
 	})
 
 	Handle(err)
-
 	blockchain := BlockChain{lastHash, db}
 	return &blockchain
 }
@@ -192,7 +188,7 @@ func (chain *BlockChain) MineBlock(transactions []*Transaction) *Block {
 	var lastHeight int
 
 	for _, tx := range transactions {
-		if chain.VerifyTransaction(tx) != true {
+		if !chain.VerifyTransaction(tx) {
 			log.Panic("Invalid Transaction")
 		}
 	}
@@ -255,7 +251,7 @@ func (chain *BlockChain) FindUTXO() map[string]TxOutputs {
 				outs.Outputs = append(outs.Outputs, out)
 				UTXO[txID] = outs
 			}
-			if tx.IsCoinbase() == false {
+			if !tx.IsCoinbase() {
 				for _, in := range tx.Inputs {
 					inTxID := hex.EncodeToString(in.ID)
 					spentTXOs[inTxID] = append(spentTXOs[inTxID], in.Out)
@@ -277,7 +273,7 @@ func (bc *BlockChain) FindTransaction(ID []byte) (Transaction, error) {
 		block := iter.Next()
 
 		for _, tx := range block.Transactions {
-			if bytes.Compare(tx.ID, ID) == 0 {
+			if bytes.Equal(tx.ID, ID) {
 				return *tx, nil
 			}
 		}

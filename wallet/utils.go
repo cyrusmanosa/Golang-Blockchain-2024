@@ -20,5 +20,3 @@ func Base58Decode(input []byte) []byte {
 
 	return decode
 }
-
-// 0 O l I + /

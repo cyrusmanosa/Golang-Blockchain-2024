@@ -92,7 +92,7 @@ func NewTransaction(w *wallet.Wallet, to string, amount int, UTXO *UTXOSet) *Tra
 		}
 	}
 
-	from := fmt.Sprintf("%s", w.Address())
+	from := string(w.Address())
 
 	outputs = append(outputs, *NewTXOutput(amount, to))
 
@@ -144,7 +144,6 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 	if tx.IsCoinbase() {
 		return true
 	}
-
 	for _, in := range tx.Inputs {
 		if prevTXs[hex.EncodeToString(in.ID)].ID == nil {
 			log.Panic("Previous transaction not correct")
@@ -175,7 +174,7 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 		dataToVerify := fmt.Sprintf("%x\n", txCopy)
 
 		rawPubKey := ecdsa.PublicKey{Curve: curve, X: &x, Y: &y}
-		if ecdsa.Verify(&rawPubKey, []byte(dataToVerify), &r, &s) == false {
+		if !ecdsa.Verify(&rawPubKey, []byte(dataToVerify), &r, &s) {
 			return false
 		}
 		txCopy.Inputs[inId].PubKey = nil
@@ -200,6 +199,8 @@ func (tx *Transaction) TrimmedCopy() Transaction {
 
 	return txCopy
 }
+
+// Print chain
 
 func (tx Transaction) String() string {
 	var lines []string
