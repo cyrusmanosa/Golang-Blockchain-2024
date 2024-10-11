@@ -2,7 +2,6 @@ package server
 
 import (
 	"blockchain-back/controllers"
-	"blockchain-back/dsl"
 	"fmt"
 	"log"
 	"net/http"
@@ -20,31 +19,6 @@ func Gin(in, out string, filePath []byte) {
 	r := gin.Default()
 	r.Use(cors.Default())
 
-	svgData := dsl.PdfToSvg(in, out)
-
-	// /----------------------------------------------------------------------------------------------------------------------------------------------------------------
-	r.GET("/png", func(c *gin.Context) {
-		html := ` 
-		<!DOCTYPE html>
-		<html>
-		<head>
-		<title>Image Display</title>
-		</head>
-		<body>
-		<h1>Image</h1>
-		<img src="/imageTest" />
-		</body>
-		</html>`
-		// Write the HTML response
-		c.Header("Content-Type", "text/html")
-		c.String(http.StatusOK, html)
-	})
-	r.GET("/imageTest", func(c *gin.Context) {
-		c.Header("Content-Type", "image/png")
-		c.Data(http.StatusOK, "image/png", filePath)
-	})
-	// /----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 	r.GET("/svg/:Cname", func(c *gin.Context) {
 		Cname := c.Param("Cname")
 		Svg := controllers.TakeBlock(c, Cname)
@@ -52,10 +26,6 @@ func Gin(in, out string, filePath []byte) {
 		c.Data(http.StatusOK, "svg+xml", Svg)
 	})
 
-	r.GET("/image", func(c *gin.Context) {
-		c.Header("Content-Type", "svg+xml")
-		c.Data(http.StatusOK, "svg+xml", svgData)
-	})
 	r.PUT("/take", controllers.AddBlockForGin)
 	r.PUT("/Check/:name", controllers.AddBlockForGinConfirm)
 
