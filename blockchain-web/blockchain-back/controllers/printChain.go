@@ -167,8 +167,13 @@ func TakeBlock(c *gin.Context, CusName string) []byte {
 		dataName, _ := dataMap["name"].(string)
 		dataCv, _ := dataMap["cv"].(string)
 		if dataName == CusName {
-			svgBase64, _ := base64.StdEncoding.DecodeString(dataCv)
-			return svgBase64
+			if dataCv != "" {
+				svgBase64, _ := base64.StdEncoding.DecodeString(dataCv)
+				return svgBase64
+			} else {
+				log.Println("!!!!!!! cv is empty !!!!!!!")
+				os.Exit(1)
+			}
 		}
 	}
 	return nil

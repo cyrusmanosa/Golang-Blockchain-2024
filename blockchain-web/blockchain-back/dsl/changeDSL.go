@@ -2,55 +2,27 @@ package dsl
 
 import (
 	"bytes"
-	"fmt"
-	"image"
-	"image/png"
+	"log"
 	"os"
 	"os/exec"
 )
 
-func PngToSvg() []byte {
-	path := "/Users/cyrusman/Desktop/ECCコンピューター専門学校/Year-3/Y3-Sem1/ITゼミ演習１/blockchain-web/blockchain-back/dsl/Original/TestPng.png"
-	file, err := os.Open(path)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return nil
-	}
-	defer file.Close()
-
-	img, _, err := image.Decode(file)
-	if err != nil {
-		fmt.Println("Error decoding image:", err)
-		return nil
-	}
-
-	var buf bytes.Buffer
-	err = png.Encode(&buf, img)
-	if err != nil {
-		fmt.Println("Error encoding image to PNG:", err)
-		return nil
-	}
-	pngData := buf.Bytes()
-
-	return pngData
-}
-
-func PdfToSvg(pdfPath string, svgPath string) []byte {
+func PdfToSvg(infPath string, outPath string) ([]byte, error) {
 	var stderr bytes.Buffer
-	cmd := exec.Command("pdf2svg", pdfPath, svgPath, "1")
+	cmd := exec.Command("pdf2svg", infPath, outPath, "1")
 	cmd.Stderr = &stderr
 	err := cmd.Run()
 	if err != nil {
-		fmt.Printf("Error running pdf2svg: %v\n", err)
-		fmt.Printf("pdf2svg stderr: %s\n", stderr.String())
-		return nil
+		log.Println("Error running pdf2svg: ", err)
+		log.Println("pdf2svg stderr: ", stderr.String())
+		return nil, err
 	}
 
-	svgBytes, err := os.ReadFile(svgPath)
+	svgBytes, err := os.ReadFile(outPath)
 	if err != nil {
-		fmt.Println("Error reading SVG file:", err)
-		return nil
+		log.Println("Error reading SVG file:", err)
+		return nil, err
 	}
 
-	return svgBytes
+	return svgBytes, nil
 }

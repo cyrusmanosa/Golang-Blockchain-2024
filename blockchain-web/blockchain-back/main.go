@@ -2,7 +2,6 @@ package main
 
 import (
 	"blockchain-back/controllers"
-	"blockchain-back/dsl"
 	"blockchain-back/server"
 	_ "net/http/pprof"
 	"os"
@@ -18,8 +17,7 @@ func main() {
 	case "command":
 		controllers.Cli()
 	case "server":
-		data := dsl.PngToSvg()
-		server.Gin(data)
+		server.Gin()
 	default:
 		runtime.Goexit()
 	}

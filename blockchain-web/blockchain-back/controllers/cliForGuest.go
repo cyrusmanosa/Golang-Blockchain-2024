@@ -22,11 +22,12 @@ type CommandLine struct {
 }
 
 const (
-	pdfPath = "/Users/cyrusman/Desktop/ECCコンピューター専門学校/Year-3/Y3-Sem1/ITゼミ演習１/blockchain-web/blockchain-back/dsl/Original/履歴書.pdf"
-	svgPath = "/Users/cyrusman/Desktop/ECCコンピューター専門学校/Year-3/Y3-Sem1/ITゼミ演習１/blockchain-web/blockchain-back/dsl/Original/Svg/TestSVG.svg"
+	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/履歴書.pdf"
+	outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Svg/aaa.svg"
 	layout  = "2006-01-02 15:04:05"
 )
 
+// / ----------------------------- Not Confirm or Text -----------------------------------
 func AddBlockForGin(ctx *gin.Context) {
 	chain := blockchain.InitBlockChainForGuest()
 	defer chain.Database.Close()
@@ -50,6 +51,7 @@ func AddBlockForGin(ctx *gin.Context) {
 	cli.PrintChain()
 }
 
+// / ----------------------------- Confirm -----------------------------------
 func AddBlockForGinConfirm(ctx *gin.Context) {
 	rspName := ctx.Param("name")
 
@@ -79,6 +81,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			ErrorResponse(err)
 			return
 		}
+
 		dataName, ok := dataMap["name"].(string)
 		if !ok {
 			ErrorResponse(err)
@@ -90,32 +93,37 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			dataT, _ := dataMap["send_time"].(string)
 			dataMsg, _ := dataMap["message"].(string)
 
-			svgData := dsl.PdfToSvg(pdfPath, svgPath)
-			svgBase64 := base64.StdEncoding.EncodeToString(svgData)
+			svgData, err := dsl.PdfToSvg(infPath, outPath)
+			if err != nil {
+				ErrorResponse(err)
+				return
+			} else {
+				svgBase64 := base64.StdEncoding.EncodeToString(svgData)
+				newData := models.InputData{
+					Name:        dataName,
+					Email:       dataEmail,
+					CompanyName: dataCN,
+					Message:     dataMsg,
+					Cv:          svgBase64,
+					Status:      "Checked",
+					SendTime:    dataT,
+					ConfirmTime: time.Now().Format(layout),
+				}
 
-			newData := models.InputData{
-				Name:        dataName,
-				Email:       dataEmail,
-				CompanyName: dataCN,
-				Message:     dataMsg,
-				Cv:          svgBase64,
-				Status:      "Checked",
-				SendTime:    dataT,
-				ConfirmTime: time.Now().Format(layout),
+				cli.blockchain.AddBlockForGuest(newData)
+				fmt.Println("Added Block!")
+				fmt.Println(" ")
+				cli.PrintChainForConfirm()
+				SendRsp(newData)
 			}
-
-			cli.blockchain.AddBlockForGuest(newData)
-			fmt.Println("Added Block!")
-			fmt.Println(" ")
-			cli.PrintChainForConfirm()
-			SendRsp(newData)
-		}
-		if len(block.PrevHash) == 0 {
-			break
+			if len(block.PrevHash) == 0 {
+				break
+			}
 		}
 	}
 }
 
+// / ----------------------------- Error func -----------------------------------
 func ErrorResponse(err error) gin.H {
 	return gin.H{"error": err.Error()}
 }

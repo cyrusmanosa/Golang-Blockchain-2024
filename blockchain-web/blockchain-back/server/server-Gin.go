@@ -11,7 +11,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Gin(in, out string, filePath []byte) {
+func Gin() {
 	go func() {
 		log.Println(http.ListenAndServe("localhost:6060", nil))
 	}()
