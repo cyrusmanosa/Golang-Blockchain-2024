@@ -36,7 +36,7 @@ export default function InputWithIcon() {
             message
         };
 
-        await axios.put("http://localhost:8080/take", data, {
+        await axios.post("http://localhost:8080/take", data, {
             headers: {
                 'Content-Type': 'application/json'
             }

@@ -124,7 +124,12 @@ func (cli *CommandLine) PrintChainForConfirm() {
 }
 
 func TakeBlock(c *gin.Context, CusName string) []byte {
-	chain := blockchain.InitBlockChainForGuest()
+	chain, err := blockchain.InitBlockChainForGuest()
+	if err != nil {
+		ErrorResponse(err)
+		return nil
+	}
+
 	defer chain.Database.Close()
 	cli := CommandLine{chain}
 

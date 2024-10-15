@@ -25,7 +25,7 @@ func Gin() {
 		c.Data(http.StatusOK, "svg+xml", Svg)
 	})
 
-	r.PUT("/take", controllers.AddBlockForGin)
+	r.POST("/take", controllers.AddBlockForGin)
 	r.POST("/Check/:name", controllers.AddBlockForGinConfirm)
 
 	log.Println("Starting server at :8080")
