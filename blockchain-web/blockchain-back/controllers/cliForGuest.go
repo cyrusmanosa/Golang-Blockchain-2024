@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	blockchain "blockchain-back/blockchain"
@@ -59,34 +58,30 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 	defer chain.Database.Close()
 	cli := CommandLine{chain}
 
-	if _, err := os.Stat("./tmp/block"); os.IsNotExist(err) {
-		err := os.MkdirAll("./tmp/block", os.ModePerm)
-		if err != nil {
-			log.Panic("Error Creating Dir: ", err)
-		}
-	}
-
 	iter := cli.blockchain.Iterator()
+
 	for {
 		block := iter.Next()
 		var prettyJSON bytes.Buffer
 		err := json.Indent(&prettyJSON, block.Data, "", "    ")
 		if err != nil {
 			ErrorResponse(err)
+			break
 		}
 
 		var dataMap map[string]interface{}
 		err = json.Unmarshal(block.Data, &dataMap)
 		if err != nil {
 			ErrorResponse(err)
-			return
+			break
 		}
 
 		dataName, ok := dataMap["name"].(string)
 		if !ok {
 			ErrorResponse(err)
-			return
+			break
 		}
+
 		if dataName == rspName {
 			dataEmail, _ := dataMap["email"].(string)
 			dataCN, _ := dataMap["company_name"].(string)
@@ -96,7 +91,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			svgData, err := dsl.PdfToSvg(infPath, outPath)
 			if err != nil {
 				ErrorResponse(err)
-				return
+				break
 			} else {
 				svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 				newData := models.InputData{

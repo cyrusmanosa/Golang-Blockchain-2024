@@ -3,6 +3,7 @@ package controllers
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"runtime"
 
@@ -54,20 +55,20 @@ func (cli *CommandLine) CommandRun() {
 				AddBlockForGuestCmd.Usage()
 				runtime.Goexit()
 			}
+
 			if *AddBlockForGuestData == "" {
 				fmt.Println("No block data provided. Use -block flag to specify block data.")
 				AddBlockForGuestCmd.Usage()
 				runtime.Goexit()
 			}
 			cli.AddBlockForGuestForCommand(*AddBlockForGuestData)
-			return
-
 		case "2":
 			err := printChainCmd.Parse(os.Args[2:])
-			blockchain.Handle(err)
+			if err != nil {
+				log.Println("2 error: ", err)
+			}
 			if printChainCmd.Parsed() {
 				cli.PrintChain()
-				return
 			}
 
 		default:

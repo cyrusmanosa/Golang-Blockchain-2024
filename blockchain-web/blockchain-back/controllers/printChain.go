@@ -17,7 +17,6 @@ func (cli *CommandLine) PrintChain() {
 	iter := cli.blockchain.Iterator()
 	for {
 		block := iter.Next()
-
 		if len(block.PrevHash) == 0 {
 			break
 		}
@@ -28,15 +27,15 @@ func (cli *CommandLine) PrintChain() {
 		var prettyJSON bytes.Buffer
 		err := json.Indent(&prettyJSON, block.Data, "", "    ")
 		if err != nil {
-			fmt.Println("Failed to format JSON:", err)
-			return
+			log.Println("Failed to format JSON:", err)
+			break
 		}
 
 		var dataMap map[string]interface{}
 		err = json.Unmarshal(block.Data, &dataMap)
 		if err != nil {
 			log.Print("Failed to parse JSON:", err)
-			return
+			break
 		}
 
 		dataName, _ := dataMap["name"].(string)
@@ -62,12 +61,10 @@ func (cli *CommandLine) PrintChain() {
 		fmt.Println("	SendTime: ", dataST)
 		fmt.Println("	ConfirmTime: ", dataCT)
 
-		// fmt.Println("Data:", prettyJSON.String())
 		fmt.Printf("Hash: %x\n", block.Hash)
 		pow := blockchain.NewProof(block)
 		fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
 		fmt.Println()
-
 	}
 }
 
@@ -86,15 +83,15 @@ func (cli *CommandLine) PrintChainForConfirm() {
 		var prettyJSON bytes.Buffer
 		err := json.Indent(&prettyJSON, block.Data, "", "    ")
 		if err != nil {
-			fmt.Println("Failed to format JSON:", err)
-			return
+			log.Println("Failed to format JSON:", err)
+			break
 		}
 
 		var dataMap map[string]interface{}
 		err = json.Unmarshal(block.Data, &dataMap)
 		if err != nil {
 			log.Print("Failed to parse JSON:", err)
-			return
+			break
 		}
 		dataName, _ := dataMap["name"].(string)
 		dataEmail, _ := dataMap["email"].(string)

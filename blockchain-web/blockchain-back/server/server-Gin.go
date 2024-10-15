@@ -2,7 +2,6 @@ package server
 
 import (
 	"blockchain-back/controllers"
-	"fmt"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
@@ -27,8 +26,8 @@ func Gin() {
 	})
 
 	r.PUT("/take", controllers.AddBlockForGin)
-	r.PUT("/Check/:name", controllers.AddBlockForGinConfirm)
+	r.POST("/Check/:name", controllers.AddBlockForGinConfirm)
 
-	fmt.Println("Starting server at :8080")
-	log.Fatal(r.Run(":8080"))
+	log.Println("Starting server at :8080")
+	r.Run(":8080")
 }

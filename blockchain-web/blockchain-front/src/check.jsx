@@ -3,5 +3,5 @@ import axios from 'axios';
 
 export default function Check() {
     const { name } = useParams();
-    axios.put(`http://localhost:8080/Check/${name}`,);
+    axios.post(`http://localhost:8080/Check/${name}`,);
 }
