@@ -34,11 +34,13 @@ func (iter *BlockChainIterator) Next() *Block {
 		if err != nil {
 			return fmt.Errorf("Iterator Next txn Get error: %w", err)
 		}
-		encodedBlock, err := item.Value()
+		err = item.Value(func(encodedBlock []byte) error {
+			block = Deserialize(encodedBlock)
+			return nil
+		})
 		if err != nil {
 			return fmt.Errorf("Iterator Next item value error: %w", err)
 		}
-		block = Deserialize(encodedBlock)
 		return nil
 	})
 
@@ -55,14 +57,19 @@ func (iter *BlockChainIterator) Next() *Block {
 
 func (chain *BlockChain) AddBlockForGuest(data models.InputData) error {
 	var lastHash []byte
-
 	err := chain.Database.View(func(txn *badger.Txn) error {
 		item, err := txn.Get([]byte("lh"))
 		if err != nil {
 			return fmt.Errorf("AddBlockForGuest db Get error: %w", err)
 		}
-		lastHash, err = item.Value()
-		return err
+		err = item.Value(func(val []byte) error {
+			lastHash = val
+			return nil
+		})
+		if err != nil {
+			return fmt.Errorf("AddBlockForGuest item value error: %w", err)
+		}
+		return nil
 	})
 
 	if err != nil {
@@ -70,13 +77,11 @@ func (chain *BlockChain) AddBlockForGuest(data models.InputData) error {
 	}
 
 	newBlock := CreateBlockForGuest(data, lastHash)
-
 	err = chain.Database.Update(func(txn *badger.Txn) error {
 		err := txn.Set(newBlock.Hash, newBlock.Serialize())
 		if err != nil {
 			return fmt.Errorf("AddBlockForGuest txn Set error: %w", err)
 		}
-
 		err = txn.Set([]byte("lh"), newBlock.Hash)
 		if err != nil {
 			return fmt.Errorf("AddBlockForGuest txn Set last hash error: %w", err)
@@ -84,16 +89,13 @@ func (chain *BlockChain) AddBlockForGuest(data models.InputData) error {
 		chain.LastHash = newBlock.Hash
 		return nil
 	})
-
 	return err
 }
 
 func InitBlockChainForGuest() (*BlockChain, error) {
 	var lastHash []byte
 
-	opts := badger.DefaultOptions
-	opts.Dir = dbPath
-	opts.ValueDir = dbPath
+	opts := badger.DefaultOptions(dbPath)
 
 	db, err := badger.Open(opts)
 	if err != nil {
@@ -103,12 +105,10 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 	err = db.Update(func(txn *badger.Txn) error {
 		if _, err := txn.Get([]byte("lh")); err == badger.ErrKeyNotFound {
 			GenesisForGuest := GenesisForGuest()
-
 			err = txn.Set(GenesisForGuest.Hash, GenesisForGuest.Serialize())
 			if err != nil {
 				return fmt.Errorf("InitBlockChainForGuest txn set error: %w", err)
 			}
-
 			err = txn.Set([]byte("lh"), GenesisForGuest.Hash)
 			lastHash = GenesisForGuest.Hash
 			return err
@@ -119,9 +119,15 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 			if err != nil {
 				return fmt.Errorf("InitBlockChainForGuest txn Get error: %w", err)
 			}
-			lastHash, err = item.Value()
-			return err
+			err = item.Value(func(val []byte) error {
+				lastHash = val
+				return nil
+			})
+			if err != nil {
+				return fmt.Errorf("InitBlockChainForGuest item value error: %w", err)
+			}
 		}
+		return nil
 	})
 
 	if err != nil {
@@ -137,9 +143,7 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 func InitBlockChainForDoc() *BlockChain {
 	var lastHash []byte
 
-	opts := badger.DefaultOptions
-	opts.Dir = dbPath
-	opts.ValueDir = dbPath
+	opts := badger.DefaultOptions(dbPath)
 
 	db, err := badger.Open(opts)
 	if err != nil {
@@ -167,7 +171,10 @@ func InitBlockChainForDoc() *BlockChain {
 				log.Println("InitBlockChainForDoc txn Get error: ", err)
 			}
 
-			lastHash, err = item.Value()
+			err = item.Value(func(val []byte) error {
+				lastHash = val
+				return nil
+			})
 			return err
 		}
 	})
@@ -188,8 +195,10 @@ func (chain *BlockChain) AddBlockForDoc(data string) {
 		if err != nil {
 			log.Println("AddBlockForDoc txn Get error: ", err)
 		}
-		lastHash, err = item.Value()
-
+		err = item.Value(func(val []byte) error {
+			lastHash = val
+			return nil
+		})
 		return err
 	})
 	if err != nil {

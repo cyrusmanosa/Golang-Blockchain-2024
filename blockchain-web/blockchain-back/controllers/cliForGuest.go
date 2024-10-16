@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"bytes"
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -108,14 +107,15 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
+			// svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 
-			svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 			newData := models.InputData{
 				Name:        dataName,
 				Email:       dataEmail,
 				CompanyName: dataCN,
 				Message:     dataMsg,
-				Cv:          svgBase64,
+				// File:          svgBase64,
+				File:        svgData,
 				Status:      "Checked",
 				SendTime:    dataT,
 				ConfirmTime: time.Now().Format(layout),
@@ -126,7 +126,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			cli.PrintChainForConfirm()
 			SendRsp(newData)
-			return // 匹配到后立即返回，防止继续遍历
+			return
 		}
 
 		if len(block.PrevHash) == 0 {

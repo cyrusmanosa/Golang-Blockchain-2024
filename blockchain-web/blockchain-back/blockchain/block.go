@@ -43,7 +43,7 @@ func GenesisForGuest() *Block {
 		Email:       "",
 		CompanyName: "",
 		Message:     "",
-		Cv:          "",
+		File:        nil,
 		Status:      "New One",
 		SendTime:    time,
 		ConfirmTime: "",
