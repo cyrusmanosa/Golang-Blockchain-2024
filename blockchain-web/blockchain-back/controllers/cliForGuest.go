@@ -126,7 +126,13 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			cli.PrintChainForConfirm()
 			SendRsp(newData)
+
 			err = DeleteAllFilesInFolder(infPath)
+			if err != nil {
+				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
+				return
+			}
+			err = DeleteAllFilesInFolder(outPath)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return

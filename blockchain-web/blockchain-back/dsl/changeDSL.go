@@ -11,13 +11,12 @@ import (
 )
 
 func PdfToSvg(infPath string, outPath string) ([]byte, error) {
-	// Read directory contents
 	files, err := os.ReadDir(infPath)
 	if err != nil {
 		return nil, fmt.Errorf("unable to read directory: %s, error: %v", infPath, err)
 	}
 
-	file := files[1]
+	file := files[0]
 	filePath := filepath.Join(infPath, file.Name())
 
 	if !strings.HasSuffix(strings.ToLower(file.Name()), ".pdf") {

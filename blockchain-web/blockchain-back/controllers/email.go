@@ -2,13 +2,19 @@ package controllers
 
 import (
 	"blockchain-back/modules"
+	"blockchain-back/util"
 	"log"
 	"net/smtp"
 )
 
 func SendRequest(req modules.InputData) {
-	auth := smtp.PlainAuth("", "studiocmkc0110@gmail.com", "iodvpvmlyvadnhfb", "smtp.gmail.com")
-	subject := `興味を待つ会社の方ー` + req.CompanyName + `の` + req.Name + `さん`
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("cannot connect to config file: ", err)
+	}
+	auth := smtp.PlainAuth("", config.Username, config.Password, config.Host)
+
+	subject := req.CompanyName + `の` + req.Name + `さん`
 	body := `<html>
 		<body>
 			<h3>履歴書の取得をご希望の場合、確認してください。</h3>
@@ -28,15 +34,19 @@ func SendRequest(req modules.InputData) {
 		"Content-Type: text/html; charset=utf-8\n\n" +
 		body
 
-	err := smtp.SendMail("smtp.gmail.com:587", auth, "studiocmkc0110@gmail.com", []string{req.Email}, []byte(msg))
+	err = smtp.SendMail(config.Addr, auth, config.Username, []string{req.Email}, []byte(msg))
 	if err != nil {
 		log.Printf("Err: %v", err)
 	}
 }
 
 func SendRsp(req modules.InputData) {
-	auth := smtp.PlainAuth("", "studiocmkc0110@gmail.com", "iodvpvmlyvadnhfb", "smtp.gmail.com")
-	subject := req.CompanyName + `の` + req.Name + `さん｜文家俊の書類リング`
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("cannot connect to config file: ", err)
+	}
+	auth := smtp.PlainAuth("", config.Username, config.Password, config.Host)
+	subject := req.CompanyName + `の` + req.Name + `さん`
 	body := `<html>
 		<body>
 			<h3>メッセージを確認しました。ぜひ、機会をいただけますと幸いです。</h3>
@@ -57,7 +67,7 @@ func SendRsp(req modules.InputData) {
 		"Content-Type: text/html; charset=utf-8\n\n" +
 		body
 
-	err := smtp.SendMail("smtp.gmail.com:587", auth, "studiocmkc0110@gmail.com", []string{req.Email}, []byte(msg))
+	err = smtp.SendMail(config.Addr, auth, config.Username, []string{req.Email}, []byte(msg))
 	if err != nil {
 		log.Printf("Err: %v", err)
 	}
