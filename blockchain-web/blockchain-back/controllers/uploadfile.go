@@ -3,28 +3,30 @@ package controllers
 import (
 	"fmt"
 	"net/http"
+	"path/filepath"
 
-	toolkit "github.com/cyrusmanosa/Toolkit/v2"
 	"github.com/gin-gonic/gin"
 )
 
-func UploadFiles(c *gin.Context) {
-
-	t := toolkit.Tools{
-		MaxFileSize:      1024 * 1024 * 1024, // 1 GB
-		AllowedFileTypes: []string{"application/pdf"},
-	}
-
-	files, err := t.UploadFiles(c.Request, "/Users/cyrusman/Desktop/ProgrammingLearning/Udemy/Toolkit/appTest/UploadTest/uploads")
+func UploadFile(c *gin.Context) {
+	// 从表单中获取文件
+	file, err := c.FormFile("file")
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "获取文件失败"})
 		return
 	}
 
-	out := ""
-	for _, item := range files {
-		out += fmt.Sprintf("Uploaded %s to the uploads folder as %s\n", item.OriginalFileName, item.NewFileName)
+	// 生成保存文件的路径
+	filename := filepath.Base(file.Filename)
+	dst := filepath.Join("/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/", filename)
+
+	// 保存文件
+	if err := c.SaveUploadedFile(file, dst); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "保存文件失败"})
+		return
 	}
 
-	c.String(http.StatusOK, out)
+	c.JSON(http.StatusOK, gin.H{
+		"message": fmt.Sprintf("文件 '%s' 上传成功", filename),
+	})
 }

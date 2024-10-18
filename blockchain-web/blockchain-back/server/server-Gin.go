@@ -25,6 +25,7 @@ func Gin() {
 		c.Data(http.StatusOK, "svg+xml", Svg)
 	})
 
+	r.POST("/Upload", controllers.UploadFile)
 	r.POST("/take", controllers.AddBlockForGin)
 	r.POST("/Check/:name", controllers.AddBlockForGinConfirm)
 

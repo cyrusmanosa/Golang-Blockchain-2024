@@ -20,7 +20,7 @@ type CommandLine struct {
 }
 
 const (
-	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/履歴書.pdf"
+	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/"
 	outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Svg/"
 	layout  = "2006-01-02 15:04:05"
 )
@@ -102,6 +102,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			r := RandomString()
 			outPath2 := fmt.Sprint(outPath, r, ".svg")
+
 			svgData, err := dsl.PdfToSvg(infPath, outPath2)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
@@ -114,7 +115,6 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				Email:       dataEmail,
 				CompanyName: dataCN,
 				Message:     dataMsg,
-				// File:          svgBase64,
 				File:        svgData,
 				Status:      "Checked",
 				SendTime:    dataT,
@@ -126,6 +126,12 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			cli.PrintChainForConfirm()
 			SendRsp(newData)
+			err = DeleteAllFilesInFolder(infPath)
+			if err != nil {
+				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
+				return
+			}
+
 			return
 		}
 
