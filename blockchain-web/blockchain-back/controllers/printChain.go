@@ -167,15 +167,29 @@ func TakeBlock(c *gin.Context, CusName string) []byte {
 		}
 
 		dataName, _ := dataMap["name"].(string)
-		dataCv, _ := dataMap["file"].(string)
+		fileValue, fileExists := dataMap["file"]
+		if !fileExists {
+			log.Println("Field 'file' not found in dataMap")
+			continue
+		}
+
 		if dataName == CusName {
-			if dataCv != "" {
-				svgBase64, _ := base64.StdEncoding.DecodeString(dataCv)
+			switch v := fileValue.(type) {
+			case string:
+				svgBase64, err := base64.StdEncoding.DecodeString(v)
+				if err != nil {
+					log.Println("Failed to decode base64:", err)
+					return nil
+				}
 				return svgBase64
-			} else {
-				log.Println("!!!!!!! cv is empty !!!!!!!")
-				os.Exit(1)
+			case []byte:
+				return v
+			default:
+				log.Println("Field 'file' is neither a string nor []byte")
+				continue
 			}
+		} else {
+			log.Println("!!!!!!! cv is empty !!!!!!!")
 		}
 	}
 	return nil
