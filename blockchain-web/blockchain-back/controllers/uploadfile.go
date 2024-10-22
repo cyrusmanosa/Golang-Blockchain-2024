@@ -3,27 +3,26 @@ package controllers
 import (
 	"fmt"
 	"net/http"
-	"path/filepath"
 
+	toolkit "github.com/cyrusmanosa/Toolkit/v2"
 	"github.com/gin-gonic/gin"
 )
 
-func UploadFile(c *gin.Context) {
-	file, err := c.FormFile("file")
+func UploadOneFiles(c *gin.Context) {
+	t := toolkit.Tools{
+		MaxFileSize: 1024 * 1024 * 1024,
+		AllowedFileTypes: []string{
+			"application/pdf",
+			"image/jpeg",
+			"image/png",
+		},
+	}
+
+	files, err := t.UploadOneFile(c.Request, "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original")
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to get file"})
+		c.String(http.StatusBadRequest, err.Error())
 		return
 	}
 
-	filename := filepath.Base(file.Filename)
-	dst := filepath.Join("/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/", filename)
-
-	if err := c.SaveUploadedFile(file, dst); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{
-		"message": fmt.Sprintf("File '%s' uploaded successfully", filename),
-	})
+	c.String(http.StatusOK, fmt.Sprintf("Uploaded 1 file, %s, to the uploads folder", files.OriginalFileName))
 }

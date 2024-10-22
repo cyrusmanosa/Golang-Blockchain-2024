@@ -24,7 +24,7 @@ func SendRequest(req modules.InputData) {
 				<h2>メッセージ：` + req.Message + `</h2>
 				<h2>時間：` + req.SendTime + `</h2>
 			<br>
-			<a href="http://localhost:5173/Ok/` + req.Name + `"> CHECK BTN </a>
+			<a href="https://localhost:5173/Ok/` + req.Name + `"> CHECK BTN </a>
 			<br>
 			<br>
 		</body>

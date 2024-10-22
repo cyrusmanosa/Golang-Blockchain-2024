@@ -47,7 +47,6 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 
 	nonce := 0
 	fmt.Println("Loading................")
-	// fmt.Println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
 		hash = sha256.Sum256(data)
@@ -61,7 +60,6 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 		}
 	}
 	fmt.Println()
-	// fmt.Println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 
 	return nonce, hash[:]
 }
