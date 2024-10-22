@@ -96,7 +96,7 @@ func (cli *CommandLine) PrintChainForConfirm() {
 		dataName, _ := dataMap["name"].(string)
 		dataEmail, _ := dataMap["email"].(string)
 		dataCN, _ := dataMap["company_name"].(string)
-		dataCv, _ := dataMap["cv"].(string)
+		dataCv, _ := dataMap["file"].(string)
 		dataMsg, _ := dataMap["message"].(string)
 		dataStatus, _ := dataMap["status"].(string)
 		dataST, _ := dataMap["send_time"].(string)
@@ -167,7 +167,7 @@ func TakeBlock(c *gin.Context, CusName string) []byte {
 		}
 
 		dataName, _ := dataMap["name"].(string)
-		dataCv, _ := dataMap["cv"].(string)
+		dataCv, _ := dataMap["file"].(string)
 		if dataName == CusName {
 			if dataCv != "" {
 				svgBase64, _ := base64.StdEncoding.DecodeString(dataCv)

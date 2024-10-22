@@ -5,8 +5,8 @@ type InputData struct {
 	Email       string `json:"email"`
 	CompanyName string `json:"company_name"`
 	Message     string `json:"message"`
-	// Cv          string `json:"cv"`
-	File        []byte `json:"cv"`
+	File        string `json:"file"`
+	// File        []byte `json:"file"`
 	Status      string `json:"status"`
 	SendTime    string `json:"send_time"`
 	ConfirmTime string `json:"confirm_time"`

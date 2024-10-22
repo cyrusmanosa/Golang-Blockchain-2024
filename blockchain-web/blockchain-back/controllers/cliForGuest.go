@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -108,14 +109,14 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
-			// svgBase64 := base64.StdEncoding.EncodeToString(svgData)
+			svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 
 			newData := models.InputData{
 				Name:        dataName,
 				Email:       dataEmail,
 				CompanyName: dataCN,
 				Message:     dataMsg,
-				File:        svgData,
+				File:        svgBase64,
 				Status:      "Checked",
 				SendTime:    dataT,
 				ConfirmTime: time.Now().Format(layout),
