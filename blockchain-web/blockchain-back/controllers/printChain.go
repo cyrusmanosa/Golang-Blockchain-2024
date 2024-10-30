@@ -108,9 +108,9 @@ func (cli *CommandLine) PrintChainForConfirm() {
 		fmt.Println("	CompanyName: ", dataCN)
 		fmt.Println("	Message: ", dataMsg)
 		if dataCv != "" {
-			fmt.Println("	Cv: OK")
+			fmt.Println("	File: OK")
 		} else {
-			fmt.Println("	Cv: ")
+			fmt.Println("	File: ")
 		}
 		fmt.Println("	Status: ", dataStatus)
 		fmt.Println("	SendTime: ", dataST)
