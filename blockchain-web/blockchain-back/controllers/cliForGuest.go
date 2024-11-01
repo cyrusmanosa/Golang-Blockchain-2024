@@ -103,7 +103,6 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			r := RandomString()
 			outPath2 := fmt.Sprint(outPath, r, ".svg")
-
 			svgData, err := dsl.PdfToSvg(infPath, outPath2)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
@@ -125,7 +124,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			cli.blockchain.AddBlockForGuest(newData)
 			fmt.Println("Added Block!")
 
-			cli.PrintChainForConfirm()
+			cli.PrintChain()
 			SendRsp(newData)
 
 			err = DeleteAllFilesInFolder(infPath)
@@ -133,6 +132,7 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
+
 			err = DeleteAllFilesInFolder(outPath)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))

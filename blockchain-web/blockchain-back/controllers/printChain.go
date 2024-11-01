@@ -15,12 +15,12 @@ import (
 
 func (cli *CommandLine) PrintChain() {
 	iter := cli.blockchain.Iterator()
+	fmt.Println()
 	for {
 		block := iter.Next()
 		if len(block.PrevHash) == 0 {
 			break
 		}
-		fmt.Println("************************************************************************************************")
 		if block.PrevHash != nil {
 			fmt.Printf("Prev. hash: %x\n", block.PrevHash)
 		}
@@ -41,7 +41,7 @@ func (cli *CommandLine) PrintChain() {
 		dataName, _ := dataMap["name"].(string)
 		dataEmail, _ := dataMap["email"].(string)
 		dataCN, _ := dataMap["company_name"].(string)
-		dataCv, _ := dataMap["cv"].(string)
+		dataFile, _ := dataMap["File"].(string)
 		dataMsg, _ := dataMap["message"].(string)
 		dataStatus, _ := dataMap["status"].(string)
 		dataST, _ := dataMap["send_time"].(string)
@@ -52,62 +52,7 @@ func (cli *CommandLine) PrintChain() {
 		fmt.Println("	Email: ", dataEmail)
 		fmt.Println("	CompanyName: ", dataCN)
 		fmt.Println("	Message: ", dataMsg)
-		if dataCv != "" || len(dataCv) > 100 {
-			fmt.Println("	Cv: OK")
-		} else {
-			fmt.Println("	Cv: ")
-		}
-		fmt.Println("	Status: ", dataStatus)
-		fmt.Println("	SendTime: ", dataST)
-		fmt.Println("	ConfirmTime: ", dataCT)
-
-		fmt.Printf("Hash: %x\n", block.Hash)
-		pow := blockchain.NewProof(block)
-		fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
-		fmt.Println()
-	}
-}
-
-func (cli *CommandLine) PrintChainForConfirm() {
-	iter := cli.blockchain.Iterator()
-	for {
-		block := iter.Next()
-		if len(block.PrevHash) == 0 {
-			break
-		}
-
-		fmt.Println("************************************************************************************************")
-		if block.PrevHash != nil {
-			fmt.Printf("Prev. hash: %x\n", block.PrevHash)
-		}
-		var prettyJSON bytes.Buffer
-		err := json.Indent(&prettyJSON, block.Data, "", "    ")
-		if err != nil {
-			log.Println("Failed to format JSON:", err)
-			break
-		}
-
-		var dataMap map[string]interface{}
-		err = json.Unmarshal(block.Data, &dataMap)
-		if err != nil {
-			log.Print("Failed to parse JSON:", err)
-			break
-		}
-		dataName, _ := dataMap["name"].(string)
-		dataEmail, _ := dataMap["email"].(string)
-		dataCN, _ := dataMap["company_name"].(string)
-		dataCv, _ := dataMap["file"].(string)
-		dataMsg, _ := dataMap["message"].(string)
-		dataStatus, _ := dataMap["status"].(string)
-		dataST, _ := dataMap["send_time"].(string)
-		dataCT, _ := dataMap["confirm_time"].(string)
-
-		fmt.Println("Data:")
-		fmt.Println("	Name: ", dataName)
-		fmt.Println("	Email: ", dataEmail)
-		fmt.Println("	CompanyName: ", dataCN)
-		fmt.Println("	Message: ", dataMsg)
-		if dataCv != "" {
+		if len(dataFile) > 100 {
 			fmt.Println("	File: OK")
 		} else {
 			fmt.Println("	File: ")
@@ -189,7 +134,7 @@ func TakeBlock(c *gin.Context, CusName string) []byte {
 				continue
 			}
 		} else {
-			log.Println("!!!!!!! cv is empty !!!!!!!")
+			log.Println("!!!!!!! File is empty !!!!!!!")
 		}
 	}
 	return nil

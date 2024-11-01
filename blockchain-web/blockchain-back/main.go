@@ -12,9 +12,8 @@ func main() {
 	if len(os.Args) < 2 {
 		runtime.Goexit()
 	}
-
 	switch os.Args[1] {
-	case "command":
+	case "print":
 		controllers.Cli()
 	case "server":
 		server.Gin()
