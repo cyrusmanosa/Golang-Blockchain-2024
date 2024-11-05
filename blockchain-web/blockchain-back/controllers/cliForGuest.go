@@ -33,6 +33,7 @@ func AddBlockForGin(ctx *gin.Context) {
 		ErrorResponse(err)
 	}
 	defer chain.Database.Close()
+
 	cli := CommandLine{chain}
 
 	// take Data

@@ -55,7 +55,7 @@ func (cli *CommandLine) PrintChain() {
 		if len(dataFile) > 100 {
 			fmt.Println("	File: OK")
 		} else {
-			fmt.Println("	File: ")
+			fmt.Println("	File: ", dataFile)
 		}
 		fmt.Println("	Status: ", dataStatus)
 		fmt.Println("	SendTime: ", dataST)
@@ -92,7 +92,6 @@ func TakeBlock(c *gin.Context, CusName string) []byte {
 			break
 		}
 
-		fmt.Println("************************************************************************************************")
 		if block.PrevHash != nil {
 			fmt.Printf("Prev. hash: %x\n", block.PrevHash)
 		}

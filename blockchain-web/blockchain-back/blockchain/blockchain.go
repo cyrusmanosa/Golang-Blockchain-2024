@@ -94,7 +94,6 @@ func (chain *BlockChain) AddBlockForGuest(data models.InputData) error {
 
 func InitBlockChainForGuest() (*BlockChain, error) {
 	var lastHash []byte
-
 	opts := badger.DefaultOptions(dbPath)
 
 	db, err := badger.Open(opts)
