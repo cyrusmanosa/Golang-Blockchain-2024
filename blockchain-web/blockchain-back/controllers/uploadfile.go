@@ -18,7 +18,7 @@ func UploadOneFiles(c *gin.Context) {
 		},
 	}
 
-	files, err := t.UploadOneFile(c.Request, "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original")
+	files, err := t.UploadOneFile(c.Request, "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-web/blockchain-back/dsl/Original")
 	if err != nil {
 		c.String(http.StatusBadRequest, err.Error())
 		return

@@ -21,8 +21,9 @@ type CommandLine struct {
 }
 
 const (
-	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Original/"
-	outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/dsl/Svg/"
+	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-web/blockchain-back/dsl/Original/"
+
+	outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-web/blockchain-back/dsl/Svg/"
 	layout  = "2006-01-02 15:04:05"
 )
 

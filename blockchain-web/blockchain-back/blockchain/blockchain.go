@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	dbPath = "/Users/cyrusman/Desktop/ProgrammingLearning/GolangBlockchain2024/blockchain-web/blockchain-back/tmp/block"
+	dbPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-web/blockchain-back/tmp/block"
 )
 
 type BlockChain struct {
