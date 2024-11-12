@@ -16,8 +16,6 @@ import (
 func (cli *CommandLine) PrintChain() {
 	iter := cli.blockchain.Iterator()
 	fmt.Println()
-	fmt.Println("---------------- Sha256 ----------------")
-	fmt.Println()
 	for {
 		block := iter.Next()
 		if len(block.PrevHash) == 0 {
