@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"Sha256v/blockchain"
+	"blockchain-back/blockchain"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
