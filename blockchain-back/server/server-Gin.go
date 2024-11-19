@@ -6,10 +6,10 @@ import (
 	"os"
 	"runtime/trace"
 
-	"Sha256v/controllers"
-
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+
+	"blockchain-back/controllers"
 )
 
 func Gin() {

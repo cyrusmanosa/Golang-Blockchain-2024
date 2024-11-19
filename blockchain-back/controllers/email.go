@@ -1,10 +1,11 @@
 package controllers
 
 import (
-	"Sha256v/modules"
-	"Sha256v/util"
+	"blockchain-back/modules"
 	"log"
 	"net/smtp"
+
+	"blockchain-back/util"
 )
 
 func SendRequest(req modules.InputData) {

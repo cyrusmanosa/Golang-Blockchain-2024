@@ -1,9 +1,7 @@
 package controllers
 
 import (
-	"Sha256v/blockchain"
-	"Sha256v/dsl"
-	"Sha256v/modules"
+	"blockchain-back/modules"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
@@ -14,6 +12,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+
+	"blockchain-back/blockchain"
+	"blockchain-back/dsl"
 )
 
 type CommandLine struct {
