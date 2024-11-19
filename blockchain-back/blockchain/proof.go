@@ -8,6 +8,8 @@ import (
 	"log"
 	"math"
 	"math/big"
+
+	"golang.org/x/crypto/blake2b"
 )
 
 const Difficulty = 18
@@ -97,6 +99,35 @@ func (pow *ProofOfWork) Argon2Run() (int, []byte) {
 	return nonce, argon2[:]
 }
 
+func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
+	var intHash big.Int
+	var hash []byte
+
+	nonce := 0
+	fmt.Println("Loading................")
+
+	for nonce < math.MaxInt64 {
+		data := pow.InitData(nonce)
+
+		hasher, err := blake2b.New256(nil)
+		if err != nil {
+			log.Panic(err)
+		}
+		hasher.Write(data)
+		hash = hasher.Sum(nil)
+
+		intHash.SetBytes(hash)
+		if intHash.Cmp(pow.Target) == -1 {
+			break
+		} else {
+			nonce++
+		}
+	}
+	fmt.Println()
+
+	return nonce, hash
+}
+
 ///----------------------------- *********** -----------------------------------
 
 func (pow *ProofOfWork) Sha256Validate() bool {
@@ -124,6 +155,22 @@ func (pow *ProofOfWork) Argon2Validate() bool {
 		log.Panic(err)
 	}
 	intHash.SetBytes(argon2[:])
+
+	return intHash.Cmp(pow.Target) == -1
+}
+
+func (pow *ProofOfWork) Blake2bValidate() bool {
+	var intHash big.Int
+
+	data := pow.InitData(pow.Block.Nonce)
+	hasher, err := blake2b.New256(nil)
+	if err != nil {
+		log.Panic(err)
+	}
+	hasher.Write(data)
+	hash := hasher.Sum(nil)
+
+	intHash.SetBytes(hash)
 
 	return intHash.Cmp(pow.Target) == -1
 }

@@ -1,10 +1,11 @@
 package blockchain
 
 import (
-	models "Sha256v/modules"
 	"encoding/json"
 	"fmt"
 	"time"
+
+	models "blockchain-back/modules"
 )
 
 type Block struct {
@@ -55,6 +56,10 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		block.Nonce = nonce
 	case "argon2":
 		nonce, hash := pow.Argon2Run()
+		block.Hash = hash[:]
+		block.Nonce = nonce
+	case "black2b":
+		nonce, hash := pow.Blake2bRun()
 		block.Hash = hash[:]
 		block.Nonce = nonce
 	}

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"Sha256v/controllers"
-	"Sha256v/server"
 	_ "net/http/pprof"
 	"os"
 	"runtime"
+
+	"blockchain-back/controllers"
+	"blockchain-back/server"
 )
 
 func main() {

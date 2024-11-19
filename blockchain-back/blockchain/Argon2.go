@@ -8,7 +8,7 @@ import (
 )
 
 func Argon2CreateHash(data, salt []byte) ([]byte, error) {
-	hash := argon2.IDKey(data, salt, 1, 4*1024, 1, 16)
+	hash := argon2.IDKey(data, salt, 1, 2*1024, 1, 32)
 	return hash, nil
 }
 
