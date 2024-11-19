@@ -58,8 +58,12 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.Argon2Run()
 		block.Hash = hash[:]
 		block.Nonce = nonce
-	case "black2b":
+	case "blake2b":
 		nonce, hash := pow.Blake2bRun()
+		block.Hash = hash[:]
+		block.Nonce = nonce
+	case "blake2s":
+		nonce, hash := pow.Blake2sRun()
 		block.Hash = hash[:]
 		block.Nonce = nonce
 	}
@@ -80,7 +84,6 @@ func GenesisForGuest() *Block {
 		File:        "",
 		Status:      "New One",
 		SendTime:    time,
-		ConfirmTime: "",
 	}
 
 	return CreateBlockForGuest(GenesisForGuest, []byte{})
