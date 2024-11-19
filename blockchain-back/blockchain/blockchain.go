@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	models "blockchain-back/modules"
-
 	"github.com/dgraph-io/badger"
+
+	models "blockchain-back/modules"
 )
 
 const (

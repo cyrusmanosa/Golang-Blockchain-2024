@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"blockchain-back/modules"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
@@ -15,6 +14,7 @@ import (
 
 	"blockchain-back/blockchain"
 	"blockchain-back/dsl"
+	"blockchain-back/modules"
 )
 
 type CommandLine struct {
@@ -122,7 +122,6 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				File:        svgBase64,
 				Status:      "Checked",
 				SendTime:    dataT,
-				ConfirmTime: time.Now().Format(layout),
 			}
 
 			cli.blockchain.AddBlockForGuest(newData)

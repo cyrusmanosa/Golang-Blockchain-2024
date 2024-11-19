@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"blockchain-back/blockchain"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
@@ -11,11 +10,14 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+
+	"blockchain-back/blockchain"
 )
 
 func (cli *CommandLine) PrintChain() {
 	iter := cli.blockchain.Iterator()
 	fmt.Println()
+
 	for {
 		block := iter.Next()
 		if len(block.PrevHash) == 0 {
@@ -46,7 +48,6 @@ func (cli *CommandLine) PrintChain() {
 		dataHash, _ := dataMap["hash"].(string)
 		dataStatus, _ := dataMap["status"].(string)
 		dataST, _ := dataMap["send_time"].(string)
-		dataCT, _ := dataMap["confirm_time"].(string)
 
 		fmt.Println("Data:")
 		fmt.Println("	Name: ", dataName)
@@ -61,15 +62,21 @@ func (cli *CommandLine) PrintChain() {
 		}
 		fmt.Println("	Status: ", dataStatus)
 		fmt.Println("	SendTime: ", dataST)
-		fmt.Println("	ConfirmTime: ", dataCT)
 
 		fmt.Printf("Hash: %x\n", block.Hash)
+
 		pow := blockchain.NewProof(block)
 		switch dataHash {
+
 		case "sha256", "":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Sha256Validate()))
 		case "argon2":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Argon2Validate()))
+		case "blake2b":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2bValidate()))
+		case "blake2s":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
+
 		}
 		fmt.Println()
 	}
