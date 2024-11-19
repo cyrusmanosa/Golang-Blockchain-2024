@@ -9,5 +9,4 @@ type InputData struct {
 	File        string `json:"file"`
 	Status      string `json:"status"`
 	SendTime    string `json:"send_time"`
-	ConfirmTime string `json:"confirm_time"`
 }
