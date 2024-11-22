@@ -70,11 +70,12 @@ func (cli *CommandLine) PrintChain() {
 
 		case "sha256", "":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Sha256Validate()))
-		case "argon2":
-			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Argon2Validate()))
+		// case "argon2":
+		// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Argon2Validate()))
 		case "blake2b":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2bValidate()))
-
+			// case "blake2s":
+			// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
 		}
 		fmt.Println()
 	}
