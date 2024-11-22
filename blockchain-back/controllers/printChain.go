@@ -76,6 +76,8 @@ func (cli *CommandLine) PrintChain() {
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2bValidate()))
 			// case "blake2s":
 			// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
+		case "blake3":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake3Validate()))
 		}
 		fmt.Println()
 	}
