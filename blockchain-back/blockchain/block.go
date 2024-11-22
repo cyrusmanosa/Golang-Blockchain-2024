@@ -62,10 +62,10 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.Blake2bRun()
 		block.Hash = hash[:]
 		block.Nonce = nonce
-	case "blake2s":
-		nonce, hash := pow.Blake2sRun()
-		block.Hash = hash[:]
-		block.Nonce = nonce
+		// case "blake2s":
+		// 	nonce, hash := pow.Blake2sRun()
+		// 	block.Hash = hash[:]
+		// 	block.Nonce = nonce
 	}
 	///------ ************************************ ------
 	return block
