@@ -8,12 +8,13 @@ import (
 	"encoding/gob"
 	"encoding/hex"
 	"fmt"
-	"golang-blockchain/wallet"
 	"log"
 	"math/big"
 	"strings"
 
 	"github.com/btcsuite/btcd/btcec/v2"
+
+	"golang-blockchain/wallet"
 )
 
 type Transaction struct {

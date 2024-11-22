@@ -153,9 +153,9 @@ export default function InputWithIcon() {
             >
                 <option value="">--Select--</option>
                 <option value="sha256">SHA-256</option>
-                <option value="argon2">Argon2</option>
+                {/* <option value="argon2">Argon2</option> */}
                 <option value="blake2b">Blake2b</option>
-                <option value="blake2s">Blake2s</option>
+                {/* <option value="blake2s">Blake2s</option> */}
                 <option value="blake3">Blake3</option>
                 <option value="gost-r">GOST R</option>
                 <option value="ripemd160">RIPEMD-160</option>
