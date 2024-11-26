@@ -5,6 +5,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 
 	"golang.org/x/crypto/blake2s"
 )
@@ -14,6 +15,7 @@ func (pow *ProofOfWork) Blake2sRun() (int, []byte) {
 	var hash []byte
 	nonce := 0
 
+	runtime.GC()
 	fmt.Println("Loading................")
 
 	for nonce < math.MaxInt64 {

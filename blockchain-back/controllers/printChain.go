@@ -67,7 +67,6 @@ func (cli *CommandLine) PrintChain() {
 
 		pow := blockchain.NewProof(block)
 		switch dataHash {
-
 		case "sha256", "":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Sha256Validate()))
 		// case "argon2":

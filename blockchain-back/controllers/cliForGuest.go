@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"sync"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -49,9 +48,9 @@ func AddBlockForGin(ctx *gin.Context) {
 	req.Status = "Unconfirmed"
 
 	cli.blockchain.AddBlockForGuest(req)
+	fmt.Println()
 	fmt.Println("Added Block!")
 	SendRequest(req)
-	fmt.Println(" ")
 	cli.PrintChain()
 }
 
@@ -127,17 +126,9 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			cli.blockchain.AddBlockForGuest(newData)
 			fmt.Println("Added Block!")
 
-			var wg sync.WaitGroup
-			wg.Add(2)
-			go func() {
-				defer wg.Done()
-				cli.PrintChain()
-			}()
-			go func() {
-				defer wg.Done()
-				SendRsp(newData)
-			}()
-			wg.Wait()
+			cli.PrintChain()
+
+			SendRsp(newData)
 
 			// delete pdf and svg
 			err = DeleteAllFilesInFolder(infPath)

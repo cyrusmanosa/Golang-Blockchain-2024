@@ -5,6 +5,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 
 	"golang.org/x/crypto/argon2"
 	"golang.org/x/exp/rand"
@@ -29,6 +30,7 @@ func (pow *ProofOfWork) Argon2Run() (int, []byte) {
 	var argon2 []byte
 
 	nonce := 0
+	runtime.GC()
 	fmt.Println("Loading................")
 	salt, err := Argon2Salt()
 	if err != nil {
