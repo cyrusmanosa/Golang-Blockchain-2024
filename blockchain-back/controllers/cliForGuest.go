@@ -114,7 +114,13 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			// svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 
 			/// --- pdf ---
-			pdfBytes, err := os.ReadFile(infPath)
+			fileLocation, err := GetUniquePDF(infPath)
+			if err != nil {
+				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
+				return
+			}
+
+			pdfBytes, err := os.ReadFile(fileLocation)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return

@@ -1,15 +1,16 @@
 package blockchain
 
 import (
-	"crypto/sha256"
 	"fmt"
 	"math"
 	"math/big"
 	"runtime"
 	"sync"
+
+	"github.com/spaolacci/murmur3"
 )
 
-func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
+func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 	var intHash big.Int
 	var hash [32]byte
 
@@ -18,8 +19,13 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 	fmt.Println("\n-Low- Loading................")
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash = sha256.Sum256(data)
-		// fmt.Printf("\r%x", hash)
+
+		h1, h2 := murmur3.Sum128(data)
+
+		hash = [32]byte{}
+		copy(hash[:16], uint64ToBytes(h1))
+		copy(hash[16:], uint64ToBytes(h2))
+
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -32,7 +38,7 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 	return nonce, hash[:]
 }
 
-func (pow *ProofOfWork) Sha256Run() (int, []byte) {
+func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 	numCPUs := 4
 
 	var resultNonce int
@@ -75,7 +81,13 @@ func (pow *ProofOfWork) Sha256Run() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					*hash = sha256.Sum256(data)
+
+					h1, h2 := murmur3.Sum128(data)
+
+					*hash = [32]byte{}
+					copy(hash[:16], uint64ToBytes(h1))
+					copy(hash[16:], uint64ToBytes(h2))
+
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
@@ -101,13 +113,26 @@ func (pow *ProofOfWork) Sha256Run() (int, []byte) {
 	return resultNonce, resultHash
 }
 
-func (pow *ProofOfWork) Sha256Validate() bool {
+func (pow *ProofOfWork) MurmurHashValidate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
 
-	hash := sha256.Sum256(data)
+	h1, h2 := murmur3.Sum128(data)
+
+	hash := [32]byte{}
+	copy(hash[:16], uint64ToBytes(h1))
+	copy(hash[16:], uint64ToBytes(h2))
+
 	intHash.SetBytes(hash[:])
 
 	return intHash.Cmp(pow.Target) == -1
+}
+
+func uint64ToBytes(n uint64) []byte {
+	buf := make([]byte, 8)
+	for i := uint(0); i < 8; i++ {
+		buf[i] = byte(n >> (56 - i*8))
+	}
+	return buf
 }

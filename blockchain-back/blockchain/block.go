@@ -88,7 +88,16 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
-
+	case "MurmurHash3":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.MurmurHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.MurmurHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	}
 	///------ ************************************ ------
 	return block
