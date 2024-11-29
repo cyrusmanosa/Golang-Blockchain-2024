@@ -2,17 +2,16 @@ package controllers
 
 import (
 	"bytes"
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
 
 	"blockchain-back/blockchain"
-	"blockchain-back/dsl"
 	"blockchain-back/modules"
 )
 
@@ -22,8 +21,8 @@ type CommandLine struct {
 
 const (
 	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
-	outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Svg/"
-	layout  = "2006-01-02 15:04:05"
+	// outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Svg/"
+	layout = "2006-01-02 15:04:05"
 )
 
 // / ----------------------------- Not Confirm or Text -----------------------------------
@@ -103,14 +102,23 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			dataMsg, _ := dataMap["message"].(string)
 			dataHash, _ := dataMap["hash"].(string)
 
-			r := RandomString()
-			outPath2 := fmt.Sprint(outPath, r, ".svg")
-			svgData, err := dsl.PdfToSvg(infPath, outPath2)
+			/// --- svg ---
+			// r := RandomString()
+			// outPath2 := fmt.Sprint(outPath, r, ".svg")
+			// svgData, err := dsl.PdfToSvg(infPath, outPath2)
+			// if err != nil {
+			// 	ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
+			// 	return
+			// }
+
+			// svgBase64 := base64.StdEncoding.EncodeToString(svgData)
+
+			/// --- pdf ---
+			pdfBytes, err := os.ReadFile(infPath)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
-			svgBase64 := base64.StdEncoding.EncodeToString(svgData)
 
 			newData := modules.InputData{
 				Name:        dataName,
@@ -118,9 +126,10 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				CompanyName: dataCN,
 				Message:     dataMsg,
 				Hash:        dataHash,
-				File:        svgBase64,
-				Status:      "Checked",
-				SendTime:    dataT,
+				// File:        svgBase64,
+				File:     pdfBytes,
+				Status:   "Checked",
+				SendTime: dataT,
 			}
 
 			cli.blockchain.AddBlockForGuest(newData)
@@ -136,11 +145,11 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
-			err = DeleteAllFilesInFolder(outPath)
-			if err != nil {
-				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
-				return
-			}
+			// err = DeleteAllFilesInFolder(outPath)
+			// if err != nil {
+			// 	ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
+			// 	return
+			// }
 			return
 		}
 		if len(block.PrevHash) == 0 {

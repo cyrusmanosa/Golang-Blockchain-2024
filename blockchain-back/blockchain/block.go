@@ -104,9 +104,10 @@ func GenesisForGuest() *Block {
 		CompanyName: "",
 		Message:     "",
 		Hash:        "",
-		File:        "",
-		Status:      "New One",
-		SendTime:    time,
+		// File:        "",
+		File:     nil,
+		Status:   "New One",
+		SendTime: time,
 	}
 
 	return CreateBlockForGuest(GenesisForGuest, []byte{})
