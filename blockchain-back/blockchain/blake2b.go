@@ -16,7 +16,7 @@ func (pow *ProofOfWork) Blake2bLowRun() (int, []byte) {
 	nonce := 0
 
 	runtime.GC()
-	fmt.Println("-Low- Loading................")
+	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
@@ -55,7 +55,7 @@ func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
 
 	rangeSize := math.MaxInt32 / numCPUs
 	runtime.GC()
-	fmt.Println("-High- Loading................")
+	fmt.Println("\n-High- Loading................")
 
 	for i := 0; i < numCPUs; i++ {
 		go func(start, end int) {
