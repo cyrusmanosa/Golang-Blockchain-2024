@@ -35,6 +35,7 @@ func Gin() {
 	r := gin.Default()
 	r.Use(cors.Default())
 
+	// Svg
 	r.GET("/svg/:Cname", func(c *gin.Context) {
 		trace.Log(c.Request.Context(), "Handler", "/svg/:Cname - Start")
 		Cname := c.Param("Cname")
@@ -42,6 +43,17 @@ func Gin() {
 		c.Header("Content-Type", "svg+xml")
 		c.Data(http.StatusOK, "svg+xml", Svg)
 		trace.Log(c.Request.Context(), "Handler", "/svg/:Cname - End")
+	})
+
+	// Pdf
+	r.GET("/pdf/:Cname", func(c *gin.Context) {
+		trace.Log(c.Request.Context(), "Handler", "/pdf/:Cname - Start")
+		Cname := c.Param("Cname")
+		PdfData := controllers.TakeBlock(c, Cname)
+		c.Header("Content-Type", "application/pdf")
+		c.Header("Content-Disposition", "inline; filename=example.pdf")
+		c.Data(http.StatusOK, "application/pdf", PdfData)
+		trace.Log(c.Request.Context(), "Handler", "/pdf/:Cname - End")
 	})
 
 	r.POST("/Upload", func(c *gin.Context) {
