@@ -73,12 +73,20 @@ func (cli *CommandLine) PrintChain() {
 		// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Argon2Validate()))
 		case "blake2b":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2bValidate()))
-			// case "blake2s":
-			// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
+		// case "blake2s":
+		// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
 		case "blake3":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake3Validate()))
 		case "MurmurHash3":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.MurmurHashValidate()))
+		case "Keccak":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+		case "skein":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+		case "farmHash":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+		case "xxhash":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
 		}
 		fmt.Println()
 	}

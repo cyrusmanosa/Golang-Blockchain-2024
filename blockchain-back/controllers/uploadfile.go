@@ -49,10 +49,10 @@ func GetUniquePDF(folderPath string) (string, error) {
 	}
 
 	if len(pdfFiles) == 0 {
-		return "", fmt.Errorf("資料夾內沒有找到 PDF 文件")
+		return "", fmt.Errorf("cannot find pdf on the folder")
 	}
 	if len(pdfFiles) > 1 {
-		return "", fmt.Errorf("資料夾內找到多個 PDF 文件，請確保只有一個")
+		return "", fmt.Errorf("pdf files must contain exactly one file")
 	}
 
 	return pdfFiles[0], nil

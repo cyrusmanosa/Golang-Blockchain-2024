@@ -18,9 +18,8 @@ func SendRequest(req modules.InputData) {
 	subject := req.CompanyName + `の` + req.Name + `さん`
 	body := `<html>
 		<body>
-			<h3>履歴書の取得をご希望の場合、確認してください。</h3>
+			<h1>` + req.Hash + `書類の取得をご希望の場合、確認してください。</h1>
 				<h2>名前：` + req.Name + `</h2>
-				<h2>会社名前：` + req.CompanyName + `</h2>
 				<h2>メール：` + req.Email + `</h2>
 				<h2>メッセージ：` + req.Message + `</h2>
 				<h2>時間：` + req.SendTime + `</h2>
@@ -50,9 +49,8 @@ func SendRsp(req modules.InputData) {
 	subject := req.CompanyName + `の` + req.Name + `さん`
 	body := `<html>
 		<body>
-			<h3>メッセージを確認しました。ぜひ、機会をいただけますと幸いです。</h3>
+			<h1>` + req.Hash + `メッセージを確認しました。</h1>
 				<h2>名前：` + req.Name + `</h2>
-				<h2>会社名前：` + req.CompanyName + `</h2>
 				<h2>メール：` + req.Email + `</h2>
 				<h2>メッセージ：` + req.Message + `</h2>
 				<h2>時間：` + req.SendTime + `</h2>

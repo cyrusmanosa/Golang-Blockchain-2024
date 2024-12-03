@@ -14,6 +14,12 @@ require (
 )
 
 require (
+	github.com/aead/skein v0.0.0-20160722084837-9365ae6e95d2 // indirect
+	github.com/pedroalbanese/skein v0.0.0-20230124182825-ffe5e4ff3827 // indirect
+	github.com/runningwild/skein v0.0.0-20180705184009-82b66e2657a7 // indirect
+)
+
+require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
 	github.com/aead/siphash v1.0.1 // indirect
 	github.com/btcsuite/btcd v0.24.2 // indirect
@@ -27,6 +33,7 @@ require (
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
+	github.com/cespare/xxhash/v2 v2.3.0
 	github.com/cloudwego/base64x v0.1.4 // indirect
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -34,6 +41,7 @@ require (
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0 // indirect
 	github.com/decred/dcrd/lru v1.1.3 // indirect
 	github.com/dgraph-io/ristretto v0.0.2 // indirect
+	github.com/dgryski/go-farm v0.0.0-20240924180020-3414d57e47da
 	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
@@ -72,6 +80,7 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
+	github.com/twmb/murmur3 v1.1.8
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	github.com/yihleego/murmurhash3 v0.0.0-20220914065222-8cd2aa986a9d // indirect
 	go.uber.org/atomic v1.9.0 // indirect
