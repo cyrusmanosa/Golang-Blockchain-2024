@@ -7,10 +7,10 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/twmb/murmur3"
+	"github.com/cespare/xxhash/v2"
 )
 
-func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
+func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 	var intHash big.Int
 	var hash [32]byte
 
@@ -20,7 +20,7 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash := MurmurHash256(data)
+		hash := xxHash256(data)
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -32,7 +32,7 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 	return nonce, hash[:]
 }
 
-func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
+func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 	numCPUs := 4
 
 	var resultNonce int
@@ -75,7 +75,7 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash := MurmurHash256(data)
+					hash := xxHash256(data)
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
@@ -101,36 +101,35 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 	return resultNonce, resultHash
 }
 
-func uint64ToBytesAtMurmur(n uint64) []byte {
-	buf := make([]byte, 8)
-	for i := uint(0); i < 8; i++ {
-		buf[i] = byte(n >> (56 - i*8))
+func uint64ToBytesAtXxhash(num uint64) []byte {
+	return []byte{
+		byte(num >> 56), byte(num >> 48), byte(num >> 40), byte(num >> 32),
+		byte(num >> 24), byte(num >> 16), byte(num >> 8), byte(num),
 	}
-	return buf
 }
 
-func (pow *ProofOfWork) MurmurHashValidate() bool {
+func (pow *ProofOfWork) XxhashValidate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
-	hash := MurmurHash256(data)
+	hash := xxHash256(data)
 
 	intHash.SetBytes(hash[:])
 
 	return intHash.Cmp(pow.Target) == -1
 }
 
-func MurmurHash256(data []byte) [32]byte {
-	h1 := murmur3.SeedSum64(0, data)
-	h2 := murmur3.SeedSum64(1, data)
-	h3 := murmur3.SeedSum64(2, data)
-	h4 := murmur3.SeedSum64(3, data)
+func xxHash256(data []byte) [32]byte {
+	hash1 := xxhash.Sum64(data[:len(data)/2])
+	hash2 := xxhash.Sum64(data[len(data)/2:])
+	hash128 := make([]byte, 16)
 
-	hash := [32]byte{}
-	copy(hash[:8], uint64ToBytesAtMurmur(h1))
-	copy(hash[8:16], uint64ToBytesAtMurmur(h2))
-	copy(hash[16:24], uint64ToBytesAtMurmur(h3))
-	copy(hash[24:], uint64ToBytesAtMurmur(h4))
+	copy(hash128[:8], uint64ToBytesAtXxhash(hash1))
+	copy(hash128[8:], uint64ToBytesAtXxhash(hash2))
 
-	return hash
+	var hash256 [32]byte
+	copy(hash256[:16], hash128)
+	copy(hash256[16:], hash128)
+
+	return hash256
 }

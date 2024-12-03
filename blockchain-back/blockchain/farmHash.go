@@ -1,16 +1,17 @@
 package blockchain
 
 import (
+	"encoding/binary"
 	"fmt"
 	"math"
 	"math/big"
 	"runtime"
 	"sync"
 
-	"github.com/twmb/murmur3"
+	"github.com/dgryski/go-farm"
 )
 
-func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
+func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 	var intHash big.Int
 	var hash [32]byte
 
@@ -20,7 +21,7 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash := MurmurHash256(data)
+		hash := FarmHash(data)
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -32,7 +33,7 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 	return nonce, hash[:]
 }
 
-func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
+func (pow *ProofOfWork) FarmRun() (int, []byte) {
 	numCPUs := 4
 
 	var resultNonce int
@@ -75,7 +76,7 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash := MurmurHash256(data)
+					hash := FarmHash(data)
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
@@ -101,36 +102,28 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 	return resultNonce, resultHash
 }
 
-func uint64ToBytesAtMurmur(n uint64) []byte {
-	buf := make([]byte, 8)
-	for i := uint(0); i < 8; i++ {
-		buf[i] = byte(n >> (56 - i*8))
-	}
-	return buf
-}
-
-func (pow *ProofOfWork) MurmurHashValidate() bool {
+func (pow *ProofOfWork) FarmValidate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
-	hash := MurmurHash256(data)
+	hash := FarmHash(data)
 
 	intHash.SetBytes(hash[:])
 
 	return intHash.Cmp(pow.Target) == -1
 }
 
-func MurmurHash256(data []byte) [32]byte {
-	h1 := murmur3.SeedSum64(0, data)
-	h2 := murmur3.SeedSum64(1, data)
-	h3 := murmur3.SeedSum64(2, data)
-	h4 := murmur3.SeedSum64(3, data)
+func FarmHash(data []byte) [32]byte {
+	hash64_1 := farm.Hash64(data)
+	hash64_2 := farm.Hash64(append(data, '1'))
+	hash64_3 := farm.Hash64(append(data, '2'))
+	hash64_4 := farm.Hash32(append(data, '3'))
 
-	hash := [32]byte{}
-	copy(hash[:8], uint64ToBytesAtMurmur(h1))
-	copy(hash[8:16], uint64ToBytesAtMurmur(h2))
-	copy(hash[16:24], uint64ToBytesAtMurmur(h3))
-	copy(hash[24:], uint64ToBytesAtMurmur(h4))
+	var hash32Bytes [32]byte
+	binary.LittleEndian.PutUint64(hash32Bytes[:8], hash64_1)
+	binary.LittleEndian.PutUint64(hash32Bytes[8:16], hash64_2)
+	binary.LittleEndian.PutUint64(hash32Bytes[16:24], hash64_3)
+	binary.LittleEndian.PutUint32(hash32Bytes[24:], hash64_4)
 
-	return hash
+	return hash32Bytes
 }

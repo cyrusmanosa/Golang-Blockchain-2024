@@ -98,6 +98,46 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
+	case "Keccak":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.KeccakRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.KeccakLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "skein":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.SkeinRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.SkeinLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "farmHash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.FarmRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.FarmLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "xxhash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.XxHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.XxHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	}
 	///------ ************************************ ------
 	return block
