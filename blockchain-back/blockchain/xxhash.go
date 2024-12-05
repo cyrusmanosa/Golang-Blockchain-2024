@@ -1,6 +1,8 @@
 package blockchain
 
 import (
+	"context"
+	"encoding/binary"
 	"fmt"
 	"math"
 	"math/big"
@@ -20,7 +22,7 @@ func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash := xxHash256(data)
+		hash = xxHash256(data)
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -33,79 +35,71 @@ func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) XxHashRun() (int, []byte) {
+	runtime.GC()
 	numCPUs := 4
+
+	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int
 	var resultHash []byte
-	stopChan := make(chan struct{})
+	var once sync.Once
+	var wg sync.WaitGroup
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	rangeSize := math.MaxInt64 / numCPUs
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
-	})
+	}, numCPUs)
 
-	rangeSize := math.MaxInt32 / numCPUs
-	runtime.GC()
-	fmt.Println("\n-High- Loading................")
-
-	intPool := &sync.Pool{
-		New: func() interface{} {
-			return &big.Int{}
-		},
-	}
-	hashPool := &sync.Pool{
-		New: func() interface{} {
-			var hash [32]byte
-			return &hash
-		},
-	}
-
+	wg.Add(numCPUs)
 	for i := 0; i < numCPUs; i++ {
+		start := i * rangeSize
+		end := start + rangeSize
 		go func(start, end int) {
-			intHash := intPool.Get().(*big.Int)
-			hash := hashPool.Get().(*[32]byte)
+			defer wg.Done()
 
-			defer func() {
-				intPool.Put(intHash)
-				hashPool.Put(hash)
-			}()
+			var intHash big.Int
+			var hash [32]byte
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
-				case <-stopChan:
+				case <-ctx.Done():
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash := xxHash256(data)
+					hash = xxHash256(data)
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
-						select {
-						case resultChan <- struct {
-							nonce int
-							hash  []byte
-						}{nonce: nonce, hash: hash[:]}:
-						case <-stopChan:
-						}
+						once.Do(func() {
+							resultChan <- struct {
+								nonce int
+								hash  []byte
+							}{nonce: nonce, hash: hash[:]}
+							cancel()
+						})
 						return
 					}
 				}
 			}
-		}(i*rangeSize, (i+1)*rangeSize)
+		}(start, end)
 	}
 
-	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
-	close(stopChan)
+	go func() {
+		wg.Wait()
+		close(resultChan)
+	}()
+
+	result, ok := <-resultChan
+	if ok {
+		resultNonce = result.nonce
+		resultHash = result.hash
+	}
 
 	return resultNonce, resultHash
-}
-
-func uint64ToBytesAtXxhash(num uint64) []byte {
-	return []byte{
-		byte(num >> 56), byte(num >> 48), byte(num >> 40), byte(num >> 32),
-		byte(num >> 24), byte(num >> 16), byte(num >> 8), byte(num),
-	}
 }
 
 func (pow *ProofOfWork) XxhashValidate() bool {
@@ -122,14 +116,12 @@ func (pow *ProofOfWork) XxhashValidate() bool {
 func xxHash256(data []byte) [32]byte {
 	hash1 := xxhash.Sum64(data[:len(data)/2])
 	hash2 := xxhash.Sum64(data[len(data)/2:])
-	hash128 := make([]byte, 16)
-
-	copy(hash128[:8], uint64ToBytesAtXxhash(hash1))
-	copy(hash128[8:], uint64ToBytesAtXxhash(hash2))
 
 	var hash256 [32]byte
-	copy(hash256[:16], hash128)
-	copy(hash256[16:], hash128)
+	binary.LittleEndian.PutUint64(hash256[:8], hash1)
+	binary.LittleEndian.PutUint64(hash256[8:16], hash2)
+	binary.LittleEndian.PutUint64(hash256[16:24], hash1)
+	binary.LittleEndian.PutUint64(hash256[24:], hash2)
 
 	return hash256
 }
