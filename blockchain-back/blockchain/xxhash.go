@@ -2,27 +2,49 @@ package blockchain
 
 import (
 	"context"
-	"encoding/binary"
 	"fmt"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 
-	"github.com/cespare/xxhash/v2"
+	"github.com/OneOfOne/xxhash"
 )
+
+func (pow *ProofOfWork) xxHash256(data []byte) []byte {
+	hash := xxhash.New64()
+	hash.Write(data)
+	hashBytes := hash.Sum(nil)
+
+	hash2 := xxhash.New64()
+	hash2.Write(hashBytes)
+	hash2Bytes := hash2.Sum(nil)
+
+	hash3 := xxhash.New64()
+	hash3.Write(hash2Bytes)
+	hash3Bytes := hash3.Sum(nil)
+
+	hash4 := xxhash.New64()
+	hash4.Write(hash3Bytes)
+	hash4Bytes := hash4.Sum(nil)
+
+	result := append(hashBytes, hash2Bytes...)
+	result = append(result, hash3Bytes...)
+	result = append(result, hash4Bytes...)
+
+	return result
+}
 
 func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 	var intHash big.Int
-	var hash [32]byte
+	var hash []byte
 
 	nonce := 0
-	runtime.GC()
+
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash = xxHash256(data)
+		hash = pow.xxHash256(data)
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -35,7 +57,6 @@ func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) XxHashRun() (int, []byte) {
-	runtime.GC()
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")
@@ -62,7 +83,7 @@ func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 			defer wg.Done()
 
 			var intHash big.Int
-			var hash [32]byte
+			var hash []byte
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
@@ -70,7 +91,7 @@ func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash = xxHash256(data)
+					hash = pow.xxHash256(data)
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
@@ -106,22 +127,9 @@ func (pow *ProofOfWork) XxhashValidate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
-	hash := xxHash256(data)
+	hash := pow.xxHash256(data)
 
 	intHash.SetBytes(hash[:])
 
 	return intHash.Cmp(pow.Target) == -1
-}
-
-func xxHash256(data []byte) [32]byte {
-	hash1 := xxhash.Sum64(data[:len(data)/2])
-	hash2 := xxhash.Sum64(data[len(data)/2:])
-
-	var hash256 [32]byte
-	binary.LittleEndian.PutUint64(hash256[:8], hash1)
-	binary.LittleEndian.PutUint64(hash256[8:16], hash2)
-	binary.LittleEndian.PutUint64(hash256[16:24], hash1)
-	binary.LittleEndian.PutUint64(hash256[24:], hash2)
-
-	return hash256
 }

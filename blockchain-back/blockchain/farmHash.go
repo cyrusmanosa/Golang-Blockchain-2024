@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 
 	"github.com/dgryski/go-farm"
@@ -16,7 +15,7 @@ func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 	var hash [32]byte
 
 	nonce := 0
-	runtime.GC()
+
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
@@ -34,7 +33,7 @@ func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) FarmRun() (int, []byte) {
-	runtime.GC()
+
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")

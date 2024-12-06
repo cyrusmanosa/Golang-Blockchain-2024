@@ -138,6 +138,16 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
+	case "highwayHash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.HighWayHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.HighWayHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	}
 	///------ ************************************ ------
 	return block

@@ -5,7 +5,6 @@ import (
 	"log"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 
 	"golang.org/x/crypto/sha3"
@@ -16,7 +15,6 @@ func (pow *ProofOfWork) KeccakLowRun() (int, []byte) {
 	var hash []byte
 	nonce := 0
 
-	runtime.GC()
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
@@ -41,7 +39,7 @@ func (pow *ProofOfWork) KeccakLowRun() (int, []byte) {
 	return nonce, hash
 }
 func (pow *ProofOfWork) KeccakRun() (int, []byte) {
-	runtime.GC()
+
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")

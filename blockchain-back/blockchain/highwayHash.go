@@ -8,35 +8,32 @@ import (
 	"math/big"
 	"sync"
 
-	"golang.org/x/crypto/blake2b"
+	"github.com/minio/highwayhash"
 )
 
-func (pow *ProofOfWork) Blake2bLowRun() (int, []byte) {
+func (pow *ProofOfWork) HighWayHashLowRun() (int, []byte) {
 	var intHash big.Int
 	var hash []byte
 	nonce := 0
+	key := make([]byte, 32)
 
 	fmt.Println("\n-Low- Loading................")
 
-	hasher, err := blake2b.New256(nil)
+	hasher, err := highwayhash.New(key)
 	if err != nil {
-		log.Panic("Failed to initialize Blake2b hasher: ", err)
+		log.Fatalf("Failed to create HighwayHash instance: %v", err)
 	}
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-
 		if _, err := hasher.Write(data); err != nil {
 			log.Panic("Error while hashing data: ", err)
 		}
-
 		hash = hasher.Sum(nil)
 		intHash.SetBytes(hash)
-
 		if intHash.Cmp(pow.Target) == -1 {
 			break
 		}
-
 		nonce++
 	}
 
@@ -44,7 +41,7 @@ func (pow *ProofOfWork) Blake2bLowRun() (int, []byte) {
 	return nonce, hash
 }
 
-func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
+func (pow *ProofOfWork) HighWayHashRun() (int, []byte) {
 	numCPUs := 4
 	fmt.Println("\n-High- Loading................")
 
@@ -78,9 +75,9 @@ func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash := blake2b.Sum256(data)
-
+					hash := highwayhash.Sum(data, make([]byte, 32))
 					intHash.SetBytes(hash[:])
+
 					if intHash.Cmp(pow.Target) == -1 {
 						once.Do(func() {
 							resultChan <- struct {
@@ -110,11 +107,11 @@ func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
 	return resultNonce, resultHash
 }
 
-func (pow *ProofOfWork) Blake2bValidate() bool {
+func (pow *ProofOfWork) HighWayHashValidate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
-	hash := blake2b.Sum256(data)
+	hash := highwayhash.Sum(data, make([]byte, 32))
 	intHash.SetBytes(hash[:])
 
 	return intHash.Cmp(pow.Target) == -1
