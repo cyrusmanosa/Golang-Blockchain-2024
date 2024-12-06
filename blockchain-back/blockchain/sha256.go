@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 )
 
@@ -15,7 +14,7 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 	var hash [32]byte
 
 	nonce := 0
-	runtime.GC()
+
 	fmt.Println("\n-Low- Loading................")
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
@@ -34,7 +33,7 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) Sha256Run() (int, []byte) {
-	runtime.GC()
+
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")

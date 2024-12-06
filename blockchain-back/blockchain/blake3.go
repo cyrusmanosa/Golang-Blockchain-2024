@@ -6,7 +6,6 @@ import (
 	"log"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 
 	"lukechampine.com/blake3"
@@ -17,7 +16,6 @@ func (pow *ProofOfWork) Blake3LowRun() (int, []byte) {
 	var hash []byte
 	nonce := 0
 
-	runtime.GC()
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
@@ -43,7 +41,7 @@ func (pow *ProofOfWork) Blake3LowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) Blake3Run() (int, []byte) {
-	runtime.GC()
+
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")

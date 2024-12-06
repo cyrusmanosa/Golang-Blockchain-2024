@@ -87,6 +87,8 @@ func (cli *CommandLine) PrintChain() {
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.FarmValidate()))
 		case "xxhash":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.XxhashValidate()))
+		case "highwayHash":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.HighWayHashValidate()))
 		}
 		fmt.Println()
 	}
