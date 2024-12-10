@@ -33,7 +33,6 @@ func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) FarmRun() (int, []byte) {
-
 	numCPUs := 4
 
 	fmt.Println("\n-High- Loading................")

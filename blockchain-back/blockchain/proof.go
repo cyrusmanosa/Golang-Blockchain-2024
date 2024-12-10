@@ -24,7 +24,7 @@ func NewProof(b *Block) *ProofOfWork {
 }
 
 func (pow *ProofOfWork) InitData(nonce int) []byte {
-	data := bytes.Join(
+	return bytes.Join(
 		[][]byte{
 			pow.Block.PrevHash,
 			pow.Block.Data,
@@ -33,8 +33,6 @@ func (pow *ProofOfWork) InitData(nonce int) []byte {
 		},
 		[]byte{},
 	)
-
-	return data
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------

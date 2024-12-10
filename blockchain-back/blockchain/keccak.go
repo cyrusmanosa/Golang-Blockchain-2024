@@ -38,66 +38,54 @@ func (pow *ProofOfWork) KeccakLowRun() (int, []byte) {
 	fmt.Println()
 	return nonce, hash
 }
+
 func (pow *ProofOfWork) KeccakRun() (int, []byte) {
-
 	numCPUs := 4
-
 	fmt.Println("\n-High- Loading................")
 
 	rangeSize := math.MaxInt64 / numCPUs
-	var resultNonce int
-	var resultHash []byte
-	var wg sync.WaitGroup
+	stopChan := make(chan struct{})
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
-	}, numCPUs)
+	})
 
-	intHashPool := &sync.Pool{
-		New: func() interface{} {
-			return new(big.Int)
-		},
-	}
-	hashPool := &sync.Pool{
-		New: func() interface{} {
-			return make([]byte, 32)
-		},
-	}
+	var wg sync.WaitGroup
 
 	for i := 0; i < numCPUs; i++ {
 		wg.Add(1)
 		go func(start, end int) {
 			defer wg.Done()
 
-			intHash := intHashPool.Get().(*big.Int)
-			hash := hashPool.Get().([]byte)
+			intHash := new(big.Int)
+			var hash []byte
 
 			for nonce := start; nonce < end; nonce++ {
-				data := pow.InitData(nonce)
+				select {
+				case <-stopChan:
+					return
+				default:
+					data := pow.InitData(nonce)
+					hash256 := sha3.NewLegacyKeccak256()
+					if _, err := hash256.Write(data); err != nil {
+						log.Panic("Error while hashing data: ", err)
+					}
+					hash = hash256.Sum(hash[:0])
+					intHash.SetBytes(hash)
 
-				hash256 := sha3.NewLegacyKeccak256()
-				if _, err := hash256.Write(data); err != nil {
-					log.Panic("Error while hashing data: ", err)
-				}
-
-				hash = hash256.Sum(hash[:0])
-				intHash.SetBytes(hash)
-
-				if intHash.Cmp(pow.Target) == -1 {
-					select {
-					case resultChan <- struct {
-						nonce int
-						hash  []byte
-					}{nonce: nonce, hash: hash[:]}:
-						intHashPool.Put(intHash)
-						hashPool.Put(hash)
-						return
+					if intHash.Cmp(pow.Target) == -1 {
+						select {
+						case resultChan <- struct {
+							nonce int
+							hash  []byte
+						}{nonce: nonce, hash: hash}:
+							return
+						case <-stopChan:
+							return
+						}
 					}
 				}
 			}
-
-			intHashPool.Put(intHash)
-			hashPool.Put(hash)
 		}(i*rangeSize, (i+1)*rangeSize)
 	}
 
@@ -107,10 +95,9 @@ func (pow *ProofOfWork) KeccakRun() (int, []byte) {
 	}()
 
 	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
+	close(stopChan)
 
-	return resultNonce, resultHash
+	return result.nonce, result.hash
 }
 
 func (pow *ProofOfWork) KeccakValidate() bool {

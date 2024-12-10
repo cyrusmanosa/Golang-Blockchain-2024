@@ -30,10 +30,10 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 
 	return nonce, hash[:]
 }
-
 func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
-
 	numCPUs := 4
+	fmt.Println("\n-High- Loading................")
+
 	var resultNonce int
 	var resultHash []byte
 	stopChan := make(chan struct{})
@@ -43,30 +43,29 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 	}, numCPUs)
 
 	rangeSize := math.MaxInt64 / numCPUs
-
-	fmt.Println("\n-High- Loading................")
+	var wg sync.WaitGroup
 
 	intPool := &sync.Pool{
 		New: func() interface{} {
-			return &big.Int{}
+			return new(big.Int)
 		},
 	}
 	hashPool := &sync.Pool{
 		New: func() interface{} {
-			var hash [32]byte
-			return &hash
+			return make([]byte, 32)
 		},
 	}
 
 	for i := 0; i < numCPUs; i++ {
+		wg.Add(1)
 		go func(start, end int) {
-			intHash := intPool.Get().(*big.Int)
-			hash := hashPool.Get().(*[32]byte)
+			defer wg.Done()
 
-			defer func() {
-				intPool.Put(intHash)
-				hashPool.Put(hash)
-			}()
+			intHash := intPool.Get().(*big.Int)
+			defer intPool.Put(intHash)
+
+			hash := hashPool.Get().([]byte)
+			defer hashPool.Put(hash)
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
@@ -83,19 +82,27 @@ func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 							nonce int
 							hash  []byte
 						}{nonce: nonce, hash: hash[:]}:
+							close(stopChan)
+							return
 						case <-stopChan:
+							return
 						}
-						return
 					}
 				}
 			}
 		}(i*rangeSize, (i+1)*rangeSize)
 	}
 
-	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
-	close(stopChan)
+	go func() {
+		wg.Wait()
+		close(resultChan)
+	}()
+
+	result, ok := <-resultChan
+	if ok {
+		resultNonce = result.nonce
+		resultHash = result.hash
+	}
 
 	return resultNonce, resultHash
 }
