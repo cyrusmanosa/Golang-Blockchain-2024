@@ -1,6 +1,7 @@
 package blockchain
 
 import (
+	"context"
 	"encoding/binary"
 	"fmt"
 	"math"
@@ -31,43 +32,54 @@ func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 
 	return nonce, hash[:]
 }
-
 func (pow *ProofOfWork) FarmRun() (int, []byte) {
 	numCPUs := 4
-
 	fmt.Println("\n-High- Loading................")
 
-	rangeSize := math.MaxInt64 / numCPUs
-	var resultNonce int
-	var resultHash []byte
+	var once sync.Once
 	var wg sync.WaitGroup
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
 	}, numCPUs)
 
+	rangeSize := math.MaxInt64 / numCPUs
+	wg.Add(numCPUs)
+
 	for i := 0; i < numCPUs; i++ {
-		wg.Add(1)
+		start := i * rangeSize
+		end := start + rangeSize
+
 		go func(start, end int) {
 			defer wg.Done()
-			intHash := new(big.Int)
+			var intHash big.Int
 
 			for nonce := start; nonce < end; nonce++ {
-				data := pow.InitData(nonce)
-				hash := FarmHash(data)
-				intHash.SetBytes(hash[:])
+				select {
+				case <-ctx.Done():
+					return
+				default:
+					data := pow.InitData(nonce)
+					hash := FarmHash(data)
+					intHash.SetBytes(hash[:])
 
-				if intHash.Cmp(pow.Target) == -1 {
-					select {
-					case resultChan <- struct {
-						nonce int
-						hash  []byte
-					}{nonce: nonce, hash: hash[:]}:
+					if intHash.Cmp(pow.Target) == -1 {
+						once.Do(func() {
+							resultChan <- struct {
+								nonce int
+								hash  []byte
+							}{nonce: nonce, hash: hash[:]}
+							cancel()
+						})
 						return
 					}
 				}
 			}
-		}(i*rangeSize, (i+1)*rangeSize)
+		}(start, end)
 	}
 
 	go func() {
@@ -76,12 +88,8 @@ func (pow *ProofOfWork) FarmRun() (int, []byte) {
 	}()
 
 	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
-
-	return resultNonce, resultHash
+	return result.nonce, result.hash
 }
-
 func (pow *ProofOfWork) FarmValidate() bool {
 	var intHash big.Int
 
