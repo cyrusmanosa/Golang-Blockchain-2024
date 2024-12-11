@@ -77,16 +77,18 @@ func (cli *CommandLine) PrintChain() {
 		// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake2sValidate()))
 		case "blake3":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Blake3Validate()))
-		case "MurmurHash3":
+		case "murmurHash3":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.MurmurHashValidate()))
-		case "Keccak":
+		case "keccak":
 			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
 		case "skein":
-			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.SkeinValidate()))
 		case "farmHash":
-			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.FarmValidate()))
 		case "xxhash":
-			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.KeccakValidate()))
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.XxhashValidate()))
+		case "highwayHash":
+			fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.HighWayHashValidate()))
 		}
 		fmt.Println()
 	}

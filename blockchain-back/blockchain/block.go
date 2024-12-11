@@ -88,7 +88,7 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
-	case "MurmurHash3":
+	case "murmurHash3":
 		if len(data.File) > 1024*1024 {
 			nonce, hash := pow.MurmurHashRun()
 			block.Hash = hash[:]
@@ -98,7 +98,7 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
-	case "Keccak":
+	case "keccak":
 		if len(data.File) > 1024*1024 {
 			nonce, hash := pow.KeccakRun()
 			block.Hash = hash[:]
@@ -128,13 +128,23 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}
-	case "xxhash":
+	case "xxHash":
 		if len(data.File) > 1024*1024 {
 			nonce, hash := pow.XxHashRun()
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		} else {
 			nonce, hash := pow.XxHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "highwayHash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.HighWayHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.HighWayHashLowRun()
 			block.Hash = hash[:]
 			block.Nonce = nonce
 		}

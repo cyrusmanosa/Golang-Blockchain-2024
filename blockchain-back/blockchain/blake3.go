@@ -1,11 +1,12 @@
 package blockchain
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"math"
 	"math/big"
-	"runtime"
+	"sync"
 
 	"lukechampine.com/blake3"
 )
@@ -15,7 +16,6 @@ func (pow *ProofOfWork) Blake3LowRun() (int, []byte) {
 	var hash []byte
 	nonce := 0
 
-	runtime.GC()
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
@@ -39,34 +39,45 @@ func (pow *ProofOfWork) Blake3LowRun() (int, []byte) {
 	fmt.Println()
 	return nonce, hash
 }
+
 func (pow *ProofOfWork) Blake3Run() (int, []byte) {
+
 	numCPUs := 4
+
+	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int
 	var resultHash []byte
-	stopChan := make(chan struct{})
+	var once sync.Once
+	var wg sync.WaitGroup
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
-	})
+	}, numCPUs)
 
-	rangeSize := math.MaxInt32 / numCPUs
-	runtime.GC()
-	fmt.Println("\n-High- Loading................")
-
+	rangeSize := math.MaxInt64 / numCPUs
+	wg.Add(numCPUs)
 	for i := 0; i < numCPUs; i++ {
+		start := i * rangeSize
+		end := start + rangeSize
+
 		go func(start, end int) {
+			defer wg.Done()
 			var intHash big.Int
 			var hash []byte
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
-				case <-stopChan:
+				case <-ctx.Done():
 					return
 				default:
 					data := pow.InitData(nonce)
-					hasher := blake3.New(32, nil)
 
+					hasher := blake3.New(32, nil)
 					if _, err := hasher.Write(data); err != nil {
 						log.Panic("Error while hashing data: ", err)
 					}
@@ -75,24 +86,30 @@ func (pow *ProofOfWork) Blake3Run() (int, []byte) {
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
-						select {
-						case resultChan <- struct {
-							nonce int
-							hash  []byte
-						}{nonce: nonce, hash: hash[:]}:
-						case <-stopChan:
-						}
+						once.Do(func() {
+							resultChan <- struct {
+								nonce int
+								hash  []byte
+							}{nonce: nonce, hash: hash[:]}
+							cancel()
+						})
 						return
 					}
 				}
 			}
-		}(i*rangeSize, (i+1)*rangeSize)
+		}(start, end)
 	}
 
-	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
-	close(stopChan)
+	go func() {
+		wg.Wait()
+		close(resultChan)
+	}()
+
+	result, ok := <-resultChan
+	if ok {
+		resultNonce = result.nonce
+		resultHash = result.hash
+	}
 
 	return resultNonce, resultHash
 }

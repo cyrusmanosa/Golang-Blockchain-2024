@@ -1,11 +1,11 @@
 package blockchain
 
 import (
+	"context"
 	"crypto/sha256"
 	"fmt"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 )
 
@@ -14,7 +14,7 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 	var hash [32]byte
 
 	nonce := 0
-	runtime.GC()
+
 	fmt.Println("\n-Low- Loading................")
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
@@ -33,70 +33,69 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) Sha256Run() (int, []byte) {
+
 	numCPUs := 4
+
+	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int
 	var resultHash []byte
-	stopChan := make(chan struct{})
+	var once sync.Once
+	var wg sync.WaitGroup
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	rangeSize := math.MaxInt64 / numCPUs
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
-	})
+	}, numCPUs)
 
-	rangeSize := math.MaxInt32 / numCPUs
-	runtime.GC()
-	fmt.Println("\n-High- Loading................")
-
-	intPool := &sync.Pool{
-		New: func() interface{} {
-			return &big.Int{}
-		},
-	}
-	hashPool := &sync.Pool{
-		New: func() interface{} {
-			var hash [32]byte
-			return &hash
-		},
-	}
-
+	wg.Add(numCPUs)
 	for i := 0; i < numCPUs; i++ {
+		start := i * rangeSize
+		end := start + rangeSize
 		go func(start, end int) {
-			intHash := intPool.Get().(*big.Int)
-			hash := hashPool.Get().(*[32]byte)
+			defer wg.Done()
 
-			defer func() {
-				intPool.Put(intHash)
-				hashPool.Put(hash)
-			}()
+			var intHash big.Int
+			var hash [32]byte
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
-				case <-stopChan:
+				case <-ctx.Done():
 					return
 				default:
 					data := pow.InitData(nonce)
-					*hash = sha256.Sum256(data)
+					hash = sha256.Sum256(data)
 					intHash.SetBytes(hash[:])
 
 					if intHash.Cmp(pow.Target) == -1 {
-						select {
-						case resultChan <- struct {
-							nonce int
-							hash  []byte
-						}{nonce: nonce, hash: hash[:]}:
-						case <-stopChan:
-						}
+						once.Do(func() {
+							resultChan <- struct {
+								nonce int
+								hash  []byte
+							}{nonce: nonce, hash: hash[:]}
+							cancel()
+						})
 						return
 					}
 				}
 			}
-		}(i*rangeSize, (i+1)*rangeSize)
+		}(start, end)
 	}
 
-	result := <-resultChan
-	resultNonce = result.nonce
-	resultHash = result.hash
-	close(stopChan)
+	go func() {
+		wg.Wait()
+		close(resultChan)
+	}()
+
+	result, ok := <-resultChan
+	if ok {
+		resultNonce = result.nonce
+		resultHash = result.hash
+	}
 
 	return resultNonce, resultHash
 }
@@ -105,7 +104,6 @@ func (pow *ProofOfWork) Sha256Validate() bool {
 	var intHash big.Int
 
 	data := pow.InitData(pow.Block.Nonce)
-
 	hash := sha256.Sum256(data)
 	intHash.SetBytes(hash[:])
 

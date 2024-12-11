@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	"runtime"
 	"sync"
 
 	"github.com/twmb/murmur3"
@@ -15,12 +14,12 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 	var hash [32]byte
 
 	nonce := 0
-	runtime.GC()
+
 	fmt.Println("\n-Low- Loading................")
 
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
-		hash := MurmurHash256(data)
+		hash = MurmurHash256(data)
 		intHash.SetBytes(hash[:])
 
 		if intHash.Cmp(pow.Target) == -1 {
@@ -33,18 +32,18 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 }
 
 func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
-	numCPUs := 4
 
+	numCPUs := 4
 	var resultNonce int
 	var resultHash []byte
 	stopChan := make(chan struct{})
 	resultChan := make(chan struct {
 		nonce int
 		hash  []byte
-	})
+	}, numCPUs)
 
-	rangeSize := math.MaxInt32 / numCPUs
-	runtime.GC()
+	rangeSize := math.MaxInt64 / numCPUs
+
 	fmt.Println("\n-High- Loading................")
 
 	intPool := &sync.Pool{
