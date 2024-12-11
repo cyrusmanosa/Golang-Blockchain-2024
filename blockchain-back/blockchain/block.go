@@ -38,8 +38,7 @@ func GenesisForDoc() *Block {
 	return CreateBlockForDoc(GenesisForDoc, []byte{})
 }
 
-///------------------------------------------------ Guest ------------------------------------------------------
-
+// /------------------------------------------------ Guest ------------------------------------------------------
 func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 	jsonData, err := json.Marshal(data)
 	if err != nil {
@@ -49,108 +48,81 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 	block := &Block{[]byte{}, []byte(jsonData), prevHash, 0}
 	pow := NewProof(block)
 	///------ ************************************ ------
-	switch data.Hash {
-	case "sha256", "":
-		if len(data.File) > 1024*1024 {
+	if len(data.File) > 1024*1024 {
+		switch data.Hash {
+		case "sha256", "":
+			nonce, hash := pow.Sha256Run()
+			block.result(nonce, hash)
+		case "blake2b":
+			nonce, hash := pow.Blake2bRun()
+			block.result(nonce, hash)
+		case "blake3":
+			nonce, hash := pow.Blake3Run()
+			block.result(nonce, hash)
+		case "murmurHash3":
+			nonce, hash := pow.MurmurHashRun()
+			block.result(nonce, hash)
+		case "keccak":
+			nonce, hash := pow.KeccakRun()
+			block.result(nonce, hash)
+		case "skein":
+			nonce, hash := pow.SkeinRun()
+			block.result(nonce, hash)
+		case "farmHash":
+			nonce, hash := pow.FarmRun()
+			block.result(nonce, hash)
+		case "xxHash":
+			nonce, hash := pow.XxHashRun()
+			block.result(nonce, hash)
+		case "highwayHash":
+			nonce, hash := pow.HighWayHashRun()
+			block.result(nonce, hash)
+		}
+	} else {
+		switch data.Hash {
+		case "sha256", "":
 			nonce, hash := pow.Sha256LowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.Sha256LowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	// case "argon2":
-	// 	nonce, hash := pow.Argon2Run()
-	// 	block.Hash = hash[:]
-	// 	block.Nonce = nonce
-	case "blake2b":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		// case "argon2":
+		// 	nonce, hash := pow.Argon2LowRun()
+		// block.result(nonce, hash)
+		case "blake2b":
 			nonce, hash := pow.Blake2bLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.Blake2bLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	// case "blake2s":
-	// 	nonce, hash := pow.Blake2sRun()
-	// 	block.Hash = hash[:]
-	// 	block.Nonce = nonce
-	case "blake3":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		// case "blake2s":
+		// 	nonce, hash := pow.Blake2sLowRun()
+		// block.result(nonce, hash)
+		case "blake3":
 			nonce, hash := pow.Blake3LowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.Blake3LowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "murmurHash3":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "murmurHash3":
 			nonce, hash := pow.MurmurHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.MurmurHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "keccak":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "keccak":
 			nonce, hash := pow.KeccakLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.KeccakLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "skein":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "skein":
 			nonce, hash := pow.SkeinLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.SkeinLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "farmHash":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "farmHash":
 			nonce, hash := pow.FarmLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.FarmLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "xxHash":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "xxHash":
 			nonce, hash := pow.XxHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.XxHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		}
-	case "highwayHash":
-		if len(data.File) > 1024*1024 {
+			block.result(nonce, hash)
+		case "highwayHash":
 			nonce, hash := pow.HighWayHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
-		} else {
-			nonce, hash := pow.HighWayHashLowRun()
-			block.Hash = hash[:]
-			block.Nonce = nonce
+			block.result(nonce, hash)
 		}
 	}
 	///------ ************************************ ------
 	return block
+}
+
+func (b *Block) result(nonce int, hash []byte) *Block {
+	b.Hash = hash[:]
+	b.Nonce = nonce
+	return b
 }
 
 func GenesisForGuest() *Block {

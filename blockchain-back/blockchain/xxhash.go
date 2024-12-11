@@ -59,29 +59,27 @@ func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 	numCPUs := 4
 	fmt.Println("\n-High- Loading................")
 
-	var resultNonce int
-	var resultHash []byte
-	stopChan := make(chan struct{})
-	resultChan := make(chan struct {
-		nonce int
-		hash  []byte
-	})
-
+	var once sync.Once
 	var wg sync.WaitGroup
-	rangeSize := math.MaxInt64 / numCPUs
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
+	resultChan := make(chan struct {
+		nonce int
+		hash  []byte
+	}, numCPUs)
+
+	rangeSize := math.MaxInt64 / numCPUs
+	wg.Add(numCPUs)
+
 	for i := 0; i < numCPUs; i++ {
-		wg.Add(1)
 		start := i * rangeSize
 		end := start + rangeSize
+
 		go func(start, end int) {
 			defer wg.Done()
-
 			var intHash big.Int
-			var hash []byte
 
 			for nonce := start; nonce < end; nonce++ {
 				select {
@@ -89,20 +87,19 @@ func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 					return
 				default:
 					data := pow.InitData(nonce)
-					hash = pow.xxHash256(data)
+					hash := pow.xxHash256(data)
+
 					intHash.SetBytes(hash)
 
 					if intHash.Cmp(pow.Target) == -1 {
-						select {
-						case resultChan <- struct {
-							nonce int
-							hash  []byte
-						}{nonce: nonce, hash: hash}:
+						once.Do(func() {
+							resultChan <- struct {
+								nonce int
+								hash  []byte
+							}{nonce: nonce, hash: hash}
 							cancel()
-							return
-						case <-ctx.Done():
-							return
-						}
+						})
+						return
 					}
 				}
 			}
@@ -115,11 +112,7 @@ func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 	}()
 
 	result := <-resultChan
-	close(stopChan)
-	resultNonce = result.nonce
-	resultHash = result.hash
-
-	return resultNonce, resultHash
+	return result.nonce, result.hash
 }
 
 func (pow *ProofOfWork) XxhashValidate() bool {
