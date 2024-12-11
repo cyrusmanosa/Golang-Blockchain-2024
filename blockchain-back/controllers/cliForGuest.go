@@ -55,6 +55,13 @@ func AddBlockForGin(ctx *gin.Context) {
 
 // / ----------------------------- Confirm -----------------------------------
 func AddBlockForGinConfirm(ctx *gin.Context) {
+	startTime := time.Now()
+
+	defer func() {
+		duration := time.Since(startTime)
+		log.Printf("AddBlockForGinConfirm executed in %v", duration)
+	}()
+
 	rspName := ctx.Param("name")
 
 	chain, err := blockchain.InitBlockChainForGuest()
@@ -132,10 +139,9 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 				CompanyName: dataCN,
 				Message:     dataMsg,
 				Hash:        dataHash,
-				// File:        svgBase64,
-				File:     pdfBytes,
-				Status:   "Checked",
-				SendTime: dataT,
+				File:        pdfBytes,
+				Status:      "Checked",
+				SendTime:    dataT,
 			}
 
 			cli.blockchain.AddBlockForGuest(newData)
@@ -145,17 +151,12 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 
 			SendRsp(newData)
 
-			// delete pdf and svg
+			// delete pdf
 			err = DeleteAllFilesInFolder(infPath)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
 				return
 			}
-			// err = DeleteAllFilesInFolder(outPath)
-			// if err != nil {
-			// 	ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
-			// 	return
-			// }
 			return
 		}
 		if len(block.PrevHash) == 0 {

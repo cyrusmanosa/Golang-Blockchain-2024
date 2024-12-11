@@ -130,7 +130,7 @@ export default function InputWithIcon() {
                 onChange={handleMessage}
             />
 
-            {/* 文件上传 */}
+            {/* Upload */}
             <TextField
                 id="File"
                 type="file"
@@ -152,19 +152,19 @@ export default function InputWithIcon() {
                 onChange={handleChange}
             >
                 <option value="">--Select--</option>
-                <option value="sha256">SHA-256</option>
+                <option value="sha256">sha256</option>
                 {/* <option value="argon2">Argon2</option> */}
-                <option value="blake2b">Blake2b</option>
+                <option value="blake2b">blake2b</option>
                 {/* <option value="blake2s">Blake2s</option> */}
-                <option value="blake3">Blake3</option>
-                <option value="gost-r">GOST R</option>
+                <option value="blake3">blake3</option>
+                {/* <option value="gost-r">gost-r</option> */}
                 {/* <option value="ripemd160">RIPEMD-160</option> */}
-                <option value="keccak">Keccak</option>
-                <option value="skein">Skein</option>
-                <option value="skein">MurmurHash3</option>
-                <option value="skein">FarmHash</option>
-                <option value="skein">xxHash</option>
-                <option value="skein">HighwayHash</option>
+                <option value="keccak">keccak</option>
+                <option value="skein">skein</option>
+                <option value="murmurHash3">murmurHash3</option>
+                <option value="farmHash">farmHash</option>
+                <option value="xxHash">xxHash</option>
+                <option value="highwayHash">highwayHash</option>
                 {/* <option value="whirlpool">Whirlpool</option> */}
             </select>
 
