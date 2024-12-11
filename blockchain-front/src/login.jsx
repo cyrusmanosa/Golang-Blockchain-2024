@@ -158,10 +158,14 @@ export default function InputWithIcon() {
                 {/* <option value="blake2s">Blake2s</option> */}
                 <option value="blake3">Blake3</option>
                 <option value="gost-r">GOST R</option>
-                <option value="ripemd160">RIPEMD-160</option>
+                {/* <option value="ripemd160">RIPEMD-160</option> */}
                 <option value="keccak">Keccak</option>
                 <option value="skein">Skein</option>
-                <option value="whirlpool">Whirlpool</option>
+                <option value="skein">MurmurHash3</option>
+                <option value="skein">FarmHash</option>
+                <option value="skein">xxHash</option>
+                <option value="skein">HighwayHash</option>
+                {/* <option value="whirlpool">Whirlpool</option> */}
             </select>
 
             <br />

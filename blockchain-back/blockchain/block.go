@@ -51,25 +51,93 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 	///------ ************************************ ------
 	switch data.Hash {
 	case "sha256", "":
-		nonce, hash := pow.Sha256Run()
-		block.Hash = hash[:]
-		block.Nonce = nonce
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.Sha256Run()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.Sha256LowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	// case "argon2":
 	// 	nonce, hash := pow.Argon2Run()
 	// 	block.Hash = hash[:]
 	// 	block.Nonce = nonce
 	case "blake2b":
-		nonce, hash := pow.Blake2bRun()
-		block.Hash = hash[:]
-		block.Nonce = nonce
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.Blake2bRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.Blake2bLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	// case "blake2s":
 	// 	nonce, hash := pow.Blake2sRun()
 	// 	block.Hash = hash[:]
 	// 	block.Nonce = nonce
 	case "blake3":
-		nonce, hash := pow.Blake3Run()
-		block.Hash = hash[:]
-		block.Nonce = nonce
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.Blake3Run()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.Blake3LowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "MurmurHash3":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.MurmurHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.MurmurHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "Keccak":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.KeccakRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.KeccakLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "skein":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.SkeinRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.SkeinLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "farmHash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.FarmRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.FarmLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
+	case "xxhash":
+		if len(data.File) > 1024*1024 {
+			nonce, hash := pow.XxHashRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		} else {
+			nonce, hash := pow.XxHashLowRun()
+			block.Hash = hash[:]
+			block.Nonce = nonce
+		}
 	}
 	///------ ************************************ ------
 	return block
@@ -85,9 +153,10 @@ func GenesisForGuest() *Block {
 		CompanyName: "",
 		Message:     "",
 		Hash:        "",
-		File:        "",
-		Status:      "New One",
-		SendTime:    time,
+		// File:        "",
+		File:     nil,
+		Status:   "New One",
+		SendTime: time,
 	}
 
 	return CreateBlockForGuest(GenesisForGuest, []byte{})
