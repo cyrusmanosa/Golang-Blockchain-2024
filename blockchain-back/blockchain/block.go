@@ -48,73 +48,73 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 	block := &Block{[]byte{}, []byte(jsonData), prevHash, 0}
 	pow := NewProof(block)
 	///------ ************************************ ------
-	if len(data.File) > 1024*1024 {
-		switch data.Hash {
-		case "sha256", "":
-			nonce, hash := pow.Sha256Run()
-			block.result(nonce, hash)
-		case "blake2b":
-			nonce, hash := pow.Blake2bRun()
-			block.result(nonce, hash)
-		case "blake3":
-			nonce, hash := pow.Blake3Run()
-			block.result(nonce, hash)
-		case "murmurHash3":
-			nonce, hash := pow.MurmurHashRun()
-			block.result(nonce, hash)
-		case "keccak":
-			nonce, hash := pow.KeccakRun()
-			block.result(nonce, hash)
-		case "skein":
-			nonce, hash := pow.SkeinRun()
-			block.result(nonce, hash)
-		case "farmHash":
-			nonce, hash := pow.FarmRun()
-			block.result(nonce, hash)
-		case "xxHash":
-			nonce, hash := pow.XxHashRun()
-			block.result(nonce, hash)
-		case "highwayHash":
-			nonce, hash := pow.HighWayHashRun()
-			block.result(nonce, hash)
-		}
-	} else {
-		switch data.Hash {
-		case "sha256", "":
-			nonce, hash := pow.Sha256LowRun()
-			block.result(nonce, hash)
-		// case "argon2":
-		// 	nonce, hash := pow.Argon2LowRun()
-		// block.result(nonce, hash)
-		case "blake2b":
-			nonce, hash := pow.Blake2bLowRun()
-			block.result(nonce, hash)
-		// case "blake2s":
-		// 	nonce, hash := pow.Blake2sLowRun()
-		// block.result(nonce, hash)
-		case "blake3":
-			nonce, hash := pow.Blake3LowRun()
-			block.result(nonce, hash)
-		case "murmurHash3":
-			nonce, hash := pow.MurmurHashLowRun()
-			block.result(nonce, hash)
-		case "keccak":
-			nonce, hash := pow.KeccakLowRun()
-			block.result(nonce, hash)
-		case "skein":
-			nonce, hash := pow.SkeinLowRun()
-			block.result(nonce, hash)
-		case "farmHash":
-			nonce, hash := pow.FarmLowRun()
-			block.result(nonce, hash)
-		case "xxHash":
-			nonce, hash := pow.XxHashLowRun()
-			block.result(nonce, hash)
-		case "highwayHash":
-			nonce, hash := pow.HighWayHashLowRun()
-			block.result(nonce, hash)
-		}
+	// if len(data.File) > 1024*1024 {
+	switch data.Hash {
+	case "sha256", "":
+		nonce, hash := pow.Sha256Run()
+		block.result(nonce, hash)
+	case "blake2b":
+		nonce, hash := pow.Blake2bRun()
+		block.result(nonce, hash)
+	case "blake3":
+		nonce, hash := pow.Blake3Run()
+		block.result(nonce, hash)
+	case "murmurHash3":
+		nonce, hash := pow.MurmurHashRun()
+		block.result(nonce, hash)
+	case "keccak":
+		nonce, hash := pow.KeccakRun()
+		block.result(nonce, hash)
+	case "skein":
+		nonce, hash := pow.SkeinRun()
+		block.result(nonce, hash)
+	case "farmHash":
+		nonce, hash := pow.FarmRun()
+		block.result(nonce, hash)
+	case "xxHash":
+		nonce, hash := pow.XxHashRun()
+		block.result(nonce, hash)
+	case "highwayHash":
+		nonce, hash := pow.HighWayHashRun()
+		block.result(nonce, hash)
 	}
+	// } else {
+	// switch data.Hash {
+	// case "sha256", "":
+	// 	nonce, hash := pow.Sha256LowRun()
+	// 	block.result(nonce, hash)
+	// // case "argon2":
+	// // 	nonce, hash := pow.Argon2LowRun()
+	// // block.result(nonce, hash)
+	// case "blake2b":
+	// 	nonce, hash := pow.Blake2bLowRun()
+	// 	block.result(nonce, hash)
+	// // case "blake2s":
+	// // 	nonce, hash := pow.Blake2sLowRun()
+	// // block.result(nonce, hash)
+	// case "blake3":
+	// 	nonce, hash := pow.Blake3LowRun()
+	// 	block.result(nonce, hash)
+	// case "murmurHash3":
+	// 	nonce, hash := pow.MurmurHashLowRun()
+	// 	block.result(nonce, hash)
+	// case "keccak":
+	// 	nonce, hash := pow.KeccakLowRun()
+	// 	block.result(nonce, hash)
+	// case "skein":
+	// 	nonce, hash := pow.SkeinLowRun()
+	// 	block.result(nonce, hash)
+	// case "farmHash":
+	// 	nonce, hash := pow.FarmLowRun()
+	// 	block.result(nonce, hash)
+	// case "xxHash":
+	// 	nonce, hash := pow.XxHashLowRun()
+	// 	block.result(nonce, hash)
+	// case "highwayHash":
+	// 	nonce, hash := pow.HighWayHashLowRun()
+	// 	block.result(nonce, hash)
+	// }
+	// }
 	///------ ************************************ ------
 	return block
 }
