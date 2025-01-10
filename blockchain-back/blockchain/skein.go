@@ -5,6 +5,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"github.com/pedroalbanese/skein"
@@ -40,6 +41,7 @@ func (pow *ProofOfWork) SkeinLowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) SkeinRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	rangeSize := math.MaxInt64 / numCPUs

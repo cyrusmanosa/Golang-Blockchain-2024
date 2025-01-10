@@ -6,6 +6,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"golang.org/x/crypto/blake2b"
@@ -46,6 +47,7 @@ func (pow *ProofOfWork) Blake2bLowRun() (int, []byte) {
 
 func (pow *ProofOfWork) Blake2bRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int

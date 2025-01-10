@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"github.com/twmb/murmur3"
@@ -32,6 +33,7 @@ func (pow *ProofOfWork) MurmurHashLowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) MurmurHashRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int

@@ -6,6 +6,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"github.com/minio/highwayhash"
@@ -43,6 +44,7 @@ func (pow *ProofOfWork) HighWayHashLowRun() (int, []byte) {
 
 func (pow *ProofOfWork) HighWayHashRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int

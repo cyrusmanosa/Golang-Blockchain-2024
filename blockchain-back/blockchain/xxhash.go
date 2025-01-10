@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"github.com/OneOfOne/xxhash"
@@ -57,6 +58,7 @@ func (pow *ProofOfWork) XxHashLowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) XxHashRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var once sync.Once

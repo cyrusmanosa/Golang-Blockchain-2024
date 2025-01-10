@@ -6,6 +6,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"golang.org/x/crypto/sha3"
@@ -41,6 +42,7 @@ func (pow *ProofOfWork) KeccakLowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) KeccakRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var once sync.Once

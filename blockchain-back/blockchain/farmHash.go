@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"github.com/dgryski/go-farm"
@@ -34,6 +35,7 @@ func (pow *ProofOfWork) FarmLowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) FarmRun() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var once sync.Once

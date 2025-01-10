@@ -6,6 +6,7 @@ import (
 	"log"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 
 	"lukechampine.com/blake3"
@@ -41,6 +42,7 @@ func (pow *ProofOfWork) Blake3LowRun() (int, []byte) {
 }
 func (pow *ProofOfWork) Blake3Run() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var once sync.Once

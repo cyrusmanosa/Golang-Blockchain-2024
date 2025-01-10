@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math"
 	"math/big"
+	"runtime"
 	"sync"
 )
 
@@ -31,8 +32,10 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 
 	return nonce, hash[:]
 }
+
 func (pow *ProofOfWork) Sha256Run() (int, []byte) {
 	numCPUs := 4
+	runtime.GOMAXPROCS(numCPUs)
 	fmt.Println("\n-High- Loading................")
 
 	var resultNonce int
