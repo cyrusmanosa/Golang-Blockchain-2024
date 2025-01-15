@@ -62,6 +62,7 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		block.result(nonce, hash)
 	case "murmurHash3":
 		nonce, hash := pow.MurmurHashRun()
+		// nonce, hash := pow.MurmurHashLowRun()
 		block.result(nonce, hash)
 	case "keccak":
 		nonce, hash := pow.KeccakRun()
