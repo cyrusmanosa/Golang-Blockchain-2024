@@ -61,8 +61,8 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.Blake3Run()
 		block.result(nonce, hash)
 	case "murmurHash3":
-		nonce, hash := pow.MurmurHashRun()
-		// nonce, hash := pow.MurmurHashLowRun()
+		// nonce, hash := pow.MurmurHashRun()
+		nonce, hash := pow.MurmurHashLowRun()
 		block.result(nonce, hash)
 	case "keccak":
 		nonce, hash := pow.KeccakRun()
@@ -80,37 +80,6 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.HighWayHashRun()
 		block.result(nonce, hash)
 	}
-	// } else {
-	// 	switch data.Hash {
-	// 	case "sha256", "":
-	// 		nonce, hash := pow.Sha256LowRun()
-	// 		block.result(nonce, hash)
-	// 	case "blake2b":
-	// 		nonce, hash := pow.Blake2bLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "blake3":
-	// 		nonce, hash := pow.Blake3LowRun()
-	// 		block.result(nonce, hash)
-	// 	case "murmurHash3":
-	// 		nonce, hash := pow.MurmurHashLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "keccak":
-	// 		nonce, hash := pow.KeccakLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "skein":
-	// 		nonce, hash := pow.SkeinLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "farmHash":
-	// 		nonce, hash := pow.FarmLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "xxHash":
-	// 		nonce, hash := pow.XxHashLowRun()
-	// 		block.result(nonce, hash)
-	// 	case "highwayHash":
-	// 		nonce, hash := pow.HighWayHashLowRun()
-	// 		block.result(nonce, hash)
-	// 	}
-	// }
 	return block
 }
 

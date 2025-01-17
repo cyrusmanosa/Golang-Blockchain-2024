@@ -266,147 +266,158 @@ function handleMouseUp(evt) {
 		state = '';
 	}
 }
-]]></script><g id="viewport" transform="scale(0.5,0.5) translate(0,0)"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2474.75)">
+]]></script><g id="viewport" transform="scale(0.5,0.5) translate(0,0)"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1452)">
 <title>blockchain&#45;back</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-2474.75 1001.38,-2474.75 1001.38,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1452 947.5,-1452 947.5,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_L</title>
-<polygon fill="none" stroke="black" points="87.88,-2307.25 87.88,-2462.75 569.88,-2462.75 569.88,-2307.25 87.88,-2307.25"/>
+<polygon fill="none" stroke="black" points="8,-1284.5 8,-1440 490,-1440 490,-1284.5 8,-1284.5"/>
 </g>
 <!-- File: blockchain&#45;back -->
 <g id="node1" class="node">
 <title>File: blockchain&#45;back</title>
 <g id="a_node1"><a xlink:title="blockchain&#45;back">
-<polygon fill="#f8f8f8" stroke="black" points="561.88,-2454.75 95.88,-2454.75 95.88,-2315.25 561.88,-2315.25 561.88,-2454.75"/>
-<text text-anchor="start" x="103.88" y="-2435.55" font-family="Times,serif" font-size="16.00">File: blockchain&#45;back</text>
-<text text-anchor="start" x="103.88" y="-2416.8" font-family="Times,serif" font-size="16.00">Type: inuse_space</text>
-<text text-anchor="start" x="103.88" y="-2398.05" font-family="Times,serif" font-size="16.00">Time: Jan 14, 2025 at 4:36pm (JST)</text>
-<text text-anchor="start" x="103.88" y="-2379.3" font-family="Times,serif" font-size="16.00">Showing nodes accounting for 139.29MB, 99.24% of 140.35MB total</text>
-<text text-anchor="start" x="103.88" y="-2360.55" font-family="Times,serif" font-size="16.00">Dropped 5 nodes (cum &lt;= 0.70MB)</text>
-<text text-anchor="start" x="103.88" y="-2322.8" font-family="Times,serif" font-size="16.00">See https://git.io/JfYMW for how to read the graph</text>
+<polygon fill="#f8f8f8" stroke="black" points="482,-1432 16,-1432 16,-1292.5 482,-1292.5 482,-1432"/>
+<text text-anchor="start" x="24" y="-1412.8" font-family="Times,serif" font-size="16.00">File: blockchain&#45;back</text>
+<text text-anchor="start" x="24" y="-1394.05" font-family="Times,serif" font-size="16.00">Type: inuse_space</text>
+<text text-anchor="start" x="24" y="-1375.3" font-family="Times,serif" font-size="16.00">Time: Jan 17, 2025 at 11:27am (JST)</text>
+<text text-anchor="start" x="24" y="-1356.55" font-family="Times,serif" font-size="16.00">Showing nodes accounting for 123.06MB, 99.56% of 123.61MB total</text>
+<text text-anchor="start" x="24" y="-1337.8" font-family="Times,serif" font-size="16.00">Dropped 4 nodes (cum &lt;= 0.62MB)</text>
+<text text-anchor="start" x="24" y="-1300.05" font-family="Times,serif" font-size="16.00">See https://git.io/JfYMW for how to read the graph</text>
 </a>
 </g>
 </g>
 <!-- N1 -->
 <g id="node1" class="node">
 <title>N1</title>
-<g id="a_node1"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="676,-1946.25 579.75,-1946.25 579.75,-1899.25 676,-1899.25 676,-1946.25"/>
-<text text-anchor="middle" x="627.88" y="-1934.65" font-family="Times,serif" font-size="8.00">gin</text>
-<text text-anchor="middle" x="627.88" y="-1924.9" font-family="Times,serif" font-size="8.00">(*Context)</text>
-<text text-anchor="middle" x="627.88" y="-1915.15" font-family="Times,serif" font-size="8.00">Next</text>
-<text text-anchor="middle" x="627.88" y="-1905.4" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<g id="a_node1"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-923.5 499.88,-923.5 499.88,-876.5 596.12,-876.5 596.12,-923.5"/>
+<text text-anchor="middle" x="548" y="-911.9" font-family="Times,serif" font-size="8.00">gin</text>
+<text text-anchor="middle" x="548" y="-902.15" font-family="Times,serif" font-size="8.00">(*Context)</text>
+<text text-anchor="middle" x="548" y="-892.4" font-family="Times,serif" font-size="8.00">Next</text>
+<text text-anchor="middle" x="548" y="-882.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
 </a>
 </g>
 </g>
-<!-- N19 -->
-<g id="node19" class="node">
-<title>N19</title>
-<g id="a_node19"><a xlink:title="blockchain&#45;back/server.Gin.func6 (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="504,-1830.25 407.75,-1830.25 407.75,-1783.25 504,-1783.25 504,-1830.25"/>
-<text text-anchor="middle" x="455.88" y="-1818.65" font-family="Times,serif" font-size="8.00">server</text>
-<text text-anchor="middle" x="455.88" y="-1808.9" font-family="Times,serif" font-size="8.00">Gin</text>
-<text text-anchor="middle" x="455.88" y="-1799.15" font-family="Times,serif" font-size="8.00">func6</text>
-<text text-anchor="middle" x="455.88" y="-1789.4" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<!-- N18 -->
+<g id="node18" class="node">
+<title>N18</title>
+<g id="a_node18"><a xlink:title="blockchain&#45;back/server.Gin.func6 (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="424.12,-807.5 327.88,-807.5 327.88,-760.5 424.12,-760.5 424.12,-807.5"/>
+<text text-anchor="middle" x="376" y="-795.9" font-family="Times,serif" font-size="8.00">server</text>
+<text text-anchor="middle" x="376" y="-786.15" font-family="Times,serif" font-size="8.00">Gin</text>
+<text text-anchor="middle" x="376" y="-776.4" font-family="Times,serif" font-size="8.00">func6</text>
+<text text-anchor="middle" x="376" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
 </a>
 </g>
 </g>
-<!-- N1&#45;&gt;N19 -->
+<!-- N1&#45;&gt;N18 -->
 <g id="edge9" class="edge">
-<title>N1&#45;&gt;N19</title>
-<g id="a_edge9"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M579.33,-1915.09C538.6,-1908.5 484.75,-1897.09 469.88,-1881.25 461.09,-1871.9 457,-1858.83 455.29,-1846.3"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="459.69,-1846.4 454.64,-1836.72 450.96,-1846.99 459.69,-1846.4"/>
+<title>N1&#45;&gt;N18</title>
+<g id="a_edge9"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M499.45,-892.34C458.72,-885.75 404.88,-874.34 390,-858.5 381.22,-849.15 377.13,-836.08 375.42,-823.55"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="379.81,-823.65 374.77,-813.97 371.08,-824.24 379.81,-823.65"/>
 </a>
 </g>
-<g id="a_edge9&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (136.33MB)">
-<text text-anchor="middle" x="501.38" y="-1859.7" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-</a>
-</g>
-</g>
-<!-- N34 -->
-<g id="node34" class="node">
-<title>N34</title>
-<g id="a_node34"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="659.62,-1830.25 552.12,-1830.25 552.12,-1783.25 659.62,-1783.25 659.62,-1830.25"/>
-<text text-anchor="middle" x="605.88" y="-1818.65" font-family="Times,serif" font-size="8.00">gin</text>
-<text text-anchor="middle" x="605.88" y="-1808.9" font-family="Times,serif" font-size="8.00">CustomRecoveryWithWriter</text>
-<text text-anchor="middle" x="605.88" y="-1799.15" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="605.88" y="-1789.4" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<g id="a_edge9&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (120.18MB)">
+<text text-anchor="middle" x="421.5" y="-836.95" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
 </a>
 </g>
 </g>
-<!-- N1&#45;&gt;N34 -->
+<!-- N23 -->
+<g id="node23" class="node">
+<title>N23</title>
+<g id="a_node23"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="579.75,-807.5 472.25,-807.5 472.25,-760.5 579.75,-760.5 579.75,-807.5"/>
+<text text-anchor="middle" x="526" y="-795.9" font-family="Times,serif" font-size="8.00">gin</text>
+<text text-anchor="middle" x="526" y="-786.15" font-family="Times,serif" font-size="8.00">CustomRecoveryWithWriter</text>
+<text text-anchor="middle" x="526" y="-776.4" font-family="Times,serif" font-size="8.00">func1</text>
+<text text-anchor="middle" x="526" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
+</a>
+</g>
+</g>
+<!-- N1&#45;&gt;N23 -->
 <g id="edge10" class="edge">
-<title>N1&#45;&gt;N34</title>
-<g id="a_edge10"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M579.59,-1909.62C565.3,-1903.53 551.25,-1894.52 542.88,-1881.25 535.05,-1868.85 535.85,-1861.12 542.88,-1848.25 544.04,-1846.11 545.38,-1844.07 546.85,-1842.12"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="549.94,-1845.22 553.83,-1835.02 543.7,-1839.08 549.94,-1845.22"/>
+<title>N1&#45;&gt;N23</title>
+<g id="a_edge10"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M499.71,-886.87C485.42,-880.78 471.38,-871.77 463,-858.5 455.17,-846.1 455.97,-838.37 463,-825.5 464.17,-823.36 465.5,-821.32 466.97,-819.37"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="470.06,-822.47 473.96,-812.27 463.83,-816.33 470.06,-822.47"/>
 </a>
 </g>
-<g id="a_edge10&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (136.33MB)">
-<text text-anchor="middle" x="574.38" y="-1859.7" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-</a>
-</g>
-</g>
-<!-- N35 -->
-<g id="node35" class="node">
-<title>N35</title>
-<g id="a_node35"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="783,-1830.25 686.75,-1830.25 686.75,-1783.25 783,-1783.25 783,-1830.25"/>
-<text text-anchor="middle" x="734.88" y="-1818.65" font-family="Times,serif" font-size="8.00">gin</text>
-<text text-anchor="middle" x="734.88" y="-1808.9" font-family="Times,serif" font-size="8.00">LoggerWithConfig</text>
-<text text-anchor="middle" x="734.88" y="-1799.15" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="734.88" y="-1789.4" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<g id="a_edge10&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
+<text text-anchor="middle" x="494.5" y="-836.95" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
 </a>
 </g>
 </g>
-<!-- N1&#45;&gt;N35 -->
+<!-- N24 -->
+<g id="node24" class="node">
+<title>N24</title>
+<g id="a_node24"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="703.12,-807.5 606.88,-807.5 606.88,-760.5 703.12,-760.5 703.12,-807.5"/>
+<text text-anchor="middle" x="655" y="-795.9" font-family="Times,serif" font-size="8.00">gin</text>
+<text text-anchor="middle" x="655" y="-786.15" font-family="Times,serif" font-size="8.00">LoggerWithConfig</text>
+<text text-anchor="middle" x="655" y="-776.4" font-family="Times,serif" font-size="8.00">func1</text>
+<text text-anchor="middle" x="655" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
+</a>
+</g>
+</g>
+<!-- N1&#45;&gt;N24 -->
 <g id="edge11" class="edge">
-<title>N1&#45;&gt;N35</title>
-<g id="a_edge11"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M666.12,-1898.75C673.43,-1893.48 680.71,-1887.56 686.88,-1881.25 697.44,-1870.44 707.02,-1856.97 714.8,-1844.53"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="718.53,-1846.81 719.87,-1835.98 711.01,-1842.35 718.53,-1846.81"/>
+<title>N1&#45;&gt;N24</title>
+<g id="a_edge11"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M586.24,-876C593.55,-870.73 600.83,-864.81 607,-858.5 617.57,-847.69 627.15,-834.22 634.93,-821.78"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="638.66,-824.06 640,-813.23 631.13,-819.6 638.66,-824.06"/>
 </a>
 </g>
-<g id="a_edge11&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (136.33MB)">
-<text text-anchor="middle" x="743.36" y="-1859.7" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
+<g id="a_edge11&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
+<text text-anchor="middle" x="663.49" y="-836.95" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
 </a>
 </g>
 </g>
 <!-- N2 -->
 <g id="node2" class="node">
 <title>N2</title>
-<g id="a_node2"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="505.12,-1730.75 406.62,-1730.75 406.62,-1693.5 505.12,-1693.5 505.12,-1730.75"/>
-<text text-anchor="middle" x="455.88" y="-1719.15" font-family="Times,serif" font-size="8.00">controllers</text>
-<text text-anchor="middle" x="455.88" y="-1709.4" font-family="Times,serif" font-size="8.00">AddBlockForGinConfirm</text>
-<text text-anchor="middle" x="455.88" y="-1699.65" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<g id="a_node2"><a xlink:title="github.com/dgraph&#45;io/badger/skl.newArena (83.20MB)">
+<polygon fill="#edd8d5" stroke="#b21300" points="477.75,-289.75 274.25,-289.75 274.25,-200.75 477.75,-200.75 477.75,-289.75"/>
+<text text-anchor="middle" x="376" y="-262.95" font-family="Times,serif" font-size="24.00">skl</text>
+<text text-anchor="middle" x="376" y="-235.95" font-family="Times,serif" font-size="24.00">newArena</text>
+<text text-anchor="middle" x="376" y="-208.95" font-family="Times,serif" font-size="24.00">83.20MB (67.31%)</text>
 </a>
 </g>
 </g>
-<!-- N6 -->
-<g id="node6" class="node">
-<title>N6</title>
-<g id="a_node6"><a xlink:title="blockchain&#45;back/controllers.(*CommandLine).PrintChain (42.53MB)">
-<polygon fill="#eddcd5" stroke="#b23500" points="255.12,-1635.75 162.62,-1635.75 162.62,-1588.75 255.12,-1588.75 255.12,-1635.75"/>
-<text text-anchor="middle" x="208.88" y="-1624.15" font-family="Times,serif" font-size="8.00">controllers</text>
-<text text-anchor="middle" x="208.88" y="-1614.4" font-family="Times,serif" font-size="8.00">(*CommandLine)</text>
-<text text-anchor="middle" x="208.88" y="-1604.65" font-family="Times,serif" font-size="8.00">PrintChain</text>
-<text text-anchor="middle" x="208.88" y="-1594.9" font-family="Times,serif" font-size="8.00">0 of 42.53MB (30.30%)</text>
+<!-- NN2_0 -->
+<g id="NN2_0" class="node">
+<title>NN2_0</title>
+<g id="a_NN2_0"><a xlink:title="83.20MB">
+<polygon fill="#f8f8f8" stroke="black" points="403,-136.38 353,-136.38 349,-132.38 349,-100.38 399,-100.38 403,-104.38 403,-136.38"/>
+<polyline fill="none" stroke="black" points="399,-132.38 349,-132.38"/>
+<polyline fill="none" stroke="black" points="399,-132.38 399,-100.38"/>
+<polyline fill="none" stroke="black" points="399,-132.38 403,-136.38"/>
+<text text-anchor="middle" x="376" y="-115.65" font-family="Times,serif" font-size="8.00">83.20MB</text>
 </a>
 </g>
 </g>
-<!-- N2&#45;&gt;N6 -->
-<g id="edge21" class="edge">
-<title>N2&#45;&gt;N6</title>
-<g id="a_edge21"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/controllers.(*CommandLine).PrintChain (42.53MB)">
-<path fill="none" stroke="#b23500" stroke-width="2" d="M406.17,-1701.87C379.11,-1695.98 345.39,-1687.23 316.62,-1675.5 295.15,-1666.74 272.75,-1654.39 253.96,-1642.99"/>
-<polygon fill="#b23500" stroke="#b23500" stroke-width="2" points="255.98,-1640.13 245.64,-1637.84 252.3,-1646.08 255.98,-1640.13"/>
+<!-- N2&#45;&gt;NN2_0 -->
+<g id="edge1" class="edge">
+<title>N2&#45;&gt;NN2_0</title>
+<g id="a_edge1"><a xlink:title="83.20MB">
+<path fill="none" stroke="black" d="M376,-200.57C376,-183.26 376,-163.82 376,-148.31"/>
+<polygon fill="black" stroke="black" points="379.5,-148.33 376,-138.33 372.5,-148.33 379.5,-148.33"/>
 </a>
 </g>
-<g id="a_edge21&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/controllers.(*CommandLine).PrintChain (42.53MB)">
-<text text-anchor="middle" x="344.75" y="-1662.2" font-family="Times,serif" font-size="14.00"> 42.53MB</text>
+<g id="a_edge1&#45;label"><a xlink:title="83.20MB">
+<text text-anchor="middle" x="404.12" y="-169.45" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
+</a>
+</g>
+</g>
+<!-- N3 -->
+<g id="node3" class="node">
+<title>N3</title>
+<g id="a_node3"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="425.25,-708 326.75,-708 326.75,-670.75 425.25,-670.75 425.25,-708"/>
+<text text-anchor="middle" x="376" y="-696.4" font-family="Times,serif" font-size="8.00">controllers</text>
+<text text-anchor="middle" x="376" y="-686.65" font-family="Times,serif" font-size="8.00">AddBlockForGinConfirm</text>
+<text text-anchor="middle" x="376" y="-676.9" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
 </a>
 </g>
 </g>
@@ -414,241 +425,230 @@ function handleMouseUp(evt) {
 <g id="node8" class="node">
 <title>N8</title>
 <g id="a_node8"><a xlink:title="os.ReadFile (10.09MB)">
-<polygon fill="#ede9e4" stroke="#b29572" points="390.5,-1641 273.25,-1641 273.25,-1583.5 390.5,-1583.5 390.5,-1641"/>
-<text text-anchor="middle" x="331.88" y="-1623.7" font-family="Times,serif" font-size="14.00">os</text>
-<text text-anchor="middle" x="331.88" y="-1607.2" font-family="Times,serif" font-size="14.00">ReadFile</text>
-<text text-anchor="middle" x="331.88" y="-1590.7" font-family="Times,serif" font-size="14.00">10.09MB (7.19%)</text>
+<polygon fill="#ede8e3" stroke="#b29069" points="199.62,-618.25 82.38,-618.25 82.38,-560.75 199.62,-560.75 199.62,-618.25"/>
+<text text-anchor="middle" x="141" y="-600.95" font-family="Times,serif" font-size="14.00">os</text>
+<text text-anchor="middle" x="141" y="-584.45" font-family="Times,serif" font-size="14.00">ReadFile</text>
+<text text-anchor="middle" x="141" y="-567.95" font-family="Times,serif" font-size="14.00">10.09MB (8.16%)</text>
 </a>
 </g>
 </g>
-<!-- N2&#45;&gt;N8 -->
-<g id="edge40" class="edge">
-<title>N2&#45;&gt;N8</title>
-<g id="a_edge40"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; os.ReadFile (10.09MB)">
-<path fill="none" stroke="#b29572" d="M422.12,-1693.08C413.22,-1687.82 403.82,-1681.78 395.62,-1675.5 385.47,-1667.72 375.23,-1658.47 366.01,-1649.52"/>
-<polygon fill="#b29572" stroke="#b29572" points="368.5,-1647.06 358.94,-1642.49 363.56,-1652.02 368.5,-1647.06"/>
+<!-- N3&#45;&gt;N8 -->
+<g id="edge27" class="edge">
+<title>N3&#45;&gt;N8</title>
+<g id="a_edge27"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; os.ReadFile (10.09MB)">
+<path fill="none" stroke="#b29069" d="M326.55,-679.28C300.14,-673.47 267.45,-664.76 239.75,-652.75 222.35,-645.21 204.48,-634.86 188.8,-624.77"/>
+<polygon fill="#b29069" stroke="#b29069" points="190.89,-621.95 180.61,-619.38 187.04,-627.8 190.89,-621.95"/>
 </a>
 </g>
-<g id="a_edge40&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; os.ReadFile (10.09MB)">
-<text text-anchor="middle" x="423.75" y="-1662.2" font-family="Times,serif" font-size="14.00"> 10.09MB</text>
-</a>
-</g>
-</g>
-<!-- N17 -->
-<g id="node17" class="node">
-<title>N17</title>
-<g id="a_node17"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest (83.71MB)">
-<polygon fill="#edd8d5" stroke="#b21900" points="503.25,-1630.88 408.5,-1630.88 408.5,-1593.62 503.25,-1593.62 503.25,-1630.88"/>
-<text text-anchor="middle" x="455.88" y="-1619.28" font-family="Times,serif" font-size="8.00">blockchain</text>
-<text text-anchor="middle" x="455.88" y="-1609.53" font-family="Times,serif" font-size="8.00">InitBlockChainForGuest</text>
-<text text-anchor="middle" x="455.88" y="-1599.78" font-family="Times,serif" font-size="8.00">0 of 83.71MB (59.65%)</text>
-</a>
-</g>
-</g>
-<!-- N2&#45;&gt;N17 -->
-<g id="edge18" class="edge">
-<title>N2&#45;&gt;N17</title>
-<g id="a_edge18"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.InitBlockChainForGuest (83.71MB)">
-<path fill="none" stroke="#b21900" stroke-width="3" d="M455.88,-1693.17C455.88,-1679.79 455.88,-1661.16 455.88,-1645.25"/>
-<polygon fill="#b21900" stroke="#b21900" stroke-width="3" points="459.38,-1645.63 455.88,-1635.63 452.38,-1645.63 459.38,-1645.63"/>
-</a>
-</g>
-<g id="a_edge18&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.InitBlockChainForGuest (83.71MB)">
-<text text-anchor="middle" x="484" y="-1662.2" font-family="Times,serif" font-size="14.00"> 83.71MB</text>
-</a>
-</g>
-</g>
-<!-- N3 -->
-<g id="node3" class="node">
-<title>N3</title>
-<g id="a_node3"><a xlink:title="github.com/dgraph&#45;io/badger/skl.newArena (83.20MB)">
-<polygon fill="#edd8d5" stroke="#b21900" points="557.62,-1299 354.12,-1299 354.12,-1210 557.62,-1210 557.62,-1299"/>
-<text text-anchor="middle" x="455.88" y="-1272.2" font-family="Times,serif" font-size="24.00">skl</text>
-<text text-anchor="middle" x="455.88" y="-1245.2" font-family="Times,serif" font-size="24.00">newArena</text>
-<text text-anchor="middle" x="455.88" y="-1218.2" font-family="Times,serif" font-size="24.00">83.20MB (59.28%)</text>
-</a>
-</g>
-</g>
-<!-- NN3_0 -->
-<g id="NN3_0" class="node">
-<title>NN3_0</title>
-<g id="a_NN3_0"><a xlink:title="83.20MB">
-<polygon fill="#f8f8f8" stroke="black" points="482.88,-1140 432.88,-1140 428.88,-1136 428.88,-1104 478.88,-1104 482.88,-1108 482.88,-1140"/>
-<polyline fill="none" stroke="black" points="478.88,-1136 428.88,-1136"/>
-<polyline fill="none" stroke="black" points="478.88,-1136 478.88,-1104"/>
-<polyline fill="none" stroke="black" points="478.88,-1136 482.88,-1140"/>
-<text text-anchor="middle" x="455.88" y="-1119.28" font-family="Times,serif" font-size="8.00">83.20MB</text>
-</a>
-</g>
-</g>
-<!-- N3&#45;&gt;NN3_0 -->
-<g id="edge1" class="edge">
-<title>N3&#45;&gt;NN3_0</title>
-<g id="a_edge1"><a xlink:title="83.20MB">
-<path fill="none" stroke="black" d="M455.88,-1209.68C455.88,-1190.62 455.88,-1168.8 455.88,-1151.83"/>
-<polygon fill="black" stroke="black" points="459.38,-1151.94 455.88,-1141.94 452.38,-1151.94 459.38,-1151.94"/>
-</a>
-</g>
-<g id="a_edge1&#45;label"><a xlink:title="83.20MB">
-<text text-anchor="middle" x="484" y="-1178.7" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
-</a>
-</g>
-</g>
-<!-- N4 -->
-<g id="node4" class="node">
-<title>N4</title>
-<g id="a_node4"><a xlink:title="net/http.(*conn).serve (137.49MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="676,-2408.5 579.75,-2408.5 579.75,-2361.5 676,-2361.5 676,-2408.5"/>
-<text text-anchor="middle" x="627.88" y="-2396.9" font-family="Times,serif" font-size="8.00">http</text>
-<text text-anchor="middle" x="627.88" y="-2387.15" font-family="Times,serif" font-size="8.00">(*conn)</text>
-<text text-anchor="middle" x="627.88" y="-2377.4" font-family="Times,serif" font-size="8.00">serve</text>
-<text text-anchor="middle" x="627.88" y="-2367.65" font-family="Times,serif" font-size="8.00">0 of 137.49MB (97.96%)</text>
-</a>
-</g>
-</g>
-<!-- N9 -->
-<g id="node9" class="node">
-<title>N9</title>
-<g id="a_node9"><a xlink:title="net/http.serverHandler.ServeHTTP (137.49MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="676,-2262.75 579.75,-2262.75 579.75,-2215.75 676,-2215.75 676,-2262.75"/>
-<text text-anchor="middle" x="627.88" y="-2251.15" font-family="Times,serif" font-size="8.00">http</text>
-<text text-anchor="middle" x="627.88" y="-2241.4" font-family="Times,serif" font-size="8.00">serverHandler</text>
-<text text-anchor="middle" x="627.88" y="-2231.65" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="627.88" y="-2221.9" font-family="Times,serif" font-size="8.00">0 of 137.49MB (97.96%)</text>
-</a>
-</g>
-</g>
-<!-- N4&#45;&gt;N9 -->
-<g id="edge7" class="edge">
-<title>N4&#45;&gt;N9</title>
-<g id="a_edge7"><a xlink:title="net/http.(*conn).serve &#45;&gt; net/http.serverHandler.ServeHTTP (137.49MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M627.88,-2361.22C627.88,-2339.14 627.88,-2305.22 627.88,-2278.91"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="632.25,-2279.16 627.88,-2269.16 623.5,-2279.16 632.25,-2279.16"/>
-</a>
-</g>
-<g id="a_edge7&#45;label"><a xlink:title="net/http.(*conn).serve &#45;&gt; net/http.serverHandler.ServeHTTP (137.49MB)">
-<text text-anchor="middle" x="659.38" y="-2283.95" font-family="Times,serif" font-size="14.00"> 137.49MB</text>
-</a>
-</g>
-</g>
-<!-- N5 -->
-<g id="node5" class="node">
-<title>N5</title>
-<g id="a_node5"><a xlink:title="bytes.growSlice (26.89MB)">
-<polygon fill="#eddfd6" stroke="#b24a07" points="287,-1157.5 130.75,-1157.5 130.75,-1086.5 287,-1086.5 287,-1157.5"/>
-<text text-anchor="middle" x="208.88" y="-1136.4" font-family="Times,serif" font-size="18.00">bytes</text>
-<text text-anchor="middle" x="208.88" y="-1115.4" font-family="Times,serif" font-size="18.00">growSlice</text>
-<text text-anchor="middle" x="208.88" y="-1094.4" font-family="Times,serif" font-size="18.00">26.89MB (19.16%)</text>
-</a>
-</g>
-</g>
-<!-- NN5_0 -->
-<g id="NN5_0" class="node">
-<title>NN5_0</title>
-<g id="a_NN5_0"><a xlink:title="26.89MB">
-<polygon fill="#f8f8f8" stroke="black" points="235.88,-1018.75 185.88,-1018.75 181.88,-1014.75 181.88,-982.75 231.88,-982.75 235.88,-986.75 235.88,-1018.75"/>
-<polyline fill="none" stroke="black" points="231.88,-1014.75 181.88,-1014.75"/>
-<polyline fill="none" stroke="black" points="231.88,-1014.75 231.88,-982.75"/>
-<polyline fill="none" stroke="black" points="231.88,-1014.75 235.88,-1018.75"/>
-<text text-anchor="middle" x="208.88" y="-998.02" font-family="Times,serif" font-size="8.00">26.89MB</text>
-</a>
-</g>
-</g>
-<!-- N5&#45;&gt;NN5_0 -->
-<g id="edge2" class="edge">
-<title>N5&#45;&gt;NN5_0</title>
-<g id="a_edge2"><a xlink:title="26.89MB">
-<path fill="none" stroke="black" d="M208.88,-1086.19C208.88,-1068.49 208.88,-1047.23 208.88,-1030.48"/>
-<polygon fill="black" stroke="black" points="212.38,-1030.7 208.88,-1020.7 205.38,-1030.7 212.38,-1030.7"/>
-</a>
-</g>
-<g id="a_edge2&#45;label"><a xlink:title="26.89MB">
-<text text-anchor="middle" x="237" y="-1055.2" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
+<g id="a_edge27&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; os.ReadFile (10.09MB)">
+<text text-anchor="middle" x="267.88" y="-639.45" font-family="Times,serif" font-size="14.00"> 10.09MB</text>
 </a>
 </g>
 </g>
 <!-- N13 -->
 <g id="node13" class="node">
 <title>N13</title>
-<g id="a_node13"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="144.12,-1531 51.62,-1531 51.62,-1484 144.12,-1484 144.12,-1531"/>
-<text text-anchor="middle" x="97.88" y="-1519.4" font-family="Times,serif" font-size="8.00">blockchain</text>
-<text text-anchor="middle" x="97.88" y="-1509.65" font-family="Times,serif" font-size="8.00">(*BlockChainIterator)</text>
-<text text-anchor="middle" x="97.88" y="-1499.9" font-family="Times,serif" font-size="8.00">Next</text>
-<text text-anchor="middle" x="97.88" y="-1490.15" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
+<g id="a_node13"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
+<polygon fill="#edded5" stroke="#b24100" points="310.25,-613 217.75,-613 217.75,-566 310.25,-566 310.25,-613"/>
+<text text-anchor="middle" x="264" y="-601.4" font-family="Times,serif" font-size="8.00">blockchain</text>
+<text text-anchor="middle" x="264" y="-591.65" font-family="Times,serif" font-size="8.00">(*BlockChain)</text>
+<text text-anchor="middle" x="264" y="-581.9" font-family="Times,serif" font-size="8.00">AddBlockForGuest</text>
+<text text-anchor="middle" x="264" y="-572.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.76%)</text>
 </a>
 </g>
 </g>
-<!-- N6&#45;&gt;N13 -->
-<g id="edge30" class="edge">
-<title>N6&#45;&gt;N13</title>
-<g id="a_edge30"><a xlink:title="blockchain&#45;back/controllers.(*CommandLine).PrintChain &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M176.36,-1588.38C167.1,-1581.38 157.21,-1573.44 148.62,-1565.5 140.18,-1557.69 131.62,-1548.62 124,-1540.04"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="126.65,-1537.74 117.44,-1532.5 121.36,-1542.34 126.65,-1537.74"/>
-</a>
-</g>
-<g id="a_edge30&#45;label"><a xlink:title="blockchain&#45;back/controllers.(*CommandLine).PrintChain &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next (15.64MB)">
-<text text-anchor="middle" x="176.75" y="-1552.2" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N27 -->
-<g id="node27" class="node">
-<title>N27</title>
-<g id="a_node27"><a xlink:title="encoding/json.Indent (26.89MB)">
-<polygon fill="#eddfd6" stroke="#b24a07" points="255.12,-1526.12 162.62,-1526.12 162.62,-1488.88 255.12,-1488.88 255.12,-1526.12"/>
-<text text-anchor="middle" x="208.88" y="-1514.53" font-family="Times,serif" font-size="8.00">json</text>
-<text text-anchor="middle" x="208.88" y="-1504.78" font-family="Times,serif" font-size="8.00">Indent</text>
-<text text-anchor="middle" x="208.88" y="-1495.03" font-family="Times,serif" font-size="8.00">0 of 26.89MB (19.16%)</text>
-</a>
-</g>
-</g>
-<!-- N6&#45;&gt;N27 -->
+<!-- N3&#45;&gt;N13 -->
 <g id="edge22" class="edge">
-<title>N6&#45;&gt;N27</title>
-<g id="a_edge22"><a xlink:title="blockchain&#45;back/controllers.(*CommandLine).PrintChain &#45;&gt; encoding/json.Indent (26.89MB)">
-<path fill="none" stroke="#b24a07" d="M208.88,-1588.45C208.88,-1573.56 208.88,-1553.98 208.88,-1537.92"/>
-<polygon fill="#b24a07" stroke="#b24a07" points="212.38,-1537.98 208.88,-1527.98 205.38,-1537.98 212.38,-1537.98"/>
+<title>N3&#45;&gt;N13</title>
+<g id="a_edge22"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
+<path fill="none" stroke="#b24100" stroke-width="2" d="M340.85,-670.33C332.24,-665.19 323.34,-659.21 315.75,-652.75 305.75,-644.23 296.14,-633.62 287.99,-623.6"/>
+<polygon fill="#b24100" stroke="#b24100" stroke-width="2" points="290.84,-621.57 281.92,-615.85 285.33,-625.88 290.84,-621.57"/>
 </a>
 </g>
-<g id="a_edge22&#45;label"><a xlink:title="blockchain&#45;back/controllers.(*CommandLine).PrintChain &#45;&gt; encoding/json.Indent (26.89MB)">
-<text text-anchor="middle" x="237" y="-1552.2" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
+<g id="a_edge22&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
+<text text-anchor="middle" x="343.88" y="-639.45" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
+</a>
+</g>
+</g>
+<!-- N16 -->
+<g id="node16" class="node">
+<title>N16</title>
+<g id="a_node16"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest (83.20MB)">
+<polygon fill="#edd8d5" stroke="#b21300" points="423.38,-608.12 328.62,-608.12 328.62,-570.88 423.38,-570.88 423.38,-608.12"/>
+<text text-anchor="middle" x="376" y="-596.52" font-family="Times,serif" font-size="8.00">blockchain</text>
+<text text-anchor="middle" x="376" y="-586.77" font-family="Times,serif" font-size="8.00">InitBlockChainForGuest</text>
+<text text-anchor="middle" x="376" y="-577.02" font-family="Times,serif" font-size="8.00">0 of 83.20MB (67.31%)</text>
+</a>
+</g>
+</g>
+<!-- N3&#45;&gt;N16 -->
+<g id="edge18" class="edge">
+<title>N3&#45;&gt;N16</title>
+<g id="a_edge18"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.InitBlockChainForGuest (83.20MB)">
+<path fill="none" stroke="#b21300" stroke-width="4" d="M376,-670.42C376,-657.45 376,-639.55 376,-623.98"/>
+<polygon fill="#b21300" stroke="#b21300" stroke-width="4" points="379.5,-624.39 376,-614.39 372.5,-624.39 379.5,-624.39"/>
+</a>
+</g>
+<g id="a_edge18&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.InitBlockChainForGuest (83.20MB)">
+<text text-anchor="middle" x="404.12" y="-639.45" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
+</a>
+</g>
+</g>
+<!-- N4 -->
+<g id="node4" class="node">
+<title>N4</title>
+<g id="a_node4"><a xlink:title="net/http.(*conn).serve (121.34MB)">
+<polygon fill="#edd5d5" stroke="#b20000" points="596.12,-1385.75 499.88,-1385.75 499.88,-1338.75 596.12,-1338.75 596.12,-1385.75"/>
+<text text-anchor="middle" x="548" y="-1374.15" font-family="Times,serif" font-size="8.00">http</text>
+<text text-anchor="middle" x="548" y="-1364.4" font-family="Times,serif" font-size="8.00">(*conn)</text>
+<text text-anchor="middle" x="548" y="-1354.65" font-family="Times,serif" font-size="8.00">serve</text>
+<text text-anchor="middle" x="548" y="-1344.9" font-family="Times,serif" font-size="8.00">0 of 121.34MB (98.16%)</text>
+</a>
+</g>
+</g>
+<!-- N9 -->
+<g id="node9" class="node">
+<title>N9</title>
+<g id="a_node9"><a xlink:title="net/http.serverHandler.ServeHTTP (121.34MB)">
+<polygon fill="#edd5d5" stroke="#b20000" points="596.12,-1240 499.88,-1240 499.88,-1193 596.12,-1193 596.12,-1240"/>
+<text text-anchor="middle" x="548" y="-1228.4" font-family="Times,serif" font-size="8.00">http</text>
+<text text-anchor="middle" x="548" y="-1218.65" font-family="Times,serif" font-size="8.00">serverHandler</text>
+<text text-anchor="middle" x="548" y="-1208.9" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
+<text text-anchor="middle" x="548" y="-1199.15" font-family="Times,serif" font-size="8.00">0 of 121.34MB (98.16%)</text>
+</a>
+</g>
+</g>
+<!-- N4&#45;&gt;N9 -->
+<g id="edge7" class="edge">
+<title>N4&#45;&gt;N9</title>
+<g id="a_edge7"><a xlink:title="net/http.(*conn).serve &#45;&gt; net/http.serverHandler.ServeHTTP (121.34MB)">
+<path fill="none" stroke="#b20000" stroke-width="5" d="M548,-1338.47C548,-1316.39 548,-1282.47 548,-1256.16"/>
+<polygon fill="#b20000" stroke="#b20000" stroke-width="5" points="552.38,-1256.41 548,-1246.41 543.63,-1256.41 552.38,-1256.41"/>
+</a>
+</g>
+<g id="a_edge7&#45;label"><a xlink:title="net/http.(*conn).serve &#45;&gt; net/http.serverHandler.ServeHTTP (121.34MB)">
+<text text-anchor="middle" x="579.5" y="-1261.2" font-family="Times,serif" font-size="14.00"> 121.34MB</text>
+</a>
+</g>
+</g>
+<!-- N5 -->
+<g id="node5" class="node">
+<title>N5</title>
+<g id="a_node5"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
+<polygon fill="#edded5" stroke="#b24100" points="306.25,-508.25 213.75,-508.25 213.75,-471 306.25,-471 306.25,-508.25"/>
+<text text-anchor="middle" x="260" y="-496.65" font-family="Times,serif" font-size="8.00">blockchain</text>
+<text text-anchor="middle" x="260" y="-486.9" font-family="Times,serif" font-size="8.00">CreateBlockForGuest</text>
+<text text-anchor="middle" x="260" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.76%)</text>
 </a>
 </g>
 </g>
 <!-- N7 -->
 <g id="node7" class="node">
 <title>N7</title>
-<g id="a_node7"><a xlink:title="reflect.growslice (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="133.75,-148.25 0,-148.25 0,-88.5 133.75,-88.5 133.75,-148.25"/>
-<text text-anchor="middle" x="66.88" y="-130" font-family="Times,serif" font-size="15.00">reflect</text>
-<text text-anchor="middle" x="66.88" y="-112.75" font-family="Times,serif" font-size="15.00">growslice</text>
-<text text-anchor="middle" x="66.88" y="-95.5" font-family="Times,serif" font-size="15.00">15.64MB (11.14%)</text>
+<g id="a_node7"><a xlink:title="encoding/json.Marshal (13.45MB)">
+<polygon fill="#ede6e0" stroke="#b28051" points="185.88,-418.5 52.12,-418.5 52.12,-358.75 185.88,-358.75 185.88,-418.5"/>
+<text text-anchor="middle" x="119" y="-400.25" font-family="Times,serif" font-size="15.00">json</text>
+<text text-anchor="middle" x="119" y="-383" font-family="Times,serif" font-size="15.00">Marshal</text>
+<text text-anchor="middle" x="119" y="-365.75" font-family="Times,serif" font-size="15.00">13.45MB (10.88%)</text>
+</a>
+</g>
+</g>
+<!-- N5&#45;&gt;N7 -->
+<g id="edge26" class="edge">
+<title>N5&#45;&gt;N7</title>
+<g id="a_edge26"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest &#45;&gt; encoding/json.Marshal (13.45MB)">
+<path fill="none" stroke="#b28051" d="M226.13,-470.53C216.75,-465.18 206.7,-459.11 197.75,-453 185.74,-444.81 173.25,-435.28 161.86,-426.14"/>
+<polygon fill="#b28051" stroke="#b28051" points="164.13,-423.47 154.16,-419.88 159.71,-428.9 164.13,-423.47"/>
+</a>
+</g>
+<g id="a_edge26&#45;label"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest &#45;&gt; encoding/json.Marshal (13.45MB)">
+<text text-anchor="middle" x="225.88" y="-439.7" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
+</a>
+</g>
+</g>
+<!-- N15 -->
+<g id="node15" class="node">
+<title>N15</title>
+<g id="a_node15"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).MurmurHashLowRun (13.45MB)">
+<polygon fill="#ede6e0" stroke="#b28051" points="303.25,-412.12 210.75,-412.12 210.75,-365.12 303.25,-365.12 303.25,-412.12"/>
+<text text-anchor="middle" x="257" y="-400.52" font-family="Times,serif" font-size="8.00">blockchain</text>
+<text text-anchor="middle" x="257" y="-390.77" font-family="Times,serif" font-size="8.00">(*ProofOfWork)</text>
+<text text-anchor="middle" x="257" y="-381.02" font-family="Times,serif" font-size="8.00">MurmurHashLowRun</text>
+<text text-anchor="middle" x="257" y="-371.27" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.88%)</text>
+</a>
+</g>
+</g>
+<!-- N5&#45;&gt;N15 -->
+<g id="edge25" class="edge">
+<title>N5&#45;&gt;N15</title>
+<g id="a_edge25"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.(*ProofOfWork).MurmurHashLowRun (13.45MB)">
+<path fill="none" stroke="#b28051" d="M259.46,-470.93C259.06,-457.77 258.51,-439.41 258.03,-423.47"/>
+<polygon fill="#b28051" stroke="#b28051" points="261.54,-423.8 257.74,-413.91 254.54,-424.01 261.54,-423.8"/>
+</a>
+</g>
+<g id="a_edge25&#45;label"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.(*ProofOfWork).MurmurHashLowRun (13.45MB)">
+<text text-anchor="middle" x="286.98" y="-439.7" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
+</a>
+</g>
+</g>
+<!-- N6 -->
+<g id="node6" class="node">
+<title>N6</title>
+<g id="a_node6"><a xlink:title="bytes.Join (13.45MB)">
+<polygon fill="#ede6e0" stroke="#b28051" points="276.88,-148.25 143.12,-148.25 143.12,-88.5 276.88,-88.5 276.88,-148.25"/>
+<text text-anchor="middle" x="210" y="-130" font-family="Times,serif" font-size="15.00">bytes</text>
+<text text-anchor="middle" x="210" y="-112.75" font-family="Times,serif" font-size="15.00">Join</text>
+<text text-anchor="middle" x="210" y="-95.5" font-family="Times,serif" font-size="15.00">13.45MB (10.88%)</text>
+</a>
+</g>
+</g>
+<!-- NN6_0 -->
+<g id="NN6_0" class="node">
+<title>NN6_0</title>
+<g id="a_NN6_0"><a xlink:title="13.45MB">
+<polygon fill="#f8f8f8" stroke="black" points="237,-36 187,-36 183,-32 183,0 233,0 237,-4 237,-36"/>
+<polyline fill="none" stroke="black" points="233,-32 183,-32"/>
+<polyline fill="none" stroke="black" points="233,-32 233,0"/>
+<polyline fill="none" stroke="black" points="233,-32 237,-36"/>
+<text text-anchor="middle" x="210" y="-15.28" font-family="Times,serif" font-size="8.00">13.45MB</text>
+</a>
+</g>
+</g>
+<!-- N6&#45;&gt;NN6_0 -->
+<g id="edge2" class="edge">
+<title>N6&#45;&gt;NN6_0</title>
+<g id="a_edge2"><a xlink:title="13.45MB">
+<path fill="none" stroke="black" d="M210,-88.13C210,-75.34 210,-60.38 210,-47.66"/>
+<polygon fill="black" stroke="black" points="213.5,-47.8 210,-37.8 206.5,-47.8 213.5,-47.8"/>
+</a>
+</g>
+<g id="a_edge2&#45;label"><a xlink:title="13.45MB">
+<text text-anchor="middle" x="238.12" y="-57.2" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
 </a>
 </g>
 </g>
 <!-- NN7_0 -->
 <g id="NN7_0" class="node">
 <title>NN7_0</title>
-<g id="a_NN7_0"><a xlink:title="15.64MB">
-<polygon fill="#f8f8f8" stroke="black" points="93.88,-36 43.88,-36 39.88,-32 39.88,0 89.88,0 93.88,-4 93.88,-36"/>
-<polyline fill="none" stroke="black" points="89.88,-32 39.88,-32"/>
-<polyline fill="none" stroke="black" points="89.88,-32 89.88,0"/>
-<polyline fill="none" stroke="black" points="89.88,-32 93.88,-36"/>
-<text text-anchor="middle" x="66.88" y="-15.28" font-family="Times,serif" font-size="8.00">15.64MB</text>
+<g id="a_NN7_0"><a xlink:title="13.45MB">
+<polygon fill="#f8f8f8" stroke="black" points="146,-263.25 96,-263.25 92,-259.25 92,-227.25 142,-227.25 146,-231.25 146,-263.25"/>
+<polyline fill="none" stroke="black" points="142,-259.25 92,-259.25"/>
+<polyline fill="none" stroke="black" points="142,-259.25 142,-227.25"/>
+<polyline fill="none" stroke="black" points="142,-259.25 146,-263.25"/>
+<text text-anchor="middle" x="119" y="-242.53" font-family="Times,serif" font-size="8.00">13.45MB</text>
 </a>
 </g>
 </g>
 <!-- N7&#45;&gt;NN7_0 -->
 <g id="edge3" class="edge">
 <title>N7&#45;&gt;NN7_0</title>
-<g id="a_edge3"><a xlink:title="15.64MB">
-<path fill="none" stroke="black" d="M66.88,-88.13C66.88,-75.34 66.88,-60.38 66.88,-47.66"/>
-<polygon fill="black" stroke="black" points="70.38,-47.8 66.88,-37.8 63.38,-47.8 70.38,-47.8"/>
+<g id="a_edge3"><a xlink:title="13.45MB">
+<path fill="none" stroke="black" d="M119,-358.33C119,-333.84 119,-299.11 119,-274.82"/>
+<polygon fill="black" stroke="black" points="122.5,-275.02 119,-265.02 115.5,-275.02 122.5,-275.02"/>
 </a>
 </g>
-<g id="a_edge3&#45;label"><a xlink:title="15.64MB">
-<text text-anchor="middle" x="95" y="-57.2" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
+<g id="a_edge3&#45;label"><a xlink:title="13.45MB">
+<text text-anchor="middle" x="147.12" y="-319.2" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
 </a>
 </g>
 </g>
@@ -656,11 +656,11 @@ function handleMouseUp(evt) {
 <g id="NN8_0" class="node">
 <title>NN8_0</title>
 <g id="a_NN8_0"><a xlink:title="10.09MB">
-<polygon fill="#f8f8f8" stroke="black" points="358.88,-1525.5 308.88,-1525.5 304.88,-1521.5 304.88,-1489.5 354.88,-1489.5 358.88,-1493.5 358.88,-1525.5"/>
-<polyline fill="none" stroke="black" points="354.88,-1521.5 304.88,-1521.5"/>
-<polyline fill="none" stroke="black" points="354.88,-1521.5 354.88,-1489.5"/>
-<polyline fill="none" stroke="black" points="354.88,-1521.5 358.88,-1525.5"/>
-<text text-anchor="middle" x="331.88" y="-1504.78" font-family="Times,serif" font-size="8.00">10.09MB</text>
+<polygon fill="#f8f8f8" stroke="black" points="168,-507.62 118,-507.62 114,-503.62 114,-471.62 164,-471.62 168,-475.62 168,-507.62"/>
+<polyline fill="none" stroke="black" points="164,-503.62 114,-503.62"/>
+<polyline fill="none" stroke="black" points="164,-503.62 164,-471.62"/>
+<polyline fill="none" stroke="black" points="164,-503.62 168,-507.62"/>
+<text text-anchor="middle" x="141" y="-486.9" font-family="Times,serif" font-size="8.00">10.09MB</text>
 </a>
 </g>
 </g>
@@ -668,787 +668,461 @@ function handleMouseUp(evt) {
 <g id="edge4" class="edge">
 <title>N8&#45;&gt;NN8_0</title>
 <g id="a_edge4"><a xlink:title="10.09MB">
-<path fill="none" stroke="black" d="M331.88,-1583.17C331.88,-1568.88 331.88,-1551.52 331.88,-1537.15"/>
-<polygon fill="black" stroke="black" points="335.38,-1537.41 331.88,-1527.41 328.38,-1537.41 335.38,-1537.41"/>
+<path fill="none" stroke="black" d="M141,-560.45C141,-547.48 141,-532.09 141,-519.07"/>
+<polygon fill="black" stroke="black" points="144.5,-519.42 141,-509.42 137.5,-519.42 144.5,-519.42"/>
 </a>
 </g>
 <g id="a_edge4&#45;label"><a xlink:title="10.09MB">
-<text text-anchor="middle" x="360" y="-1552.2" font-family="Times,serif" font-size="14.00"> 10.09MB</text>
-</a>
-</g>
-</g>
-<!-- N32 -->
-<g id="node32" class="node">
-<title>N32</title>
-<g id="a_node32"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="676,-2163.25 579.75,-2163.25 579.75,-2116.25 676,-2116.25 676,-2163.25"/>
-<text text-anchor="middle" x="627.88" y="-2151.65" font-family="Times,serif" font-size="8.00">gin</text>
-<text text-anchor="middle" x="627.88" y="-2141.9" font-family="Times,serif" font-size="8.00">(*Engine)</text>
-<text text-anchor="middle" x="627.88" y="-2132.15" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="627.88" y="-2122.4" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
-</a>
-</g>
-</g>
-<!-- N9&#45;&gt;N32 -->
-<g id="edge16" class="edge">
-<title>N9&#45;&gt;N32</title>
-<g id="a_edge16"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M627.88,-2215.64C627.88,-2204.88 627.88,-2191.72 627.88,-2179.45"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="632.25,-2179.82 627.88,-2169.82 623.5,-2179.82 632.25,-2179.82"/>
-</a>
-</g>
-<g id="a_edge16&#45;label"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (136.33MB)">
-<text text-anchor="middle" x="659.38" y="-2184.45" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-</a>
-</g>
-</g>
-<!-- N37 -->
-<g id="node37" class="node">
-<title>N37</title>
-<g id="a_node37"><a xlink:title="net/http.(*ServeMux).ServeHTTP (1.16MB)">
-<polygon fill="#edecec" stroke="#b2b0ab" points="800.38,-2163.25 715.38,-2163.25 715.38,-2116.25 800.38,-2116.25 800.38,-2163.25"/>
-<text text-anchor="middle" x="757.88" y="-2151.65" font-family="Times,serif" font-size="8.00">http</text>
-<text text-anchor="middle" x="757.88" y="-2141.9" font-family="Times,serif" font-size="8.00">(*ServeMux)</text>
-<text text-anchor="middle" x="757.88" y="-2132.15" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="757.88" y="-2122.4" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.82%)</text>
-</a>
-</g>
-</g>
-<!-- N9&#45;&gt;N37 -->
-<g id="edge46" class="edge">
-<title>N9&#45;&gt;N37</title>
-<g id="a_edge46"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; net/http.(*ServeMux).ServeHTTP (1.16MB)">
-<path fill="none" stroke="#b2b0ab" d="M668.73,-2215.27C677.56,-2209.83 686.7,-2203.83 694.88,-2197.75 705.68,-2189.72 716.78,-2180.17 726.6,-2171.2"/>
-<polygon fill="#b2b0ab" stroke="#b2b0ab" points="728.81,-2173.93 733.76,-2164.56 724.05,-2168.8 728.81,-2173.93"/>
-</a>
-</g>
-<g id="a_edge46&#45;label"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; net/http.(*ServeMux).ServeHTTP (1.16MB)">
-<text text-anchor="middle" x="739.6" y="-2184.45" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
-</a>
-</g>
-</g>
-<!-- N10 -->
-<g id="node10" class="node">
-<title>N10</title>
-<g id="a_node10"><a xlink:title="runtime/trace.Start (2.31MB)">
-<polygon fill="#edeceb" stroke="#b2aea3" points="993,-2063.75 902.75,-2063.75 902.75,-2015.25 993,-2015.25 993,-2063.75"/>
-<text text-anchor="middle" x="947.88" y="-2049.3" font-family="Times,serif" font-size="11.00">trace</text>
-<text text-anchor="middle" x="947.88" y="-2035.8" font-family="Times,serif" font-size="11.00">Start</text>
-<text text-anchor="middle" x="947.88" y="-2022.3" font-family="Times,serif" font-size="11.00">2.31MB (1.65%)</text>
-</a>
-</g>
-</g>
-<!-- NN10_0 -->
-<g id="NN10_0" class="node">
-<title>NN10_0</title>
-<g id="a_NN10_0"><a xlink:title="2.31MB">
-<polygon fill="#f8f8f8" stroke="black" points="974.88,-1940.75 924.88,-1940.75 920.88,-1936.75 920.88,-1904.75 970.88,-1904.75 974.88,-1908.75 974.88,-1940.75"/>
-<polyline fill="none" stroke="black" points="970.88,-1936.75 920.88,-1936.75"/>
-<polyline fill="none" stroke="black" points="970.88,-1936.75 970.88,-1904.75"/>
-<polyline fill="none" stroke="black" points="970.88,-1936.75 974.88,-1940.75"/>
-<text text-anchor="middle" x="947.88" y="-1920.03" font-family="Times,serif" font-size="8.00">1MB</text>
-</a>
-</g>
-</g>
-<!-- N10&#45;&gt;NN10_0 -->
-<g id="edge5" class="edge">
-<title>N10&#45;&gt;NN10_0</title>
-<g id="a_edge5"><a xlink:title="2.31MB">
-<path fill="none" stroke="black" d="M947.88,-2015C947.88,-1996.95 947.88,-1971.93 947.88,-1952.65"/>
-<polygon fill="black" stroke="black" points="951.38,-1952.74 947.88,-1942.74 944.38,-1952.74 951.38,-1952.74"/>
-</a>
-</g>
-<g id="a_edge5&#45;label"><a xlink:title="2.31MB">
-<text text-anchor="middle" x="972.62" y="-1975.7" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
-</a>
-</g>
-</g>
-<!-- N11 -->
-<g id="node11" class="node">
-<title>N11</title>
-<g id="a_node11"><a xlink:title="runtime.main (2.86MB)">
-<polygon fill="#edecea" stroke="#b2aca0" points="990.38,-2403.62 905.38,-2403.62 905.38,-2366.38 990.38,-2366.38 990.38,-2403.62"/>
-<text text-anchor="middle" x="947.88" y="-2392.03" font-family="Times,serif" font-size="8.00">runtime</text>
-<text text-anchor="middle" x="947.88" y="-2382.28" font-family="Times,serif" font-size="8.00">main</text>
-<text text-anchor="middle" x="947.88" y="-2372.53" font-family="Times,serif" font-size="8.00">0 of 2.86MB (2.04%)</text>
-</a>
-</g>
-</g>
-<!-- N36 -->
-<g id="node36" class="node">
-<title>N36</title>
-<g id="a_node36"><a xlink:title="main.main (2.31MB)">
-<polygon fill="#edeceb" stroke="#b2aea3" points="990.38,-2257.88 905.38,-2257.88 905.38,-2220.62 990.38,-2220.62 990.38,-2257.88"/>
-<text text-anchor="middle" x="947.88" y="-2246.28" font-family="Times,serif" font-size="8.00">main</text>
-<text text-anchor="middle" x="947.88" y="-2236.53" font-family="Times,serif" font-size="8.00">main</text>
-<text text-anchor="middle" x="947.88" y="-2226.78" font-family="Times,serif" font-size="8.00">0 of 2.31MB (1.65%)</text>
-</a>
-</g>
-</g>
-<!-- N11&#45;&gt;N36 -->
-<g id="edge43" class="edge">
-<title>N11&#45;&gt;N36</title>
-<g id="a_edge43"><a xlink:title="runtime.main &#45;&gt; main.main (2.31MB)">
-<path fill="none" stroke="#b2aea3" d="M947.88,-2366.08C947.88,-2341.85 947.88,-2298.33 947.88,-2269.36"/>
-<polygon fill="#b2aea3" stroke="#b2aea3" points="951.38,-2269.45 947.88,-2259.45 944.38,-2269.45 951.38,-2269.45"/>
-</a>
-</g>
-<g id="a_edge43&#45;label"><a xlink:title="runtime.main &#45;&gt; main.main (2.31MB)">
-<text text-anchor="middle" x="972.62" y="-2283.95" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
-</a>
-</g>
-</g>
-<!-- N12 -->
-<g id="node12" class="node">
-<title>N12</title>
-<g id="a_node12"><a xlink:title="runtime/pprof.StartCPUProfile (1.16MB)">
-<polygon fill="#edecec" stroke="#b2b0ab" points="928,-1827.62 843.75,-1827.62 843.75,-1785.88 928,-1785.88 928,-1827.62"/>
-<text text-anchor="middle" x="885.88" y="-1814.12" font-family="Times,serif" font-size="10.00">pprof</text>
-<text text-anchor="middle" x="885.88" y="-1802.88" font-family="Times,serif" font-size="10.00">StartCPUProfile</text>
-<text text-anchor="middle" x="885.88" y="-1791.62" font-family="Times,serif" font-size="10.00">1.16MB (0.82%)</text>
-</a>
-</g>
-</g>
-<!-- NN12_0 -->
-<g id="NN12_0" class="node">
-<title>NN12_0</title>
-<g id="a_NN12_0"><a xlink:title="1.16MB">
-<polygon fill="#f8f8f8" stroke="black" points="912.88,-1730.12 862.88,-1730.12 858.88,-1726.12 858.88,-1694.12 908.88,-1694.12 912.88,-1698.12 912.88,-1730.12"/>
-<polyline fill="none" stroke="black" points="908.88,-1726.12 858.88,-1726.12"/>
-<polyline fill="none" stroke="black" points="908.88,-1726.12 908.88,-1694.12"/>
-<polyline fill="none" stroke="black" points="908.88,-1726.12 912.88,-1730.12"/>
-<text text-anchor="middle" x="885.88" y="-1709.4" font-family="Times,serif" font-size="8.00">1MB</text>
-</a>
-</g>
-</g>
-<!-- N12&#45;&gt;NN12_0 -->
-<g id="edge6" class="edge">
-<title>N12&#45;&gt;NN12_0</title>
-<g id="a_edge6"><a xlink:title="1.16MB">
-<path fill="none" stroke="black" d="M885.88,-1785.65C885.88,-1772.77 885.88,-1755.84 885.88,-1741.58"/>
-<polygon fill="black" stroke="black" points="889.38,-1741.9 885.88,-1731.9 882.38,-1741.9 889.38,-1741.9"/>
-</a>
-</g>
-<g id="a_edge6&#45;label"><a xlink:title="1.16MB">
-<text text-anchor="middle" x="910.62" y="-1751.95" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
-</a>
-</g>
-</g>
-<!-- N28 -->
-<g id="node28" class="node">
-<title>N28</title>
-<g id="a_node28"><a xlink:title="github.com/dgraph&#45;io/badger.(*DB).View (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="128.12,-1415 35.62,-1415 35.62,-1368 128.12,-1368 128.12,-1415"/>
-<text text-anchor="middle" x="81.88" y="-1403.4" font-family="Times,serif" font-size="8.00">badger</text>
-<text text-anchor="middle" x="81.88" y="-1393.65" font-family="Times,serif" font-size="8.00">(*DB)</text>
-<text text-anchor="middle" x="81.88" y="-1383.9" font-family="Times,serif" font-size="8.00">View</text>
-<text text-anchor="middle" x="81.88" y="-1374.15" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N13&#45;&gt;N28 -->
-<g id="edge26" class="edge">
-<title>N13&#45;&gt;N28</title>
-<g id="a_edge26"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next &#45;&gt; github.com/dgraph&#45;io/badger.(*DB).View (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M94.68,-1483.7C92.38,-1467.32 89.24,-1444.94 86.64,-1426.46"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="90.14,-1426.17 85.28,-1416.75 83.2,-1427.14 90.14,-1426.17"/>
-</a>
-</g>
-<g id="a_edge26&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next &#45;&gt; github.com/dgraph&#45;io/badger.(*DB).View (15.64MB)">
-<text text-anchor="middle" x="119.9" y="-1444.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N14 -->
-<g id="node14" class="node">
-<title>N14</title>
-<g id="a_node14"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1 (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="116.12,-1282.88 23.62,-1282.88 23.62,-1226.12 116.12,-1226.12 116.12,-1282.88"/>
-<text text-anchor="middle" x="69.88" y="-1271.28" font-family="Times,serif" font-size="8.00">blockchain</text>
-<text text-anchor="middle" x="69.88" y="-1261.53" font-family="Times,serif" font-size="8.00">(*BlockChainIterator)</text>
-<text text-anchor="middle" x="69.88" y="-1251.78" font-family="Times,serif" font-size="8.00">Next</text>
-<text text-anchor="middle" x="69.88" y="-1242.03" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="69.88" y="-1232.28" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N29 -->
-<g id="node29" class="node">
-<title>N29</title>
-<g id="a_node29"><a xlink:title="github.com/dgraph&#45;io/badger.(*Item).Value (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-1145.5 20.62,-1145.5 20.62,-1098.5 113.12,-1098.5 113.12,-1145.5"/>
-<text text-anchor="middle" x="66.88" y="-1133.9" font-family="Times,serif" font-size="8.00">badger</text>
-<text text-anchor="middle" x="66.88" y="-1124.15" font-family="Times,serif" font-size="8.00">(*Item)</text>
-<text text-anchor="middle" x="66.88" y="-1114.4" font-family="Times,serif" font-size="8.00">Value</text>
-<text text-anchor="middle" x="66.88" y="-1104.65" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N14&#45;&gt;N29 -->
-<g id="edge27" class="edge">
-<title>N14&#45;&gt;N29</title>
-<g id="a_edge27"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1 &#45;&gt; github.com/dgraph&#45;io/badger.(*Item).Value (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M69.24,-1225.82C68.78,-1205.84 68.16,-1178.73 67.66,-1157.36"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="71.16,-1157.28 67.44,-1147.37 64.17,-1157.44 71.16,-1157.28"/>
-</a>
-</g>
-<g id="a_edge27&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1 &#45;&gt; github.com/dgraph&#45;io/badger.(*Item).Value (15.64MB)">
-<text text-anchor="middle" x="96.5" y="-1178.7" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N15 -->
-<g id="node15" class="node">
-<title>N15</title>
-<g id="a_node15"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1.1 (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-1034 20.62,-1034 20.62,-967.5 113.12,-967.5 113.12,-1034"/>
-<text text-anchor="middle" x="66.88" y="-1022.4" font-family="Times,serif" font-size="8.00">blockchain</text>
-<text text-anchor="middle" x="66.88" y="-1012.65" font-family="Times,serif" font-size="8.00">(*BlockChainIterator)</text>
-<text text-anchor="middle" x="66.88" y="-1002.9" font-family="Times,serif" font-size="8.00">Next</text>
-<text text-anchor="middle" x="66.88" y="-993.15" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="66.88" y="-983.4" font-family="Times,serif" font-size="8.00">1</text>
-<text text-anchor="middle" x="66.88" y="-973.65" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N16 -->
-<g id="node16" class="node">
-<title>N16</title>
-<g id="a_node16"><a xlink:title="blockchain&#45;back/blockchain.Deserialize (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-915 20.62,-915 20.62,-877.75 113.12,-877.75 113.12,-915"/>
-<text text-anchor="middle" x="66.88" y="-903.4" font-family="Times,serif" font-size="8.00">blockchain</text>
-<text text-anchor="middle" x="66.88" y="-893.65" font-family="Times,serif" font-size="8.00">Deserialize</text>
-<text text-anchor="middle" x="66.88" y="-883.9" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N15&#45;&gt;N16 -->
-<g id="edge28" class="edge">
-<title>N15&#45;&gt;N16</title>
-<g id="a_edge28"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1.1 &#45;&gt; blockchain&#45;back/blockchain.Deserialize (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-967.08C66.88,-954.13 66.88,-939.35 66.88,-926.75"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-926.97 66.88,-916.97 63.38,-926.97 70.38,-926.97"/>
-</a>
-</g>
-<g id="a_edge28&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1.1 &#45;&gt; blockchain&#45;back/blockchain.Deserialize (15.64MB)">
-<text text-anchor="middle" x="95" y="-936.2" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N22 -->
-<g id="node22" class="node">
-<title>N22</title>
-<g id="a_node22"><a xlink:title="encoding/gob.(*Decoder).Decode (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-825.25 20.62,-825.25 20.62,-778.25 113.12,-778.25 113.12,-825.25"/>
-<text text-anchor="middle" x="66.88" y="-813.65" font-family="Times,serif" font-size="8.00">gob</text>
-<text text-anchor="middle" x="66.88" y="-803.9" font-family="Times,serif" font-size="8.00">(*Decoder)</text>
-<text text-anchor="middle" x="66.88" y="-794.15" font-family="Times,serif" font-size="8.00">Decode</text>
-<text text-anchor="middle" x="66.88" y="-784.4" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N16&#45;&gt;N22 -->
-<g id="edge29" class="edge">
-<title>N16&#45;&gt;N22</title>
-<g id="a_edge29"><a xlink:title="blockchain&#45;back/blockchain.Deserialize &#45;&gt; encoding/gob.(*Decoder).Decode (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-877.52C66.88,-865.93 66.88,-850.48 66.88,-836.62"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-837 66.88,-827 63.38,-837 70.38,-837"/>
-</a>
-</g>
-<g id="a_edge29&#45;label"><a xlink:title="blockchain&#45;back/blockchain.Deserialize &#45;&gt; encoding/gob.(*Decoder).Decode (15.64MB)">
-<text text-anchor="middle" x="95" y="-846.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N30 -->
-<g id="node30" class="node">
-<title>N30</title>
-<g id="a_node30"><a xlink:title="github.com/dgraph&#45;io/badger.Open (83.71MB)">
-<polygon fill="#edd8d5" stroke="#b21900" points="502.12,-1526.12 409.62,-1526.12 409.62,-1488.88 502.12,-1488.88 502.12,-1526.12"/>
-<text text-anchor="middle" x="455.88" y="-1514.53" font-family="Times,serif" font-size="8.00">badger</text>
-<text text-anchor="middle" x="455.88" y="-1504.78" font-family="Times,serif" font-size="8.00">Open</text>
-<text text-anchor="middle" x="455.88" y="-1495.03" font-family="Times,serif" font-size="8.00">0 of 83.71MB (59.65%)</text>
-</a>
-</g>
-</g>
-<!-- N17&#45;&gt;N30 -->
-<g id="edge17" class="edge">
-<title>N17&#45;&gt;N30</title>
-<g id="a_edge17"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest &#45;&gt; github.com/dgraph&#45;io/badger.Open (83.71MB)">
-<path fill="none" stroke="#b21900" stroke-width="3" d="M455.88,-1593.35C455.88,-1578.93 455.88,-1558.27 455.88,-1540.95"/>
-<polygon fill="#b21900" stroke="#b21900" stroke-width="3" points="459.38,-1541.08 455.88,-1531.08 452.38,-1541.08 459.38,-1541.08"/>
-</a>
-</g>
-<g id="a_edge17&#45;label"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest &#45;&gt; github.com/dgraph&#45;io/badger.Open (83.71MB)">
-<text text-anchor="middle" x="484" y="-1552.2" font-family="Times,serif" font-size="14.00"> 83.71MB</text>
-</a>
-</g>
-</g>
-<!-- N18 -->
-<g id="node18" class="node">
-<title>N18</title>
-<g id="a_node18"><a xlink:title="blockchain&#45;back/server.Gin (2.31MB)">
-<polygon fill="#edeceb" stroke="#b2aea3" points="990.38,-2158.38 905.38,-2158.38 905.38,-2121.12 990.38,-2121.12 990.38,-2158.38"/>
-<text text-anchor="middle" x="947.88" y="-2146.78" font-family="Times,serif" font-size="8.00">server</text>
-<text text-anchor="middle" x="947.88" y="-2137.03" font-family="Times,serif" font-size="8.00">Gin</text>
-<text text-anchor="middle" x="947.88" y="-2127.28" font-family="Times,serif" font-size="8.00">0 of 2.31MB (1.65%)</text>
-</a>
-</g>
-</g>
-<!-- N18&#45;&gt;N10 -->
-<g id="edge41" class="edge">
-<title>N18&#45;&gt;N10</title>
-<g id="a_edge41"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.31MB)">
-<path fill="none" stroke="#b2aea3" d="M947.88,-2120.73C947.88,-2108.02 947.88,-2090.58 947.88,-2075.21"/>
-<polygon fill="#b2aea3" stroke="#b2aea3" points="951.38,-2075.48 947.88,-2065.48 944.38,-2075.48 951.38,-2075.48"/>
-</a>
-</g>
-<g id="a_edge41&#45;label"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.31MB)">
-<text text-anchor="middle" x="972.62" y="-2084.95" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
-</a>
-</g>
-</g>
-<!-- N19&#45;&gt;N2 -->
-<g id="edge8" class="edge">
-<title>N19&#45;&gt;N2</title>
-<g id="a_edge8"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M455.88,-1782.85C455.88,-1772.13 455.88,-1759.13 455.88,-1747.27"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="460.25,-1747.36 455.88,-1737.36 451.5,-1747.36 460.25,-1747.36"/>
-</a>
-</g>
-<g id="a_edge8&#45;label"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (136.33MB)">
-<text text-anchor="middle" x="487.38" y="-1751.95" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-</a>
-</g>
-</g>
-<!-- N20 -->
-<g id="node20" class="node">
-<title>N20</title>
-<g id="a_node20"><a xlink:title="bytes.(*Buffer).Grow (26.89MB)">
-<polygon fill="#eddfd6" stroke="#b24a07" points="255.12,-1415 162.62,-1415 162.62,-1368 255.12,-1368 255.12,-1415"/>
-<text text-anchor="middle" x="208.88" y="-1403.4" font-family="Times,serif" font-size="8.00">bytes</text>
-<text text-anchor="middle" x="208.88" y="-1393.65" font-family="Times,serif" font-size="8.00">(*Buffer)</text>
-<text text-anchor="middle" x="208.88" y="-1383.9" font-family="Times,serif" font-size="8.00">Grow</text>
-<text text-anchor="middle" x="208.88" y="-1374.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (19.16%)</text>
+<text text-anchor="middle" x="169.12" y="-529.45" font-family="Times,serif" font-size="14.00"> 10.09MB</text>
 </a>
 </g>
 </g>
 <!-- N21 -->
 <g id="node21" class="node">
 <title>N21</title>
-<g id="a_node21"><a xlink:title="bytes.(*Buffer).grow (26.89MB)">
-<polygon fill="#eddfd6" stroke="#b24a07" points="255.12,-1278 162.62,-1278 162.62,-1231 255.12,-1231 255.12,-1278"/>
-<text text-anchor="middle" x="208.88" y="-1266.4" font-family="Times,serif" font-size="8.00">bytes</text>
-<text text-anchor="middle" x="208.88" y="-1256.65" font-family="Times,serif" font-size="8.00">(*Buffer)</text>
-<text text-anchor="middle" x="208.88" y="-1246.9" font-family="Times,serif" font-size="8.00">grow</text>
-<text text-anchor="middle" x="208.88" y="-1237.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (19.16%)</text>
+<g id="a_node21"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-1140.5 499.88,-1140.5 499.88,-1093.5 596.12,-1093.5 596.12,-1140.5"/>
+<text text-anchor="middle" x="548" y="-1128.9" font-family="Times,serif" font-size="8.00">gin</text>
+<text text-anchor="middle" x="548" y="-1119.15" font-family="Times,serif" font-size="8.00">(*Engine)</text>
+<text text-anchor="middle" x="548" y="-1109.4" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
+<text text-anchor="middle" x="548" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
 </a>
 </g>
 </g>
-<!-- N20&#45;&gt;N21 -->
-<g id="edge23" class="edge">
-<title>N20&#45;&gt;N21</title>
-<g id="a_edge23"><a xlink:title="bytes.(*Buffer).Grow &#45;&gt; bytes.(*Buffer).grow (26.89MB)">
-<path fill="none" stroke="#b24a07" d="M208.88,-1367.6C208.88,-1346.14 208.88,-1313.78 208.88,-1289.34"/>
-<polygon fill="#b24a07" stroke="#b24a07" points="212.38,-1289.58 208.88,-1279.58 205.38,-1289.58 212.38,-1289.58"/>
+<!-- N9&#45;&gt;N21 -->
+<g id="edge16" class="edge">
+<title>N9&#45;&gt;N21</title>
+<g id="a_edge16"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-1192.89C548,-1182.13 548,-1168.97 548,-1156.7"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-1157.07 548,-1147.07 543.63,-1157.07 552.38,-1157.07"/>
 </a>
 </g>
-<g id="a_edge23&#45;label"><a xlink:title="bytes.(*Buffer).Grow &#45;&gt; bytes.(*Buffer).grow (26.89MB)">
-<text text-anchor="middle" x="237" y="-1328.45" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
-</a>
-</g>
-</g>
-<!-- N21&#45;&gt;N5 -->
-<g id="edge24" class="edge">
-<title>N21&#45;&gt;N5</title>
-<g id="a_edge24"><a xlink:title="bytes.(*Buffer).grow &#45;&gt; bytes.growSlice (26.89MB)">
-<path fill="none" stroke="#b24a07" d="M208.88,-1230.77C208.88,-1213.82 208.88,-1190.1 208.88,-1169.23"/>
-<polygon fill="#b24a07" stroke="#b24a07" points="212.38,-1169.5 208.88,-1159.5 205.38,-1169.5 212.38,-1169.5"/>
-</a>
-</g>
-<g id="a_edge24&#45;label"><a xlink:title="bytes.(*Buffer).grow &#45;&gt; bytes.growSlice (26.89MB)">
-<text text-anchor="middle" x="237" y="-1178.7" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
-</a>
-</g>
-</g>
-<!-- N23 -->
-<g id="node23" class="node">
-<title>N23</title>
-<g id="a_node23"><a xlink:title="encoding/gob.(*Decoder).DecodeValue (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-725.75 20.62,-725.75 20.62,-678.75 113.12,-678.75 113.12,-725.75"/>
-<text text-anchor="middle" x="66.88" y="-714.15" font-family="Times,serif" font-size="8.00">gob</text>
-<text text-anchor="middle" x="66.88" y="-704.4" font-family="Times,serif" font-size="8.00">(*Decoder)</text>
-<text text-anchor="middle" x="66.88" y="-694.65" font-family="Times,serif" font-size="8.00">DecodeValue</text>
-<text text-anchor="middle" x="66.88" y="-684.9" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N22&#45;&gt;N23 -->
-<g id="edge31" class="edge">
-<title>N22&#45;&gt;N23</title>
-<g id="a_edge31"><a xlink:title="encoding/gob.(*Decoder).Decode &#45;&gt; encoding/gob.(*Decoder).DecodeValue (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-778.14C66.88,-766.04 66.88,-750.9 66.88,-737.4"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-737.59 66.88,-727.59 63.38,-737.59 70.38,-737.59"/>
-</a>
-</g>
-<g id="a_edge31&#45;label"><a xlink:title="encoding/gob.(*Decoder).Decode &#45;&gt; encoding/gob.(*Decoder).DecodeValue (15.64MB)">
-<text text-anchor="middle" x="95" y="-746.95" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N25 -->
-<g id="node25" class="node">
-<title>N25</title>
-<g id="a_node25"><a xlink:title="encoding/gob.(*Decoder).decodeValue (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-626.25 20.62,-626.25 20.62,-579.25 113.12,-579.25 113.12,-626.25"/>
-<text text-anchor="middle" x="66.88" y="-614.65" font-family="Times,serif" font-size="8.00">gob</text>
-<text text-anchor="middle" x="66.88" y="-604.9" font-family="Times,serif" font-size="8.00">(*Decoder)</text>
-<text text-anchor="middle" x="66.88" y="-595.15" font-family="Times,serif" font-size="8.00">decodeValue</text>
-<text text-anchor="middle" x="66.88" y="-585.4" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
-</a>
-</g>
-</g>
-<!-- N23&#45;&gt;N25 -->
-<g id="edge32" class="edge">
-<title>N23&#45;&gt;N25</title>
-<g id="a_edge32"><a xlink:title="encoding/gob.(*Decoder).DecodeValue &#45;&gt; encoding/gob.(*Decoder).decodeValue (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-678.64C66.88,-666.54 66.88,-651.4 66.88,-637.9"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-638.09 66.88,-628.09 63.38,-638.09 70.38,-638.09"/>
-</a>
-</g>
-<g id="a_edge32&#45;label"><a xlink:title="encoding/gob.(*Decoder).DecodeValue &#45;&gt; encoding/gob.(*Decoder).decodeValue (15.64MB)">
-<text text-anchor="middle" x="95" y="-647.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N24 -->
-<g id="node24" class="node">
-<title>N24</title>
-<g id="a_node24"><a xlink:title="encoding/gob.(*Decoder).decodeStruct (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-526.75 20.62,-526.75 20.62,-479.75 113.12,-479.75 113.12,-526.75"/>
-<text text-anchor="middle" x="66.88" y="-515.15" font-family="Times,serif" font-size="8.00">gob</text>
-<text text-anchor="middle" x="66.88" y="-505.4" font-family="Times,serif" font-size="8.00">(*Decoder)</text>
-<text text-anchor="middle" x="66.88" y="-495.65" font-family="Times,serif" font-size="8.00">decodeStruct</text>
-<text text-anchor="middle" x="66.88" y="-485.9" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
+<g id="a_edge16&#45;label"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
+<text text-anchor="middle" x="579.5" y="-1161.7" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
 </a>
 </g>
 </g>
 <!-- N26 -->
 <g id="node26" class="node">
 <title>N26</title>
-<g id="a_node26"><a xlink:title="encoding/gob.decUint8Slice (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-427.25 20.62,-427.25 20.62,-390 113.12,-390 113.12,-427.25"/>
-<text text-anchor="middle" x="66.88" y="-415.65" font-family="Times,serif" font-size="8.00">gob</text>
-<text text-anchor="middle" x="66.88" y="-405.9" font-family="Times,serif" font-size="8.00">decUint8Slice</text>
-<text text-anchor="middle" x="66.88" y="-396.15" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
+<g id="a_node26"><a xlink:title="net/http.(*ServeMux).ServeHTTP (1.16MB)">
+<polygon fill="#edecec" stroke="#b2b0aa" points="716.5,-1140.5 631.5,-1140.5 631.5,-1093.5 716.5,-1093.5 716.5,-1140.5"/>
+<text text-anchor="middle" x="674" y="-1128.9" font-family="Times,serif" font-size="8.00">http</text>
+<text text-anchor="middle" x="674" y="-1119.15" font-family="Times,serif" font-size="8.00">(*ServeMux)</text>
+<text text-anchor="middle" x="674" y="-1109.4" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
+<text text-anchor="middle" x="674" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.94%)</text>
 </a>
 </g>
 </g>
-<!-- N24&#45;&gt;N26 -->
+<!-- N9&#45;&gt;N26 -->
 <g id="edge33" class="edge">
-<title>N24&#45;&gt;N26</title>
-<g id="a_edge33"><a xlink:title="encoding/gob.(*Decoder).decodeStruct &#45;&gt; encoding/gob.decUint8Slice (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-479.35C66.88,-467.13 66.88,-451.96 66.88,-438.89"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-439.13 66.88,-429.13 63.38,-439.13 70.38,-439.13"/>
+<title>N9&#45;&gt;N26</title>
+<g id="a_edge33"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; net/http.(*ServeMux).ServeHTTP (1.16MB)">
+<path fill="none" stroke="#b2b0aa" d="M589,-1192.72C597.83,-1187.27 606.92,-1181.22 615,-1175 625.2,-1167.15 635.54,-1157.74 644.67,-1148.86"/>
+<polygon fill="#b2b0aa" stroke="#b2b0aa" points="646.97,-1151.5 651.59,-1141.97 642.03,-1146.54 646.97,-1151.5"/>
 </a>
 </g>
-<g id="a_edge33&#45;label"><a xlink:title="encoding/gob.(*Decoder).decodeStruct &#45;&gt; encoding/gob.decUint8Slice (15.64MB)">
-<text text-anchor="middle" x="95" y="-448.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N25&#45;&gt;N24 -->
-<g id="edge34" class="edge">
-<title>N25&#45;&gt;N24</title>
-<g id="a_edge34"><a xlink:title="encoding/gob.(*Decoder).decodeValue &#45;&gt; encoding/gob.(*Decoder).decodeStruct (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-579.14C66.88,-567.04 66.88,-551.9 66.88,-538.4"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-538.59 66.88,-528.59 63.38,-538.59 70.38,-538.59"/>
-</a>
-</g>
-<g id="a_edge34&#45;label"><a xlink:title="encoding/gob.(*Decoder).decodeValue &#45;&gt; encoding/gob.(*Decoder).decodeStruct (15.64MB)">
-<text text-anchor="middle" x="95" y="-547.95" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
+<g id="a_edge33&#45;label"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; net/http.(*ServeMux).ServeHTTP (1.16MB)">
+<text text-anchor="middle" x="658.66" y="-1161.7" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
 </a>
 </g>
 </g>
-<!-- N40 -->
-<g id="node40" class="node">
-<title>N40</title>
-<g id="a_node40"><a xlink:title="reflect.Value.Grow (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-337.5 20.62,-337.5 20.62,-290.5 113.12,-290.5 113.12,-337.5"/>
-<text text-anchor="middle" x="66.88" y="-325.9" font-family="Times,serif" font-size="8.00">reflect</text>
-<text text-anchor="middle" x="66.88" y="-316.15" font-family="Times,serif" font-size="8.00">Value</text>
-<text text-anchor="middle" x="66.88" y="-306.4" font-family="Times,serif" font-size="8.00">Grow</text>
-<text text-anchor="middle" x="66.88" y="-296.65" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
+<!-- N10 -->
+<g id="node10" class="node">
+<title>N10</title>
+<g id="a_node10"><a xlink:title="runtime/trace.Start (1.72MB)">
+<polygon fill="#edeceb" stroke="#b2afa6" points="939.12,-1041 848.88,-1041 848.88,-992.5 939.12,-992.5 939.12,-1041"/>
+<text text-anchor="middle" x="894" y="-1026.55" font-family="Times,serif" font-size="11.00">trace</text>
+<text text-anchor="middle" x="894" y="-1013.05" font-family="Times,serif" font-size="11.00">Start</text>
+<text text-anchor="middle" x="894" y="-999.55" font-family="Times,serif" font-size="11.00">1.72MB (1.39%)</text>
 </a>
 </g>
 </g>
-<!-- N26&#45;&gt;N40 -->
-<g id="edge35" class="edge">
-<title>N26&#45;&gt;N40</title>
-<g id="a_edge35"><a xlink:title="encoding/gob.decUint8Slice &#45;&gt; reflect.Value.Grow (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-389.77C66.88,-378.18 66.88,-362.73 66.88,-348.87"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-349.25 66.88,-339.25 63.38,-349.25 70.38,-349.25"/>
-</a>
-</g>
-<g id="a_edge35&#45;label"><a xlink:title="encoding/gob.decUint8Slice &#45;&gt; reflect.Value.Grow (15.64MB)">
-<text text-anchor="middle" x="95" y="-358.7" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N27&#45;&gt;N20 -->
-<g id="edge25" class="edge">
-<title>N27&#45;&gt;N20</title>
-<g id="a_edge25"><a xlink:title="encoding/json.Indent &#45;&gt; bytes.(*Buffer).Grow (26.89MB)">
-<path fill="none" stroke="#b24a07" d="M208.88,-1488.44C208.88,-1471.85 208.88,-1446.84 208.88,-1426.52"/>
-<polygon fill="#b24a07" stroke="#b24a07" points="212.38,-1426.7 208.88,-1416.7 205.38,-1426.7 212.38,-1426.7"/>
-</a>
-</g>
-<g id="a_edge25&#45;label"><a xlink:title="encoding/json.Indent &#45;&gt; bytes.(*Buffer).Grow (26.89MB)">
-<text text-anchor="middle" x="237" y="-1452.7" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
-<text text-anchor="middle" x="237" y="-1436.2" font-family="Times,serif" font-size="14.00"> (inline)</text>
+<!-- NN10_0 -->
+<g id="NN10_0" class="node">
+<title>NN10_0</title>
+<g id="a_NN10_0"><a xlink:title="1.16MB">
+<polygon fill="#f8f8f8" stroke="black" points="921,-918 871,-918 867,-914 867,-882 917,-882 921,-886 921,-918"/>
+<polyline fill="none" stroke="black" points="917,-914 867,-914"/>
+<polyline fill="none" stroke="black" points="917,-914 917,-882"/>
+<polyline fill="none" stroke="black" points="917,-914 921,-918"/>
+<text text-anchor="middle" x="894" y="-897.27" font-family="Times,serif" font-size="8.00">1MB</text>
 </a>
 </g>
 </g>
-<!-- N28&#45;&gt;N14 -->
-<g id="edge36" class="edge">
-<title>N28&#45;&gt;N14</title>
-<g id="a_edge36"><a xlink:title="github.com/dgraph&#45;io/badger.(*DB).View &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1 (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M79.84,-1367.6C78.07,-1347.65 75.46,-1318.29 73.35,-1294.62"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="76.84,-1294.35 72.47,-1284.7 69.87,-1294.97 76.84,-1294.35"/>
+<!-- N10&#45;&gt;NN10_0 -->
+<g id="edge5" class="edge">
+<title>N10&#45;&gt;NN10_0</title>
+<g id="a_edge5"><a xlink:title="1.16MB">
+<path fill="none" stroke="black" d="M894,-992.25C894,-974.2 894,-949.18 894,-929.9"/>
+<polygon fill="black" stroke="black" points="897.5,-929.99 894,-919.99 890.5,-929.99 897.5,-929.99"/>
 </a>
 </g>
-<g id="a_edge36&#45;label"><a xlink:title="github.com/dgraph&#45;io/badger.(*DB).View &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1 (15.64MB)">
-<text text-anchor="middle" x="106.12" y="-1328.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
-</a>
-</g>
-</g>
-<!-- N29&#45;&gt;N15 -->
-<g id="edge37" class="edge">
-<title>N29&#45;&gt;N15</title>
-<g id="a_edge37"><a xlink:title="github.com/dgraph&#45;io/badger.(*Item).Value &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1.1 (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-1098.01C66.88,-1083.13 66.88,-1063.28 66.88,-1045.47"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-1045.65 66.88,-1035.65 63.38,-1045.65 70.38,-1045.65"/>
-</a>
-</g>
-<g id="a_edge37&#45;label"><a xlink:title="github.com/dgraph&#45;io/badger.(*Item).Value &#45;&gt; blockchain&#45;back/blockchain.(*BlockChainIterator).Next.func1.1 (15.64MB)">
-<text text-anchor="middle" x="95" y="-1055.2" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
+<g id="a_edge5&#45;label"><a xlink:title="1.16MB">
+<text text-anchor="middle" x="918.75" y="-952.95" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
 </a>
 </g>
 </g>
-<!-- N31 -->
-<g id="node31" class="node">
-<title>N31</title>
-<g id="a_node31"><a xlink:title="github.com/dgraph&#45;io/badger/skl.NewSkiplist (83.20MB)">
-<polygon fill="#edd8d5" stroke="#b21900" points="502.12,-1410.12 409.62,-1410.12 409.62,-1372.88 502.12,-1372.88 502.12,-1410.12"/>
-<text text-anchor="middle" x="455.88" y="-1398.53" font-family="Times,serif" font-size="8.00">skl</text>
-<text text-anchor="middle" x="455.88" y="-1388.78" font-family="Times,serif" font-size="8.00">NewSkiplist</text>
-<text text-anchor="middle" x="455.88" y="-1379.03" font-family="Times,serif" font-size="8.00">0 of 83.20MB (59.28%)</text>
+<!-- N11 -->
+<g id="node11" class="node">
+<title>N11</title>
+<g id="a_node11"><a xlink:title="runtime/pprof.StartCPUProfile (1.16MB)">
+<polygon fill="#edecec" stroke="#b2b0aa" points="848.12,-804.88 763.88,-804.88 763.88,-763.12 848.12,-763.12 848.12,-804.88"/>
+<text text-anchor="middle" x="806" y="-791.38" font-family="Times,serif" font-size="10.00">pprof</text>
+<text text-anchor="middle" x="806" y="-780.12" font-family="Times,serif" font-size="10.00">StartCPUProfile</text>
+<text text-anchor="middle" x="806" y="-768.88" font-family="Times,serif" font-size="10.00">1.16MB (0.94%)</text>
 </a>
 </g>
 </g>
-<!-- N30&#45;&gt;N31 -->
+<!-- NN11_0 -->
+<g id="NN11_0" class="node">
+<title>NN11_0</title>
+<g id="a_NN11_0"><a xlink:title="1.16MB">
+<polygon fill="#f8f8f8" stroke="black" points="833,-707.38 783,-707.38 779,-703.38 779,-671.38 829,-671.38 833,-675.38 833,-707.38"/>
+<polyline fill="none" stroke="black" points="829,-703.38 779,-703.38"/>
+<polyline fill="none" stroke="black" points="829,-703.38 829,-671.38"/>
+<polyline fill="none" stroke="black" points="829,-703.38 833,-707.38"/>
+<text text-anchor="middle" x="806" y="-686.65" font-family="Times,serif" font-size="8.00">1MB</text>
+</a>
+</g>
+</g>
+<!-- N11&#45;&gt;NN11_0 -->
+<g id="edge6" class="edge">
+<title>N11&#45;&gt;NN11_0</title>
+<g id="a_edge6"><a xlink:title="1.16MB">
+<path fill="none" stroke="black" d="M806,-762.9C806,-750.02 806,-733.09 806,-718.83"/>
+<polygon fill="black" stroke="black" points="809.5,-719.15 806,-709.15 802.5,-719.15 809.5,-719.15"/>
+</a>
+</g>
+<g id="a_edge6&#45;label"><a xlink:title="1.16MB">
+<text text-anchor="middle" x="830.75" y="-729.2" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
+</a>
+</g>
+</g>
+<!-- N12 -->
+<g id="node12" class="node">
+<title>N12</title>
+<g id="a_node12"><a xlink:title="runtime.main (2.27MB)">
+<polygon fill="#edecea" stroke="#b2ada2" points="936.5,-1380.88 851.5,-1380.88 851.5,-1343.62 936.5,-1343.62 936.5,-1380.88"/>
+<text text-anchor="middle" x="894" y="-1369.28" font-family="Times,serif" font-size="8.00">runtime</text>
+<text text-anchor="middle" x="894" y="-1359.53" font-family="Times,serif" font-size="8.00">main</text>
+<text text-anchor="middle" x="894" y="-1349.78" font-family="Times,serif" font-size="8.00">0 of 2.27MB (1.84%)</text>
+</a>
+</g>
+</g>
+<!-- N25 -->
+<g id="node25" class="node">
+<title>N25</title>
+<g id="a_node25"><a xlink:title="main.main (1.72MB)">
+<polygon fill="#edeceb" stroke="#b2afa6" points="936.5,-1235.12 851.5,-1235.12 851.5,-1197.88 936.5,-1197.88 936.5,-1235.12"/>
+<text text-anchor="middle" x="894" y="-1223.53" font-family="Times,serif" font-size="8.00">main</text>
+<text text-anchor="middle" x="894" y="-1213.78" font-family="Times,serif" font-size="8.00">main</text>
+<text text-anchor="middle" x="894" y="-1204.03" font-family="Times,serif" font-size="8.00">0 of 1.72MB (1.39%)</text>
+</a>
+</g>
+</g>
+<!-- N12&#45;&gt;N25 -->
+<g id="edge30" class="edge">
+<title>N12&#45;&gt;N25</title>
+<g id="a_edge30"><a xlink:title="runtime.main &#45;&gt; main.main (1.72MB)">
+<path fill="none" stroke="#b2afa6" d="M894,-1343.33C894,-1319.1 894,-1275.58 894,-1246.61"/>
+<polygon fill="#b2afa6" stroke="#b2afa6" points="897.5,-1246.7 894,-1236.7 890.5,-1246.7 897.5,-1246.7"/>
+</a>
+</g>
+<g id="a_edge30&#45;label"><a xlink:title="runtime.main &#45;&gt; main.main (1.72MB)">
+<text text-anchor="middle" x="918.75" y="-1261.2" font-family="Times,serif" font-size="14.00"> 1.72MB</text>
+</a>
+</g>
+</g>
+<!-- N13&#45;&gt;N5 -->
+<g id="edge21" class="edge">
+<title>N13&#45;&gt;N5</title>
+<g id="a_edge21"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
+<path fill="none" stroke="#b24100" stroke-width="2" d="M263.07,-565.8C262.53,-552.62 261.85,-535.83 261.26,-521.47"/>
+<polygon fill="#b24100" stroke="#b24100" stroke-width="2" points="264.77,-521.51 260.86,-511.66 257.77,-521.79 264.77,-521.51"/>
+</a>
+</g>
+<g id="a_edge21&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
+<text text-anchor="middle" x="290.24" y="-529.45" font-family="Times,serif" font-size="14.00"> 26.89MB</text>
+</a>
+</g>
+</g>
+<!-- N14 -->
+<g id="node14" class="node">
+<title>N14</title>
+<g id="a_node14"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).InitData (13.45MB)">
+<polygon fill="#ede6e0" stroke="#b28051" points="256.25,-268.75 163.75,-268.75 163.75,-221.75 256.25,-221.75 256.25,-268.75"/>
+<text text-anchor="middle" x="210" y="-257.15" font-family="Times,serif" font-size="8.00">blockchain</text>
+<text text-anchor="middle" x="210" y="-247.4" font-family="Times,serif" font-size="8.00">(*ProofOfWork)</text>
+<text text-anchor="middle" x="210" y="-237.65" font-family="Times,serif" font-size="8.00">InitData</text>
+<text text-anchor="middle" x="210" y="-227.9" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.88%)</text>
+</a>
+</g>
+</g>
+<!-- N14&#45;&gt;N6 -->
+<g id="edge23" class="edge">
+<title>N14&#45;&gt;N6</title>
+<g id="a_edge23"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).InitData &#45;&gt; bytes.Join (13.45MB)">
+<path fill="none" stroke="#b28051" d="M210,-221.35C210,-204.28 210,-180.51 210,-160.22"/>
+<polygon fill="#b28051" stroke="#b28051" points="213.5,-160.26 210,-150.26 206.5,-160.26 213.5,-160.26"/>
+</a>
+</g>
+<g id="a_edge23&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).InitData &#45;&gt; bytes.Join (13.45MB)">
+<text text-anchor="middle" x="238.12" y="-169.45" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
+</a>
+</g>
+</g>
+<!-- N15&#45;&gt;N14 -->
+<g id="edge24" class="edge">
+<title>N15&#45;&gt;N14</title>
+<g id="a_edge24"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).MurmurHashLowRun &#45;&gt; blockchain&#45;back/blockchain.(*ProofOfWork).InitData (13.45MB)">
+<path fill="none" stroke="#b28051" d="M249.45,-364.91C241.77,-341.83 229.8,-305.82 221.06,-279.52"/>
+<polygon fill="#b28051" stroke="#b28051" points="224.49,-278.73 218.01,-270.34 217.84,-280.94 224.49,-278.73"/>
+</a>
+</g>
+<g id="a_edge24&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*ProofOfWork).MurmurHashLowRun &#45;&gt; blockchain&#45;back/blockchain.(*ProofOfWork).InitData (13.45MB)">
+<text text-anchor="middle" x="268.58" y="-319.2" font-family="Times,serif" font-size="14.00"> 13.45MB</text>
+</a>
+</g>
+</g>
+<!-- N19 -->
+<g id="node19" class="node">
+<title>N19</title>
+<g id="a_node19"><a xlink:title="github.com/dgraph&#45;io/badger.Open (83.20MB)">
+<polygon fill="#edd8d5" stroke="#b21300" points="422.25,-508.25 329.75,-508.25 329.75,-471 422.25,-471 422.25,-508.25"/>
+<text text-anchor="middle" x="376" y="-496.65" font-family="Times,serif" font-size="8.00">badger</text>
+<text text-anchor="middle" x="376" y="-486.9" font-family="Times,serif" font-size="8.00">Open</text>
+<text text-anchor="middle" x="376" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (67.31%)</text>
+</a>
+</g>
+</g>
+<!-- N16&#45;&gt;N19 -->
+<g id="edge17" class="edge">
+<title>N16&#45;&gt;N19</title>
+<g id="a_edge17"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest &#45;&gt; github.com/dgraph&#45;io/badger.Open (83.20MB)">
+<path fill="none" stroke="#b21300" stroke-width="4" d="M376,-570.55C376,-557.58 376,-539.68 376,-524.1"/>
+<polygon fill="#b21300" stroke="#b21300" stroke-width="4" points="379.5,-524.52 376,-514.52 372.5,-524.52 379.5,-524.52"/>
+</a>
+</g>
+<g id="a_edge17&#45;label"><a xlink:title="blockchain&#45;back/blockchain.InitBlockChainForGuest &#45;&gt; github.com/dgraph&#45;io/badger.Open (83.20MB)">
+<text text-anchor="middle" x="404.12" y="-529.45" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
+</a>
+</g>
+</g>
+<!-- N17 -->
+<g id="node17" class="node">
+<title>N17</title>
+<g id="a_node17"><a xlink:title="blockchain&#45;back/server.Gin (1.72MB)">
+<polygon fill="#edeceb" stroke="#b2afa6" points="936.5,-1135.62 851.5,-1135.62 851.5,-1098.38 936.5,-1098.38 936.5,-1135.62"/>
+<text text-anchor="middle" x="894" y="-1124.03" font-family="Times,serif" font-size="8.00">server</text>
+<text text-anchor="middle" x="894" y="-1114.28" font-family="Times,serif" font-size="8.00">Gin</text>
+<text text-anchor="middle" x="894" y="-1104.53" font-family="Times,serif" font-size="8.00">0 of 1.72MB (1.39%)</text>
+</a>
+</g>
+</g>
+<!-- N17&#45;&gt;N10 -->
+<g id="edge28" class="edge">
+<title>N17&#45;&gt;N10</title>
+<g id="a_edge28"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (1.72MB)">
+<path fill="none" stroke="#b2afa6" d="M894,-1097.98C894,-1085.27 894,-1067.83 894,-1052.46"/>
+<polygon fill="#b2afa6" stroke="#b2afa6" points="897.5,-1052.73 894,-1042.73 890.5,-1052.73 897.5,-1052.73"/>
+</a>
+</g>
+<g id="a_edge28&#45;label"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (1.72MB)">
+<text text-anchor="middle" x="918.75" y="-1062.2" font-family="Times,serif" font-size="14.00"> 1.72MB</text>
+</a>
+</g>
+</g>
+<!-- N18&#45;&gt;N3 -->
+<g id="edge8" class="edge">
+<title>N18&#45;&gt;N3</title>
+<g id="a_edge8"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M376,-760.1C376,-749.38 376,-736.38 376,-724.52"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="380.38,-724.61 376,-714.61 371.63,-724.61 380.38,-724.61"/>
+</a>
+</g>
+<g id="a_edge8&#45;label"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
+<text text-anchor="middle" x="407.5" y="-729.2" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
+</a>
+</g>
+</g>
+<!-- N20 -->
+<g id="node20" class="node">
+<title>N20</title>
+<g id="a_node20"><a xlink:title="github.com/dgraph&#45;io/badger/skl.NewSkiplist (83.20MB)">
+<polygon fill="#edd8d5" stroke="#b21300" points="422.25,-407.25 329.75,-407.25 329.75,-370 422.25,-370 422.25,-407.25"/>
+<text text-anchor="middle" x="376" y="-395.65" font-family="Times,serif" font-size="8.00">skl</text>
+<text text-anchor="middle" x="376" y="-385.9" font-family="Times,serif" font-size="8.00">NewSkiplist</text>
+<text text-anchor="middle" x="376" y="-376.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (67.31%)</text>
+</a>
+</g>
+</g>
+<!-- N19&#45;&gt;N20 -->
 <g id="edge19" class="edge">
-<title>N30&#45;&gt;N31</title>
+<title>N19&#45;&gt;N20</title>
 <g id="a_edge19"><a xlink:title="github.com/dgraph&#45;io/badger.Open &#45;&gt; github.com/dgraph&#45;io/badger/skl.NewSkiplist (83.20MB)">
-<path fill="none" stroke="#b21900" stroke-width="3" d="M455.88,-1488.44C455.88,-1471.43 455.88,-1445.55 455.88,-1424.96"/>
-<polygon fill="#b21900" stroke="#b21900" stroke-width="3" points="459.38,-1425.02 455.88,-1415.02 452.38,-1425.02 459.38,-1425.02"/>
+<path fill="none" stroke="#b21300" stroke-width="4" d="M376,-470.93C376,-457.77 376,-439.43 376,-423.49"/>
+<polygon fill="#b21300" stroke="#b21300" stroke-width="4" points="379.5,-423.56 376,-413.56 372.5,-423.56 379.5,-423.56"/>
 </a>
 </g>
 <g id="a_edge19&#45;label"><a xlink:title="github.com/dgraph&#45;io/badger.Open &#45;&gt; github.com/dgraph&#45;io/badger/skl.NewSkiplist (83.20MB)">
-<text text-anchor="middle" x="484" y="-1444.45" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
+<text text-anchor="middle" x="404.12" y="-439.7" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
 </a>
 </g>
 </g>
-<!-- N31&#45;&gt;N3 -->
+<!-- N20&#45;&gt;N2 -->
 <g id="edge20" class="edge">
-<title>N31&#45;&gt;N3</title>
+<title>N20&#45;&gt;N2</title>
 <g id="a_edge20"><a xlink:title="github.com/dgraph&#45;io/badger/skl.NewSkiplist &#45;&gt; github.com/dgraph&#45;io/badger/skl.newArena (83.20MB)">
-<path fill="none" stroke="#b21900" stroke-width="3" d="M455.88,-1372.57C455.88,-1357.48 455.88,-1335.02 455.88,-1313.79"/>
-<polygon fill="#b21900" stroke="#b21900" stroke-width="3" points="459.38,-1313.94 455.88,-1303.94 452.38,-1313.94 459.38,-1313.94"/>
+<path fill="none" stroke="#b21300" stroke-width="4" d="M376,-369.72C376,-353.62 376,-329.03 376,-306.02"/>
+<polygon fill="#b21300" stroke="#b21300" stroke-width="4" points="379.5,-306.13 376,-296.13 372.5,-306.13 379.5,-306.13"/>
 </a>
 </g>
 <g id="a_edge20&#45;label"><a xlink:title="github.com/dgraph&#45;io/badger/skl.NewSkiplist &#45;&gt; github.com/dgraph&#45;io/badger/skl.newArena (83.20MB)">
-<text text-anchor="middle" x="484" y="-1336.7" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
-<text text-anchor="middle" x="484" y="-1320.2" font-family="Times,serif" font-size="14.00"> (inline)</text>
+<text text-anchor="middle" x="404.12" y="-327.45" font-family="Times,serif" font-size="14.00"> 83.20MB</text>
+<text text-anchor="middle" x="404.12" y="-310.95" font-family="Times,serif" font-size="14.00"> (inline)</text>
 </a>
 </g>
 </g>
-<!-- N33 -->
-<g id="node33" class="node">
-<title>N33</title>
-<g id="a_node33"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (136.33MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="676,-2063 579.75,-2063 579.75,-2016 676,-2016 676,-2063"/>
-<text text-anchor="middle" x="627.88" y="-2051.4" font-family="Times,serif" font-size="8.00">gin</text>
-<text text-anchor="middle" x="627.88" y="-2041.65" font-family="Times,serif" font-size="8.00">(*Engine)</text>
-<text text-anchor="middle" x="627.88" y="-2031.9" font-family="Times,serif" font-size="8.00">handleHTTPRequest</text>
-<text text-anchor="middle" x="627.88" y="-2022.15" font-family="Times,serif" font-size="8.00">0 of 136.33MB (97.14%)</text>
+<!-- N22 -->
+<g id="node22" class="node">
+<title>N22</title>
+<g id="a_node22"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
+<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-1040.25 499.88,-1040.25 499.88,-993.25 596.12,-993.25 596.12,-1040.25"/>
+<text text-anchor="middle" x="548" y="-1028.65" font-family="Times,serif" font-size="8.00">gin</text>
+<text text-anchor="middle" x="548" y="-1018.9" font-family="Times,serif" font-size="8.00">(*Engine)</text>
+<text text-anchor="middle" x="548" y="-1009.15" font-family="Times,serif" font-size="8.00">handleHTTPRequest</text>
+<text text-anchor="middle" x="548" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 120.18MB (97.23%)</text>
 </a>
 </g>
 </g>
-<!-- N32&#45;&gt;N33 -->
+<!-- N21&#45;&gt;N22 -->
 <g id="edge12" class="edge">
-<title>N32&#45;&gt;N33</title>
-<g id="a_edge12"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M627.88,-2115.96C627.88,-2105.05 627.88,-2091.68 627.88,-2079.23"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="632.25,-2079.4 627.88,-2069.4 623.5,-2079.4 632.25,-2079.4"/>
+<title>N21&#45;&gt;N22</title>
+<g id="a_edge12"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-1093.21C548,-1082.3 548,-1068.93 548,-1056.48"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-1056.65 548,-1046.65 543.63,-1056.65 552.38,-1056.65"/>
 </a>
 </g>
-<g id="a_edge12&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (136.33MB)">
-<text text-anchor="middle" x="659.38" y="-2084.95" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
+<g id="a_edge12&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
+<text text-anchor="middle" x="579.5" y="-1062.2" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
 </a>
 </g>
 </g>
-<!-- N33&#45;&gt;N1 -->
+<!-- N22&#45;&gt;N1 -->
 <g id="edge13" class="edge">
-<title>N33&#45;&gt;N1</title>
-<g id="a_edge13"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M627.88,-2015.55C627.88,-2000.47 627.88,-1980.34 627.88,-1962.77"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="632.25,-1962.89 627.88,-1952.89 623.5,-1962.89 632.25,-1962.89"/>
+<title>N22&#45;&gt;N1</title>
+<g id="a_edge13"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-992.8C548,-977.72 548,-957.59 548,-940.02"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-940.14 548,-930.14 543.63,-940.14 552.38,-940.14"/>
 </a>
 </g>
-<g id="a_edge13&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<text text-anchor="middle" x="659.38" y="-1983.95" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-<text text-anchor="middle" x="659.38" y="-1967.45" font-family="Times,serif" font-size="14.00"> (inline)</text>
+<g id="a_edge13&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<text text-anchor="middle" x="579.5" y="-961.2" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
+<text text-anchor="middle" x="579.5" y="-944.7" font-family="Times,serif" font-size="14.00"> (inline)</text>
 </a>
 </g>
 </g>
-<!-- N34&#45;&gt;N1 -->
+<!-- N23&#45;&gt;N1 -->
 <g id="edge14" class="edge">
-<title>N34&#45;&gt;N1</title>
-<g id="a_edge14"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M610.27,-1830.51C613.17,-1845.56 617.06,-1865.69 620.44,-1883.21"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="616.1,-1883.84 622.29,-1892.83 624.69,-1882.18 616.1,-1883.84"/>
+<title>N23&#45;&gt;N1</title>
+<g id="a_edge14"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M530.39,-807.76C533.3,-822.81 537.18,-842.94 540.56,-860.46"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="536.23,-861.09 542.42,-870.08 544.82,-859.43 536.23,-861.09"/>
 </a>
 </g>
-<g id="a_edge14&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<text text-anchor="middle" x="650.99" y="-1867.95" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-<text text-anchor="middle" x="650.99" y="-1851.45" font-family="Times,serif" font-size="14.00"> (inline)</text>
+<g id="a_edge14&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<text text-anchor="middle" x="571.12" y="-845.2" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
+<text text-anchor="middle" x="571.12" y="-828.7" font-family="Times,serif" font-size="14.00"> (inline)</text>
 </a>
 </g>
 </g>
-<!-- N35&#45;&gt;N1 -->
+<!-- N24&#45;&gt;N1 -->
 <g id="edge15" class="edge">
-<title>N35&#45;&gt;N1</title>
-<g id="a_edge15"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M765.48,-1830.38C770.52,-1835.65 775.03,-1841.66 777.88,-1848.25 783.69,-1861.71 786.79,-1869.61 777.88,-1881.25 767.05,-1895.38 727.53,-1905.71 691.77,-1912.39"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="691.48,-1908 682.39,-1914.04 692.99,-1916.62 691.48,-1908"/>
+<title>N24&#45;&gt;N1</title>
+<g id="a_edge15"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<path fill="none" stroke="#b20100" stroke-width="5" d="M685.61,-807.63C690.65,-812.9 695.15,-818.91 698,-825.5 703.81,-838.96 706.92,-846.86 698,-858.5 687.18,-872.63 647.65,-882.96 611.89,-889.64"/>
+<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="611.6,-885.25 602.51,-891.29 613.12,-893.87 611.6,-885.25"/>
 </a>
 </g>
-<g id="a_edge15&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (136.33MB)">
-<text text-anchor="middle" x="814.96" y="-1867.95" font-family="Times,serif" font-size="14.00"> 136.33MB</text>
-<text text-anchor="middle" x="814.96" y="-1851.45" font-family="Times,serif" font-size="14.00"> (inline)</text>
-</a>
-</g>
-</g>
-<!-- N36&#45;&gt;N18 -->
-<g id="edge42" class="edge">
-<title>N36&#45;&gt;N18</title>
-<g id="a_edge42"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.31MB)">
-<path fill="none" stroke="#b2aea3" d="M947.88,-2220.37C947.88,-2206.3 947.88,-2186.41 947.88,-2170.02"/>
-<polygon fill="#b2aea3" stroke="#b2aea3" points="951.38,-2170.36 947.88,-2160.36 944.38,-2170.36 951.38,-2170.36"/>
-</a>
-</g>
-<g id="a_edge42&#45;label"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.31MB)">
-<text text-anchor="middle" x="972.62" y="-2184.45" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
+<g id="a_edge15&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
+<text text-anchor="middle" x="735.08" y="-845.2" font-family="Times,serif" font-size="14.00"> 120.18MB</text>
+<text text-anchor="middle" x="735.08" y="-828.7" font-family="Times,serif" font-size="14.00"> (inline)</text>
 </a>
 </g>
 </g>
-<!-- N38 -->
-<g id="node38" class="node">
-<title>N38</title>
-<g id="a_node38"><a xlink:title="net/http.HandlerFunc.ServeHTTP (1.16MB)">
-<polygon fill="#edecec" stroke="#b2b0ab" points="849.38,-2063 764.38,-2063 764.38,-2016 849.38,-2016 849.38,-2063"/>
-<text text-anchor="middle" x="806.88" y="-2051.4" font-family="Times,serif" font-size="8.00">http</text>
-<text text-anchor="middle" x="806.88" y="-2041.65" font-family="Times,serif" font-size="8.00">HandlerFunc</text>
-<text text-anchor="middle" x="806.88" y="-2031.9" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="806.88" y="-2022.15" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.82%)</text>
+<!-- N25&#45;&gt;N17 -->
+<g id="edge29" class="edge">
+<title>N25&#45;&gt;N17</title>
+<g id="a_edge29"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (1.72MB)">
+<path fill="none" stroke="#b2afa6" d="M894,-1197.62C894,-1183.55 894,-1163.66 894,-1147.27"/>
+<polygon fill="#b2afa6" stroke="#b2afa6" points="897.5,-1147.61 894,-1137.61 890.5,-1147.61 897.5,-1147.61"/>
+</a>
+</g>
+<g id="a_edge29&#45;label"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (1.72MB)">
+<text text-anchor="middle" x="918.75" y="-1161.7" font-family="Times,serif" font-size="14.00"> 1.72MB</text>
 </a>
 </g>
 </g>
-<!-- N37&#45;&gt;N38 -->
-<g id="edge44" class="edge">
-<title>N37&#45;&gt;N38</title>
-<g id="a_edge44"><a xlink:title="net/http.(*ServeMux).ServeHTTP &#45;&gt; net/http.HandlerFunc.ServeHTTP (1.16MB)">
-<path fill="none" stroke="#b2b0ab" d="M769.24,-2115.96C775.55,-2103.31 783.51,-2087.36 790.48,-2073.38"/>
-<polygon fill="#b2b0ab" stroke="#b2b0ab" points="793.57,-2075.03 794.9,-2064.52 787.3,-2071.91 793.57,-2075.03"/>
-</a>
-</g>
-<g id="a_edge44&#45;label"><a xlink:title="net/http.(*ServeMux).ServeHTTP &#45;&gt; net/http.HandlerFunc.ServeHTTP (1.16MB)">
-<text text-anchor="middle" x="810.06" y="-2084.95" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
-</a>
-</g>
-</g>
-<!-- N39 -->
-<g id="node39" class="node">
-<title>N39</title>
-<g id="a_node39"><a xlink:title="net/http/pprof.Profile (1.16MB)">
-<polygon fill="#edecec" stroke="#b2b0ab" points="893.38,-1941.38 808.38,-1941.38 808.38,-1904.12 893.38,-1904.12 893.38,-1941.38"/>
-<text text-anchor="middle" x="850.88" y="-1929.78" font-family="Times,serif" font-size="8.00">pprof</text>
-<text text-anchor="middle" x="850.88" y="-1920.03" font-family="Times,serif" font-size="8.00">Profile</text>
-<text text-anchor="middle" x="850.88" y="-1910.28" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.82%)</text>
+<!-- N27 -->
+<g id="node27" class="node">
+<title>N27</title>
+<g id="a_node27"><a xlink:title="net/http.HandlerFunc.ServeHTTP (1.16MB)">
+<polygon fill="#edecec" stroke="#b2b0aa" points="760.5,-1040.25 675.5,-1040.25 675.5,-993.25 760.5,-993.25 760.5,-1040.25"/>
+<text text-anchor="middle" x="718" y="-1028.65" font-family="Times,serif" font-size="8.00">http</text>
+<text text-anchor="middle" x="718" y="-1018.9" font-family="Times,serif" font-size="8.00">HandlerFunc</text>
+<text text-anchor="middle" x="718" y="-1009.15" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
+<text text-anchor="middle" x="718" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.94%)</text>
 </a>
 </g>
 </g>
-<!-- N38&#45;&gt;N39 -->
-<g id="edge45" class="edge">
-<title>N38&#45;&gt;N39</title>
-<g id="a_edge45"><a xlink:title="net/http.HandlerFunc.ServeHTTP &#45;&gt; net/http/pprof.Profile (1.16MB)">
-<path fill="none" stroke="#b2b0ab" d="M815.67,-2015.55C822.63,-1997.4 832.39,-1971.96 839.87,-1952.45"/>
-<polygon fill="#b2b0ab" stroke="#b2b0ab" points="843.11,-1953.76 843.43,-1943.17 836.58,-1951.26 843.11,-1953.76"/>
+<!-- N26&#45;&gt;N27 -->
+<g id="edge31" class="edge">
+<title>N26&#45;&gt;N27</title>
+<g id="a_edge31"><a xlink:title="net/http.(*ServeMux).ServeHTTP &#45;&gt; net/http.HandlerFunc.ServeHTTP (1.16MB)">
+<path fill="none" stroke="#b2b0aa" d="M684.21,-1093.21C689.87,-1080.56 697.02,-1064.61 703.28,-1050.63"/>
+<polygon fill="#b2b0aa" stroke="#b2b0aa" points="706.34,-1052.35 707.23,-1041.8 699.95,-1049.49 706.34,-1052.35"/>
 </a>
 </g>
-<g id="a_edge45&#45;label"><a xlink:title="net/http.HandlerFunc.ServeHTTP &#45;&gt; net/http/pprof.Profile (1.16MB)">
-<text text-anchor="middle" x="858.86" y="-1975.7" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
-</a>
-</g>
-</g>
-<!-- N39&#45;&gt;N12 -->
-<g id="edge47" class="edge">
-<title>N39&#45;&gt;N12</title>
-<g id="a_edge47"><a xlink:title="net/http/pprof.Profile &#45;&gt; runtime/pprof.StartCPUProfile (1.16MB)">
-<path fill="none" stroke="#b2b0ab" d="M856.78,-1903.63C859.03,-1896.64 861.6,-1888.59 863.88,-1881.25 868.18,-1867.38 872.81,-1851.98 876.7,-1838.89"/>
-<polygon fill="#b2b0ab" stroke="#b2b0ab" points="880,-1840.09 879.48,-1829.51 873.28,-1838.1 880,-1840.09"/>
-</a>
-</g>
-<g id="a_edge47&#45;label"><a xlink:title="net/http/pprof.Profile &#45;&gt; runtime/pprof.StartCPUProfile (1.16MB)">
-<text text-anchor="middle" x="898.43" y="-1859.7" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
+<g id="a_edge31&#45;label"><a xlink:title="net/http.(*ServeMux).ServeHTTP &#45;&gt; net/http.HandlerFunc.ServeHTTP (1.16MB)">
+<text text-anchor="middle" x="723.38" y="-1062.2" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
 </a>
 </g>
 </g>
-<!-- N41 -->
-<g id="node41" class="node">
-<title>N41</title>
-<g id="a_node41"><a xlink:title="reflect.Value.grow (15.64MB)">
-<polygon fill="#ede6df" stroke="#b27f4f" points="113.12,-238 20.62,-238 20.62,-200.75 113.12,-200.75 113.12,-238"/>
-<text text-anchor="middle" x="66.88" y="-226.4" font-family="Times,serif" font-size="8.00">Value</text>
-<text text-anchor="middle" x="66.88" y="-216.65" font-family="Times,serif" font-size="8.00">grow</text>
-<text text-anchor="middle" x="66.88" y="-206.9" font-family="Times,serif" font-size="8.00">0 of 15.64MB (11.14%)</text>
+<!-- N28 -->
+<g id="node28" class="node">
+<title>N28</title>
+<g id="a_node28"><a xlink:title="net/http/pprof.Profile (1.16MB)">
+<polygon fill="#edecec" stroke="#b2b0aa" points="839.5,-918.62 754.5,-918.62 754.5,-881.38 839.5,-881.38 839.5,-918.62"/>
+<text text-anchor="middle" x="797" y="-907.02" font-family="Times,serif" font-size="8.00">pprof</text>
+<text text-anchor="middle" x="797" y="-897.27" font-family="Times,serif" font-size="8.00">Profile</text>
+<text text-anchor="middle" x="797" y="-887.52" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.94%)</text>
 </a>
 </g>
 </g>
-<!-- N40&#45;&gt;N41 -->
-<g id="edge38" class="edge">
-<title>N40&#45;&gt;N41</title>
-<g id="a_edge38"><a xlink:title="reflect.Value.Grow &#45;&gt; reflect.Value.grow (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-290.1C66.88,-277.88 66.88,-262.71 66.88,-249.64"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-249.88 66.88,-239.88 63.38,-249.88 70.38,-249.88"/>
+<!-- N27&#45;&gt;N28 -->
+<g id="edge32" class="edge">
+<title>N27&#45;&gt;N28</title>
+<g id="a_edge32"><a xlink:title="net/http.HandlerFunc.ServeHTTP &#45;&gt; net/http/pprof.Profile (1.16MB)">
+<path fill="none" stroke="#b2b0aa" d="M733.8,-992.8C746.59,-974.23 764.63,-948.01 778.17,-928.35"/>
+<polygon fill="#b2b0aa" stroke="#b2b0aa" points="780.95,-930.48 783.74,-920.26 775.19,-926.51 780.95,-930.48"/>
 </a>
 </g>
-<g id="a_edge38&#45;label"><a xlink:title="reflect.Value.Grow &#45;&gt; reflect.Value.grow (15.64MB)">
-<text text-anchor="middle" x="95" y="-259.2" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
+<g id="a_edge32&#45;label"><a xlink:title="net/http.HandlerFunc.ServeHTTP &#45;&gt; net/http/pprof.Profile (1.16MB)">
+<text text-anchor="middle" x="791.65" y="-952.95" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
 </a>
 </g>
 </g>
-<!-- N41&#45;&gt;N7 -->
-<g id="edge39" class="edge">
-<title>N41&#45;&gt;N7</title>
-<g id="a_edge39"><a xlink:title="reflect.Value.grow &#45;&gt; reflect.growslice (15.64MB)">
-<path fill="none" stroke="#b27f4f" d="M66.88,-200.68C66.88,-189.27 66.88,-173.95 66.88,-159.68"/>
-<polygon fill="#b27f4f" stroke="#b27f4f" points="70.38,-160.08 66.88,-150.08 63.38,-160.08 70.38,-160.08"/>
+<!-- N28&#45;&gt;N11 -->
+<g id="edge34" class="edge">
+<title>N28&#45;&gt;N11</title>
+<g id="a_edge34"><a xlink:title="net/http/pprof.Profile &#45;&gt; runtime/pprof.StartCPUProfile (1.16MB)">
+<path fill="none" stroke="#b2b0aa" d="M798.43,-880.94C799.79,-863.72 801.86,-837.43 803.5,-816.72"/>
+<polygon fill="#b2b0aa" stroke="#b2b0aa" points="806.98,-817.04 804.28,-806.8 800,-816.49 806.98,-817.04"/>
 </a>
 </g>
-<g id="a_edge39&#45;label"><a xlink:title="reflect.Value.grow &#45;&gt; reflect.growslice (15.64MB)">
-<text text-anchor="middle" x="95" y="-169.45" font-family="Times,serif" font-size="14.00"> 15.64MB</text>
+<g id="a_edge34&#45;label"><a xlink:title="net/http/pprof.Profile &#45;&gt; runtime/pprof.StartCPUProfile (1.16MB)">
+<text text-anchor="middle" x="827.32" y="-836.95" font-family="Times,serif" font-size="14.00"> 1.16MB</text>
 </a>
 </g>
 </g>
