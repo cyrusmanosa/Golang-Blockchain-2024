@@ -107,3 +107,5 @@ func GenesisForGuest() *Block {
 
 	return CreateBlockForGuest(GenesisForGuest, []byte{})
 }
+
+// asdasdas
