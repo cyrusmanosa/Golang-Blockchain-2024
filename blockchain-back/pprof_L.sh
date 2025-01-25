@@ -10,6 +10,6 @@ curl -o $pprof_file/pprof/heap-L.prof "$pprof_url/heap"
 curl -o $pprof_file/pprof/goroutine-L.prof "$pprof_url/goroutine"
 
 # 生成 火焰圖
-go tool pprof -svg -output=$pprof_file/svg/20250114/cpu-L.svg $pprof_file/pprof/cpu-L.prof
-go tool pprof -svg -output=$pprof_file/svg/20250114/heap-L.svg $pprof_file/pprof/heap-L.prof
-go tool pprof -svg -output=$pprof_file/svg/20250114/goroutine-L.svg $pprof_file/pprof/goroutine-L.prof
+go tool pprof -svg -output=$pprof_file/svg/cpu-L.svg $pprof_file/pprof/cpu-L.prof
+go tool pprof -svg -output=$pprof_file/svg/heap-L.svg $pprof_file/pprof/heap-L.prof
+go tool pprof -svg -output=$pprof_file/svg/goroutine-L.svg $pprof_file/pprof/goroutine-L.prof

@@ -12,6 +12,12 @@ func main() {
 	if len(os.Args) < 2 {
 		runtime.Goexit()
 	}
+
+	infPath := "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
+	err := controllers.DeleteAllFilesInFolder(infPath)
+	if err != nil {
+
+	}
 	switch os.Args[1] {
 	case "print":
 		controllers.Cli()

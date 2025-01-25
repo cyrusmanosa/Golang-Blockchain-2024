@@ -61,8 +61,8 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.Blake3Run()
 		block.result(nonce, hash)
 	case "murmurHash3":
-		// nonce, hash := pow.MurmurHashRun()
-		nonce, hash := pow.MurmurHashLowRun()
+		nonce, hash := pow.MurmurHashRun()
+		// nonce, hash := pow.MurmurHashLowRun()
 		block.result(nonce, hash)
 	case "keccak":
 		nonce, hash := pow.KeccakRun()
@@ -107,5 +107,3 @@ func GenesisForGuest() *Block {
 
 	return CreateBlockForGuest(GenesisForGuest, []byte{})
 }
-
-// asdasdas

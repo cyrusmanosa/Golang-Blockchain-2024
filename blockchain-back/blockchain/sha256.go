@@ -20,16 +20,13 @@ func (pow *ProofOfWork) Sha256LowRun() (int, []byte) {
 	for nonce < math.MaxInt64 {
 		data := pow.InitData(nonce)
 		hash = sha256.Sum256(data)
-		// fmt.Printf("\r%x", hash)
 		intHash.SetBytes(hash[:])
-
 		if intHash.Cmp(pow.Target) == -1 {
 			break
 		} else {
 			nonce++
 		}
 	}
-
 	return nonce, hash[:]
 }
 
