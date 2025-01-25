@@ -280,9 +280,9 @@ function handleMouseUp(evt) {
 <polygon fill="#f8f8f8" stroke="black" points="482,-1432 16,-1432 16,-1292.5 482,-1292.5 482,-1432"/>
 <text text-anchor="start" x="24" y="-1412.8" font-family="Times,serif" font-size="16.00">File: blockchain&#45;back</text>
 <text text-anchor="start" x="24" y="-1394.05" font-family="Times,serif" font-size="16.00">Type: inuse_space</text>
-<text text-anchor="start" x="24" y="-1375.3" font-family="Times,serif" font-size="16.00">Time: Jan 21, 2025 at 3:47pm (JST)</text>
-<text text-anchor="start" x="24" y="-1356.55" font-family="Times,serif" font-size="16.00">Showing nodes accounting for 123.65MB, 99.16% of 124.70MB total</text>
-<text text-anchor="start" x="24" y="-1337.8" font-family="Times,serif" font-size="16.00">Dropped 7 nodes (cum &lt;= 0.62MB)</text>
+<text text-anchor="start" x="24" y="-1375.3" font-family="Times,serif" font-size="16.00">Time: Jan 25, 2025 at 2:03pm (JST)</text>
+<text text-anchor="start" x="24" y="-1356.55" font-family="Times,serif" font-size="16.00">Showing nodes accounting for 124.21MB, 99.14% of 125.30MB total</text>
+<text text-anchor="start" x="24" y="-1337.8" font-family="Times,serif" font-size="16.00">Dropped 12 nodes (cum &lt;= 0.63MB)</text>
 <text text-anchor="start" x="24" y="-1300.05" font-family="Times,serif" font-size="16.00">See https://git.io/JfYMW for how to read the graph</text>
 </a>
 </g>
@@ -291,11 +291,11 @@ function handleMouseUp(evt) {
 <g id="node1" class="node">
 <title>N1</title>
 <g id="a_node1"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-923.5 499.88,-923.5 499.88,-876.5 596.12,-876.5 596.12,-923.5"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="596.12,-923.5 499.88,-923.5 499.88,-876.5 596.12,-876.5 596.12,-923.5"/>
 <text text-anchor="middle" x="548" y="-911.9" font-family="Times,serif" font-size="8.00">gin</text>
 <text text-anchor="middle" x="548" y="-902.15" font-family="Times,serif" font-size="8.00">(*Context)</text>
 <text text-anchor="middle" x="548" y="-892.4" font-family="Times,serif" font-size="8.00">Next</text>
-<text text-anchor="middle" x="548" y="-882.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="548" y="-882.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -303,11 +303,11 @@ function handleMouseUp(evt) {
 <g id="node18" class="node">
 <title>N18</title>
 <g id="a_node18"><a xlink:title="blockchain&#45;back/server.Gin.func6 (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="424.12,-807.5 327.88,-807.5 327.88,-760.5 424.12,-760.5 424.12,-807.5"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="424.12,-807.5 327.88,-807.5 327.88,-760.5 424.12,-760.5 424.12,-807.5"/>
 <text text-anchor="middle" x="376" y="-795.9" font-family="Times,serif" font-size="8.00">server</text>
 <text text-anchor="middle" x="376" y="-786.15" font-family="Times,serif" font-size="8.00">Gin</text>
 <text text-anchor="middle" x="376" y="-776.4" font-family="Times,serif" font-size="8.00">func6</text>
-<text text-anchor="middle" x="376" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="376" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -315,8 +315,8 @@ function handleMouseUp(evt) {
 <g id="edge9" class="edge">
 <title>N1&#45;&gt;N18</title>
 <g id="a_edge9"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M499.45,-892.34C458.72,-885.75 404.88,-874.34 390,-858.5 381.22,-849.15 377.13,-836.08 375.42,-823.55"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="379.81,-823.65 374.77,-813.97 371.08,-824.24 379.81,-823.65"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M499.45,-892.34C458.72,-885.75 404.88,-874.34 390,-858.5 381.22,-849.15 377.13,-836.08 375.42,-823.55"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="379.81,-823.65 374.77,-813.97 371.08,-824.24 379.81,-823.65"/>
 </a>
 </g>
 <g id="a_edge9&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; blockchain&#45;back/server.Gin.func6 (120.18MB)">
@@ -328,11 +328,11 @@ function handleMouseUp(evt) {
 <g id="node23" class="node">
 <title>N23</title>
 <g id="a_node23"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="579.75,-807.5 472.25,-807.5 472.25,-760.5 579.75,-760.5 579.75,-807.5"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="579.75,-807.5 472.25,-807.5 472.25,-760.5 579.75,-760.5 579.75,-807.5"/>
 <text text-anchor="middle" x="526" y="-795.9" font-family="Times,serif" font-size="8.00">gin</text>
 <text text-anchor="middle" x="526" y="-786.15" font-family="Times,serif" font-size="8.00">CustomRecoveryWithWriter</text>
 <text text-anchor="middle" x="526" y="-776.4" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="526" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="526" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -340,8 +340,8 @@ function handleMouseUp(evt) {
 <g id="edge10" class="edge">
 <title>N1&#45;&gt;N23</title>
 <g id="a_edge10"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M499.71,-886.87C485.42,-880.78 471.38,-871.77 463,-858.5 455.17,-846.1 455.97,-838.37 463,-825.5 464.17,-823.36 465.5,-821.32 466.97,-819.37"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="470.06,-822.47 473.96,-812.27 463.83,-816.33 470.06,-822.47"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M499.71,-886.87C485.42,-880.78 471.38,-871.77 463,-858.5 455.17,-846.1 455.97,-838.37 463,-825.5 464.17,-823.36 465.5,-821.32 466.97,-819.37"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="470.06,-822.47 473.96,-812.27 463.83,-816.33 470.06,-822.47"/>
 </a>
 </g>
 <g id="a_edge10&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 (120.18MB)">
@@ -353,11 +353,11 @@ function handleMouseUp(evt) {
 <g id="node24" class="node">
 <title>N24</title>
 <g id="a_node24"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="703.12,-807.5 606.88,-807.5 606.88,-760.5 703.12,-760.5 703.12,-807.5"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="703.12,-807.5 606.88,-807.5 606.88,-760.5 703.12,-760.5 703.12,-807.5"/>
 <text text-anchor="middle" x="655" y="-795.9" font-family="Times,serif" font-size="8.00">gin</text>
 <text text-anchor="middle" x="655" y="-786.15" font-family="Times,serif" font-size="8.00">LoggerWithConfig</text>
 <text text-anchor="middle" x="655" y="-776.4" font-family="Times,serif" font-size="8.00">func1</text>
-<text text-anchor="middle" x="655" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="655" y="-766.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -365,8 +365,8 @@ function handleMouseUp(evt) {
 <g id="edge11" class="edge">
 <title>N1&#45;&gt;N24</title>
 <g id="a_edge11"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M586.24,-876C593.55,-870.73 600.83,-864.81 607,-858.5 617.57,-847.69 627.15,-834.22 634.93,-821.78"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="638.66,-824.06 640,-813.23 631.13,-819.6 638.66,-824.06"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M586.24,-876C593.55,-870.73 600.83,-864.81 607,-858.5 617.57,-847.69 627.15,-834.22 634.93,-821.78"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="638.66,-824.06 640,-813.23 631.13,-819.6 638.66,-824.06"/>
 </a>
 </g>
 <g id="a_edge11&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Context).Next &#45;&gt; github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 (120.18MB)">
@@ -381,7 +381,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edd8d5" stroke="#b21400" points="477.75,-289.75 274.25,-289.75 274.25,-200.75 477.75,-200.75 477.75,-289.75"/>
 <text text-anchor="middle" x="376" y="-262.95" font-family="Times,serif" font-size="24.00">skl</text>
 <text text-anchor="middle" x="376" y="-235.95" font-family="Times,serif" font-size="24.00">newArena</text>
-<text text-anchor="middle" x="376" y="-208.95" font-family="Times,serif" font-size="24.00">83.20MB (66.72%)</text>
+<text text-anchor="middle" x="376" y="-208.95" font-family="Times,serif" font-size="24.00">83.20MB (66.40%)</text>
 </a>
 </g>
 </g>
@@ -414,10 +414,10 @@ function handleMouseUp(evt) {
 <g id="node3" class="node">
 <title>N3</title>
 <g id="a_node3"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="425.25,-708 326.75,-708 326.75,-670.75 425.25,-670.75 425.25,-708"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="425.25,-708 326.75,-708 326.75,-670.75 425.25,-670.75 425.25,-708"/>
 <text text-anchor="middle" x="376" y="-696.4" font-family="Times,serif" font-size="8.00">controllers</text>
 <text text-anchor="middle" x="376" y="-686.65" font-family="Times,serif" font-size="8.00">AddBlockForGinConfirm</text>
-<text text-anchor="middle" x="376" y="-676.9" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="376" y="-676.9" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -428,7 +428,7 @@ function handleMouseUp(evt) {
 <polygon fill="#ede8e3" stroke="#b2906a" points="199.62,-618.25 82.38,-618.25 82.38,-560.75 199.62,-560.75 199.62,-618.25"/>
 <text text-anchor="middle" x="141" y="-600.95" font-family="Times,serif" font-size="14.00">os</text>
 <text text-anchor="middle" x="141" y="-584.45" font-family="Times,serif" font-size="14.00">ReadFile</text>
-<text text-anchor="middle" x="141" y="-567.95" font-family="Times,serif" font-size="14.00">10.09MB (8.09%)</text>
+<text text-anchor="middle" x="141" y="-567.95" font-family="Times,serif" font-size="14.00">10.09MB (8.05%)</text>
 </a>
 </g>
 </g>
@@ -449,11 +449,11 @@ function handleMouseUp(evt) {
 <g id="node13" class="node">
 <title>N13</title>
 <g id="a_node13"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
-<polygon fill="#edded5" stroke="#b24100" points="310.25,-613 217.75,-613 217.75,-566 310.25,-566 310.25,-613"/>
+<polygon fill="#edded5" stroke="#b24200" points="310.25,-613 217.75,-613 217.75,-566 310.25,-566 310.25,-613"/>
 <text text-anchor="middle" x="264" y="-601.4" font-family="Times,serif" font-size="8.00">blockchain</text>
 <text text-anchor="middle" x="264" y="-591.65" font-family="Times,serif" font-size="8.00">(*BlockChain)</text>
 <text text-anchor="middle" x="264" y="-581.9" font-family="Times,serif" font-size="8.00">AddBlockForGuest</text>
-<text text-anchor="middle" x="264" y="-572.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.56%)</text>
+<text text-anchor="middle" x="264" y="-572.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.46%)</text>
 </a>
 </g>
 </g>
@@ -461,8 +461,8 @@ function handleMouseUp(evt) {
 <g id="edge22" class="edge">
 <title>N3&#45;&gt;N13</title>
 <g id="a_edge22"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
-<path fill="none" stroke="#b24100" stroke-width="2" d="M340.85,-670.33C332.24,-665.19 323.34,-659.21 315.75,-652.75 305.75,-644.23 296.14,-633.62 287.99,-623.6"/>
-<polygon fill="#b24100" stroke="#b24100" stroke-width="2" points="290.84,-621.57 281.92,-615.85 285.33,-625.88 290.84,-621.57"/>
+<path fill="none" stroke="#b24200" stroke-width="2" d="M340.85,-670.33C332.24,-665.19 323.34,-659.21 315.75,-652.75 305.75,-644.23 296.14,-633.62 287.99,-623.6"/>
+<polygon fill="#b24200" stroke="#b24200" stroke-width="2" points="290.84,-621.57 281.92,-615.85 285.33,-625.88 290.84,-621.57"/>
 </a>
 </g>
 <g id="a_edge22&#45;label"><a xlink:title="blockchain&#45;back/controllers.AddBlockForGinConfirm &#45;&gt; blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest (26.89MB)">
@@ -477,7 +477,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edd8d5" stroke="#b21400" points="423.38,-608.12 328.62,-608.12 328.62,-570.88 423.38,-570.88 423.38,-608.12"/>
 <text text-anchor="middle" x="376" y="-596.52" font-family="Times,serif" font-size="8.00">blockchain</text>
 <text text-anchor="middle" x="376" y="-586.77" font-family="Times,serif" font-size="8.00">InitBlockChainForGuest</text>
-<text text-anchor="middle" x="376" y="-577.02" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.72%)</text>
+<text text-anchor="middle" x="376" y="-577.02" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.40%)</text>
 </a>
 </g>
 </g>
@@ -502,7 +502,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="548" y="-1374.15" font-family="Times,serif" font-size="8.00">http</text>
 <text text-anchor="middle" x="548" y="-1364.4" font-family="Times,serif" font-size="8.00">(*conn)</text>
 <text text-anchor="middle" x="548" y="-1354.65" font-family="Times,serif" font-size="8.00">serve</text>
-<text text-anchor="middle" x="548" y="-1344.9" font-family="Times,serif" font-size="8.00">0 of 121.34MB (97.30%)</text>
+<text text-anchor="middle" x="548" y="-1344.9" font-family="Times,serif" font-size="8.00">0 of 121.34MB (96.84%)</text>
 </a>
 </g>
 </g>
@@ -514,7 +514,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="548" y="-1228.4" font-family="Times,serif" font-size="8.00">http</text>
 <text text-anchor="middle" x="548" y="-1218.65" font-family="Times,serif" font-size="8.00">serverHandler</text>
 <text text-anchor="middle" x="548" y="-1208.9" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="548" y="-1199.15" font-family="Times,serif" font-size="8.00">0 of 121.34MB (97.30%)</text>
+<text text-anchor="middle" x="548" y="-1199.15" font-family="Times,serif" font-size="8.00">0 of 121.34MB (96.84%)</text>
 </a>
 </g>
 </g>
@@ -535,10 +535,10 @@ function handleMouseUp(evt) {
 <g id="node5" class="node">
 <title>N5</title>
 <g id="a_node5"><a xlink:title="blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
-<polygon fill="#edded5" stroke="#b24100" points="306.25,-508.25 213.75,-508.25 213.75,-471 306.25,-471 306.25,-508.25"/>
+<polygon fill="#edded5" stroke="#b24200" points="306.25,-508.25 213.75,-508.25 213.75,-471 306.25,-471 306.25,-508.25"/>
 <text text-anchor="middle" x="260" y="-496.65" font-family="Times,serif" font-size="8.00">blockchain</text>
 <text text-anchor="middle" x="260" y="-486.9" font-family="Times,serif" font-size="8.00">CreateBlockForGuest</text>
-<text text-anchor="middle" x="260" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.56%)</text>
+<text text-anchor="middle" x="260" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 26.89MB (21.46%)</text>
 </a>
 </g>
 </g>
@@ -549,7 +549,7 @@ function handleMouseUp(evt) {
 <polygon fill="#ede6e0" stroke="#b28152" points="185.88,-418.5 52.12,-418.5 52.12,-358.75 185.88,-358.75 185.88,-418.5"/>
 <text text-anchor="middle" x="119" y="-400.25" font-family="Times,serif" font-size="15.00">json</text>
 <text text-anchor="middle" x="119" y="-383" font-family="Times,serif" font-size="15.00">Marshal</text>
-<text text-anchor="middle" x="119" y="-365.75" font-family="Times,serif" font-size="15.00">13.45MB (10.78%)</text>
+<text text-anchor="middle" x="119" y="-365.75" font-family="Times,serif" font-size="15.00">13.45MB (10.73%)</text>
 </a>
 </g>
 </g>
@@ -574,7 +574,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="257" y="-400.52" font-family="Times,serif" font-size="8.00">blockchain</text>
 <text text-anchor="middle" x="257" y="-390.77" font-family="Times,serif" font-size="8.00">(*ProofOfWork)</text>
 <text text-anchor="middle" x="257" y="-381.02" font-family="Times,serif" font-size="8.00">MurmurHashLowRun</text>
-<text text-anchor="middle" x="257" y="-371.27" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.78%)</text>
+<text text-anchor="middle" x="257" y="-371.27" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.73%)</text>
 </a>
 </g>
 </g>
@@ -598,7 +598,7 @@ function handleMouseUp(evt) {
 <polygon fill="#ede6e0" stroke="#b28152" points="276.88,-148.25 143.12,-148.25 143.12,-88.5 276.88,-88.5 276.88,-148.25"/>
 <text text-anchor="middle" x="210" y="-130" font-family="Times,serif" font-size="15.00">bytes</text>
 <text text-anchor="middle" x="210" y="-112.75" font-family="Times,serif" font-size="15.00">Join</text>
-<text text-anchor="middle" x="210" y="-95.5" font-family="Times,serif" font-size="15.00">13.45MB (10.78%)</text>
+<text text-anchor="middle" x="210" y="-95.5" font-family="Times,serif" font-size="15.00">13.45MB (10.73%)</text>
 </a>
 </g>
 </g>
@@ -681,11 +681,11 @@ function handleMouseUp(evt) {
 <g id="node21" class="node">
 <title>N21</title>
 <g id="a_node21"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-1140.5 499.88,-1140.5 499.88,-1093.5 596.12,-1093.5 596.12,-1140.5"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="596.12,-1140.5 499.88,-1140.5 499.88,-1093.5 596.12,-1093.5 596.12,-1140.5"/>
 <text text-anchor="middle" x="548" y="-1128.9" font-family="Times,serif" font-size="8.00">gin</text>
 <text text-anchor="middle" x="548" y="-1119.15" font-family="Times,serif" font-size="8.00">(*Engine)</text>
 <text text-anchor="middle" x="548" y="-1109.4" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="548" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="548" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -693,8 +693,8 @@ function handleMouseUp(evt) {
 <g id="edge16" class="edge">
 <title>N9&#45;&gt;N21</title>
 <g id="a_edge16"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-1192.89C548,-1182.13 548,-1168.97 548,-1156.7"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-1157.07 548,-1147.07 543.63,-1157.07 552.38,-1157.07"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M548,-1192.89C548,-1182.13 548,-1168.97 548,-1156.7"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="552.38,-1157.07 548,-1147.07 543.63,-1157.07 552.38,-1157.07"/>
 </a>
 </g>
 <g id="a_edge16&#45;label"><a xlink:title="net/http.serverHandler.ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP (120.18MB)">
@@ -710,7 +710,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="674" y="-1128.9" font-family="Times,serif" font-size="8.00">http</text>
 <text text-anchor="middle" x="674" y="-1119.15" font-family="Times,serif" font-size="8.00">(*ServeMux)</text>
 <text text-anchor="middle" x="674" y="-1109.4" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="674" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.93%)</text>
+<text text-anchor="middle" x="674" y="-1099.65" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.92%)</text>
 </a>
 </g>
 </g>
@@ -730,11 +730,11 @@ function handleMouseUp(evt) {
 <!-- N10 -->
 <g id="node10" class="node">
 <title>N10</title>
-<g id="a_node10"><a xlink:title="runtime/trace.Start (2.31MB)">
-<polygon fill="#edecea" stroke="#b2ada1" points="939.12,-1041 848.88,-1041 848.88,-992.5 939.12,-992.5 939.12,-1041"/>
+<g id="a_node10"><a xlink:title="runtime/trace.Start (2.88MB)">
+<polygon fill="#edecea" stroke="#b2ab9d" points="939.12,-1041 848.88,-1041 848.88,-992.5 939.12,-992.5 939.12,-1041"/>
 <text text-anchor="middle" x="894" y="-1026.55" font-family="Times,serif" font-size="11.00">trace</text>
 <text text-anchor="middle" x="894" y="-1013.05" font-family="Times,serif" font-size="11.00">Start</text>
-<text text-anchor="middle" x="894" y="-999.55" font-family="Times,serif" font-size="11.00">2.31MB (1.85%)</text>
+<text text-anchor="middle" x="894" y="-999.55" font-family="Times,serif" font-size="11.00">2.88MB (2.30%)</text>
 </a>
 </g>
 </g>
@@ -766,35 +766,35 @@ function handleMouseUp(evt) {
 <!-- N11 -->
 <g id="node11" class="node">
 <title>N11</title>
-<g id="a_node11"><a xlink:title="runtime.main (2.86MB)">
-<polygon fill="#edecea" stroke="#b2ab9e" points="936.5,-1380.88 851.5,-1380.88 851.5,-1343.62 936.5,-1343.62 936.5,-1380.88"/>
+<g id="a_node11"><a xlink:title="runtime.main (3.46MB)">
+<polygon fill="#edece9" stroke="#b2aa99" points="936.5,-1380.88 851.5,-1380.88 851.5,-1343.62 936.5,-1343.62 936.5,-1380.88"/>
 <text text-anchor="middle" x="894" y="-1369.28" font-family="Times,serif" font-size="8.00">runtime</text>
 <text text-anchor="middle" x="894" y="-1359.53" font-family="Times,serif" font-size="8.00">main</text>
-<text text-anchor="middle" x="894" y="-1349.78" font-family="Times,serif" font-size="8.00">0 of 2.86MB (2.29%)</text>
+<text text-anchor="middle" x="894" y="-1349.78" font-family="Times,serif" font-size="8.00">0 of 3.46MB (2.76%)</text>
 </a>
 </g>
 </g>
 <!-- N25 -->
 <g id="node25" class="node">
 <title>N25</title>
-<g id="a_node25"><a xlink:title="main.main (2.31MB)">
-<polygon fill="#edecea" stroke="#b2ada1" points="936.5,-1235.12 851.5,-1235.12 851.5,-1197.88 936.5,-1197.88 936.5,-1235.12"/>
+<g id="a_node25"><a xlink:title="main.main (2.88MB)">
+<polygon fill="#edecea" stroke="#b2ab9d" points="936.5,-1235.12 851.5,-1235.12 851.5,-1197.88 936.5,-1197.88 936.5,-1235.12"/>
 <text text-anchor="middle" x="894" y="-1223.53" font-family="Times,serif" font-size="8.00">main</text>
 <text text-anchor="middle" x="894" y="-1213.78" font-family="Times,serif" font-size="8.00">main</text>
-<text text-anchor="middle" x="894" y="-1204.03" font-family="Times,serif" font-size="8.00">0 of 2.31MB (1.85%)</text>
+<text text-anchor="middle" x="894" y="-1204.03" font-family="Times,serif" font-size="8.00">0 of 2.88MB (2.30%)</text>
 </a>
 </g>
 </g>
 <!-- N11&#45;&gt;N25 -->
 <g id="edge30" class="edge">
 <title>N11&#45;&gt;N25</title>
-<g id="a_edge30"><a xlink:title="runtime.main &#45;&gt; main.main (2.31MB)">
-<path fill="none" stroke="#b2ada1" d="M894,-1343.33C894,-1319.1 894,-1275.58 894,-1246.61"/>
-<polygon fill="#b2ada1" stroke="#b2ada1" points="897.5,-1246.7 894,-1236.7 890.5,-1246.7 897.5,-1246.7"/>
+<g id="a_edge30"><a xlink:title="runtime.main &#45;&gt; main.main (2.88MB)">
+<path fill="none" stroke="#b2ab9d" d="M894,-1343.33C894,-1319.1 894,-1275.58 894,-1246.61"/>
+<polygon fill="#b2ab9d" stroke="#b2ab9d" points="897.5,-1246.7 894,-1236.7 890.5,-1246.7 897.5,-1246.7"/>
 </a>
 </g>
-<g id="a_edge30&#45;label"><a xlink:title="runtime.main &#45;&gt; main.main (2.31MB)">
-<text text-anchor="middle" x="918.75" y="-1261.2" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
+<g id="a_edge30&#45;label"><a xlink:title="runtime.main &#45;&gt; main.main (2.88MB)">
+<text text-anchor="middle" x="918.75" y="-1261.2" font-family="Times,serif" font-size="14.00"> 2.88MB</text>
 </a>
 </g>
 </g>
@@ -805,7 +805,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edecec" stroke="#b2b0aa" points="848.12,-804.88 763.88,-804.88 763.88,-763.12 848.12,-763.12 848.12,-804.88"/>
 <text text-anchor="middle" x="806" y="-791.38" font-family="Times,serif" font-size="10.00">pprof</text>
 <text text-anchor="middle" x="806" y="-780.12" font-family="Times,serif" font-size="10.00">StartCPUProfile</text>
-<text text-anchor="middle" x="806" y="-768.88" font-family="Times,serif" font-size="10.00">1.16MB (0.93%)</text>
+<text text-anchor="middle" x="806" y="-768.88" font-family="Times,serif" font-size="10.00">1.16MB (0.92%)</text>
 </a>
 </g>
 </g>
@@ -838,8 +838,8 @@ function handleMouseUp(evt) {
 <g id="edge21" class="edge">
 <title>N13&#45;&gt;N5</title>
 <g id="a_edge21"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
-<path fill="none" stroke="#b24100" stroke-width="2" d="M263.07,-565.8C262.53,-552.62 261.85,-535.83 261.26,-521.47"/>
-<polygon fill="#b24100" stroke="#b24100" stroke-width="2" points="264.77,-521.51 260.86,-511.66 257.77,-521.79 264.77,-521.51"/>
+<path fill="none" stroke="#b24200" stroke-width="2" d="M263.07,-565.8C262.53,-552.62 261.85,-535.83 261.26,-521.47"/>
+<polygon fill="#b24200" stroke="#b24200" stroke-width="2" points="264.77,-521.51 260.86,-511.66 257.77,-521.79 264.77,-521.51"/>
 </a>
 </g>
 <g id="a_edge21&#45;label"><a xlink:title="blockchain&#45;back/blockchain.(*BlockChain).AddBlockForGuest &#45;&gt; blockchain&#45;back/blockchain.CreateBlockForGuest (26.89MB)">
@@ -855,7 +855,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="210" y="-257.15" font-family="Times,serif" font-size="8.00">blockchain</text>
 <text text-anchor="middle" x="210" y="-247.4" font-family="Times,serif" font-size="8.00">(*ProofOfWork)</text>
 <text text-anchor="middle" x="210" y="-237.65" font-family="Times,serif" font-size="8.00">InitData</text>
-<text text-anchor="middle" x="210" y="-227.9" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.78%)</text>
+<text text-anchor="middle" x="210" y="-227.9" font-family="Times,serif" font-size="8.00">0 of 13.45MB (10.73%)</text>
 </a>
 </g>
 </g>
@@ -892,7 +892,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edd8d5" stroke="#b21400" points="422.25,-508.25 329.75,-508.25 329.75,-471 422.25,-471 422.25,-508.25"/>
 <text text-anchor="middle" x="376" y="-496.65" font-family="Times,serif" font-size="8.00">badger</text>
 <text text-anchor="middle" x="376" y="-486.9" font-family="Times,serif" font-size="8.00">Open</text>
-<text text-anchor="middle" x="376" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.72%)</text>
+<text text-anchor="middle" x="376" y="-477.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.40%)</text>
 </a>
 </g>
 </g>
@@ -912,24 +912,24 @@ function handleMouseUp(evt) {
 <!-- N17 -->
 <g id="node17" class="node">
 <title>N17</title>
-<g id="a_node17"><a xlink:title="blockchain&#45;back/server.Gin (2.31MB)">
-<polygon fill="#edecea" stroke="#b2ada1" points="936.5,-1135.62 851.5,-1135.62 851.5,-1098.38 936.5,-1098.38 936.5,-1135.62"/>
+<g id="a_node17"><a xlink:title="blockchain&#45;back/server.Gin (2.88MB)">
+<polygon fill="#edecea" stroke="#b2ab9d" points="936.5,-1135.62 851.5,-1135.62 851.5,-1098.38 936.5,-1098.38 936.5,-1135.62"/>
 <text text-anchor="middle" x="894" y="-1124.03" font-family="Times,serif" font-size="8.00">server</text>
 <text text-anchor="middle" x="894" y="-1114.28" font-family="Times,serif" font-size="8.00">Gin</text>
-<text text-anchor="middle" x="894" y="-1104.53" font-family="Times,serif" font-size="8.00">0 of 2.31MB (1.85%)</text>
+<text text-anchor="middle" x="894" y="-1104.53" font-family="Times,serif" font-size="8.00">0 of 2.88MB (2.30%)</text>
 </a>
 </g>
 </g>
 <!-- N17&#45;&gt;N10 -->
 <g id="edge28" class="edge">
 <title>N17&#45;&gt;N10</title>
-<g id="a_edge28"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.31MB)">
-<path fill="none" stroke="#b2ada1" d="M894,-1097.98C894,-1085.27 894,-1067.83 894,-1052.46"/>
-<polygon fill="#b2ada1" stroke="#b2ada1" points="897.5,-1052.73 894,-1042.73 890.5,-1052.73 897.5,-1052.73"/>
+<g id="a_edge28"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.88MB)">
+<path fill="none" stroke="#b2ab9d" d="M894,-1097.98C894,-1085.27 894,-1067.83 894,-1052.46"/>
+<polygon fill="#b2ab9d" stroke="#b2ab9d" points="897.5,-1052.73 894,-1042.73 890.5,-1052.73 897.5,-1052.73"/>
 </a>
 </g>
-<g id="a_edge28&#45;label"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.31MB)">
-<text text-anchor="middle" x="918.75" y="-1062.2" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
+<g id="a_edge28&#45;label"><a xlink:title="blockchain&#45;back/server.Gin &#45;&gt; runtime/trace.Start (2.88MB)">
+<text text-anchor="middle" x="918.75" y="-1062.2" font-family="Times,serif" font-size="14.00"> 2.88MB</text>
 </a>
 </g>
 </g>
@@ -937,8 +937,8 @@ function handleMouseUp(evt) {
 <g id="edge8" class="edge">
 <title>N18&#45;&gt;N3</title>
 <g id="a_edge8"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M376,-760.1C376,-749.38 376,-736.38 376,-724.52"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="380.38,-724.61 376,-714.61 371.63,-724.61 380.38,-724.61"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M376,-760.1C376,-749.38 376,-736.38 376,-724.52"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="380.38,-724.61 376,-714.61 371.63,-724.61 380.38,-724.61"/>
 </a>
 </g>
 <g id="a_edge8&#45;label"><a xlink:title="blockchain&#45;back/server.Gin.func6 &#45;&gt; blockchain&#45;back/controllers.AddBlockForGinConfirm (120.18MB)">
@@ -953,7 +953,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edd8d5" stroke="#b21400" points="422.25,-407.25 329.75,-407.25 329.75,-370 422.25,-370 422.25,-407.25"/>
 <text text-anchor="middle" x="376" y="-395.65" font-family="Times,serif" font-size="8.00">skl</text>
 <text text-anchor="middle" x="376" y="-385.9" font-family="Times,serif" font-size="8.00">NewSkiplist</text>
-<text text-anchor="middle" x="376" y="-376.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.72%)</text>
+<text text-anchor="middle" x="376" y="-376.15" font-family="Times,serif" font-size="8.00">0 of 83.20MB (66.40%)</text>
 </a>
 </g>
 </g>
@@ -988,11 +988,11 @@ function handleMouseUp(evt) {
 <g id="node22" class="node">
 <title>N22</title>
 <g id="a_node22"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
-<polygon fill="#edd5d5" stroke="#b20100" points="596.12,-1040.25 499.88,-1040.25 499.88,-993.25 596.12,-993.25 596.12,-1040.25"/>
+<polygon fill="#edd5d5" stroke="#b20200" points="596.12,-1040.25 499.88,-1040.25 499.88,-993.25 596.12,-993.25 596.12,-1040.25"/>
 <text text-anchor="middle" x="548" y="-1028.65" font-family="Times,serif" font-size="8.00">gin</text>
 <text text-anchor="middle" x="548" y="-1018.9" font-family="Times,serif" font-size="8.00">(*Engine)</text>
 <text text-anchor="middle" x="548" y="-1009.15" font-family="Times,serif" font-size="8.00">handleHTTPRequest</text>
-<text text-anchor="middle" x="548" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 120.18MB (96.37%)</text>
+<text text-anchor="middle" x="548" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 120.18MB (95.92%)</text>
 </a>
 </g>
 </g>
@@ -1000,8 +1000,8 @@ function handleMouseUp(evt) {
 <g id="edge12" class="edge">
 <title>N21&#45;&gt;N22</title>
 <g id="a_edge12"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-1093.21C548,-1082.3 548,-1068.93 548,-1056.48"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-1056.65 548,-1046.65 543.63,-1056.65 552.38,-1056.65"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M548,-1093.21C548,-1082.3 548,-1068.93 548,-1056.48"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="552.38,-1056.65 548,-1046.65 543.63,-1056.65 552.38,-1056.65"/>
 </a>
 </g>
 <g id="a_edge12&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).ServeHTTP &#45;&gt; github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest (120.18MB)">
@@ -1013,8 +1013,8 @@ function handleMouseUp(evt) {
 <g id="edge13" class="edge">
 <title>N22&#45;&gt;N1</title>
 <g id="a_edge13"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M548,-992.8C548,-977.72 548,-957.59 548,-940.02"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="552.38,-940.14 548,-930.14 543.63,-940.14 552.38,-940.14"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M548,-992.8C548,-977.72 548,-957.59 548,-940.02"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="552.38,-940.14 548,-930.14 543.63,-940.14 552.38,-940.14"/>
 </a>
 </g>
 <g id="a_edge13&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.(*Engine).handleHTTPRequest &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
@@ -1027,8 +1027,8 @@ function handleMouseUp(evt) {
 <g id="edge14" class="edge">
 <title>N23&#45;&gt;N1</title>
 <g id="a_edge14"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M530.39,-807.76C533.3,-822.81 537.18,-842.94 540.56,-860.46"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="536.23,-861.09 542.42,-870.08 544.82,-859.43 536.23,-861.09"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M530.39,-807.76C533.3,-822.81 537.18,-842.94 540.56,-860.46"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="536.23,-861.09 542.42,-870.08 544.82,-859.43 536.23,-861.09"/>
 </a>
 </g>
 <g id="a_edge14&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.CustomRecoveryWithWriter.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
@@ -1041,8 +1041,8 @@ function handleMouseUp(evt) {
 <g id="edge15" class="edge">
 <title>N24&#45;&gt;N1</title>
 <g id="a_edge15"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
-<path fill="none" stroke="#b20100" stroke-width="5" d="M685.61,-807.63C690.65,-812.9 695.15,-818.91 698,-825.5 703.81,-838.96 706.92,-846.86 698,-858.5 687.18,-872.63 647.65,-882.96 611.89,-889.64"/>
-<polygon fill="#b20100" stroke="#b20100" stroke-width="5" points="611.6,-885.25 602.51,-891.29 613.12,-893.87 611.6,-885.25"/>
+<path fill="none" stroke="#b20200" stroke-width="5" d="M685.61,-807.63C690.65,-812.9 695.15,-818.91 698,-825.5 703.81,-838.96 706.92,-846.86 698,-858.5 687.18,-872.63 647.65,-882.96 611.89,-889.64"/>
+<polygon fill="#b20200" stroke="#b20200" stroke-width="5" points="611.6,-885.25 602.51,-891.29 613.12,-893.87 611.6,-885.25"/>
 </a>
 </g>
 <g id="a_edge15&#45;label"><a xlink:title="github.com/gin&#45;gonic/gin.LoggerWithConfig.func1 &#45;&gt; github.com/gin&#45;gonic/gin.(*Context).Next (120.18MB)">
@@ -1054,13 +1054,13 @@ function handleMouseUp(evt) {
 <!-- N25&#45;&gt;N17 -->
 <g id="edge29" class="edge">
 <title>N25&#45;&gt;N17</title>
-<g id="a_edge29"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.31MB)">
-<path fill="none" stroke="#b2ada1" d="M894,-1197.62C894,-1183.55 894,-1163.66 894,-1147.27"/>
-<polygon fill="#b2ada1" stroke="#b2ada1" points="897.5,-1147.61 894,-1137.61 890.5,-1147.61 897.5,-1147.61"/>
+<g id="a_edge29"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.88MB)">
+<path fill="none" stroke="#b2ab9d" d="M894,-1197.62C894,-1183.55 894,-1163.66 894,-1147.27"/>
+<polygon fill="#b2ab9d" stroke="#b2ab9d" points="897.5,-1147.61 894,-1137.61 890.5,-1147.61 897.5,-1147.61"/>
 </a>
 </g>
-<g id="a_edge29&#45;label"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.31MB)">
-<text text-anchor="middle" x="918.75" y="-1161.7" font-family="Times,serif" font-size="14.00"> 2.31MB</text>
+<g id="a_edge29&#45;label"><a xlink:title="main.main &#45;&gt; blockchain&#45;back/server.Gin (2.88MB)">
+<text text-anchor="middle" x="918.75" y="-1161.7" font-family="Times,serif" font-size="14.00"> 2.88MB</text>
 </a>
 </g>
 </g>
@@ -1072,7 +1072,7 @@ function handleMouseUp(evt) {
 <text text-anchor="middle" x="718" y="-1028.65" font-family="Times,serif" font-size="8.00">http</text>
 <text text-anchor="middle" x="718" y="-1018.9" font-family="Times,serif" font-size="8.00">HandlerFunc</text>
 <text text-anchor="middle" x="718" y="-1009.15" font-family="Times,serif" font-size="8.00">ServeHTTP</text>
-<text text-anchor="middle" x="718" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.93%)</text>
+<text text-anchor="middle" x="718" y="-999.4" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.92%)</text>
 </a>
 </g>
 </g>
@@ -1096,7 +1096,7 @@ function handleMouseUp(evt) {
 <polygon fill="#edecec" stroke="#b2b0aa" points="839.5,-918.62 754.5,-918.62 754.5,-881.38 839.5,-881.38 839.5,-918.62"/>
 <text text-anchor="middle" x="797" y="-907.02" font-family="Times,serif" font-size="8.00">pprof</text>
 <text text-anchor="middle" x="797" y="-897.27" font-family="Times,serif" font-size="8.00">Profile</text>
-<text text-anchor="middle" x="797" y="-887.52" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.93%)</text>
+<text text-anchor="middle" x="797" y="-887.52" font-family="Times,serif" font-size="8.00">0 of 1.16MB (0.92%)</text>
 </a>
 </g>
 </g>

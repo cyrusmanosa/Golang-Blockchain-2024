@@ -51,8 +51,8 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 	// if len(data.File) > 1024*1024 {
 	switch data.Hash {
 	case "sha256", "":
-		nonce, hash := pow.Sha256Run()
-		// nonce, hash := pow.Sha256LowRun()
+		// nonce, hash := pow.Sha256Run()
+		nonce, hash := pow.Sha256LowRun()
 		block.result(nonce, hash)
 	case "blake2b":
 		nonce, hash := pow.Blake2bRun()
@@ -61,8 +61,8 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 		nonce, hash := pow.Blake3Run()
 		block.result(nonce, hash)
 	case "murmurHash3":
-		nonce, hash := pow.MurmurHashRun()
-		// nonce, hash := pow.MurmurHashLowRun()
+		// nonce, hash := pow.MurmurHashRun()
+		nonce, hash := pow.MurmurHashLowRun()
 		block.result(nonce, hash)
 	case "keccak":
 		nonce, hash := pow.KeccakRun()

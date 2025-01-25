@@ -14,10 +14,9 @@ func main() {
 	}
 
 	infPath := "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
-	err := controllers.DeleteAllFilesInFolder(infPath)
-	if err != nil {
-
-	}
+	controllers.DeleteAllFilesInFolder(infPath)
+	infPath2 := "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/tmp"
+	controllers.DeleteAllFilesInFolder(infPath2)
 	switch os.Args[1] {
 	case "print":
 		controllers.Cli()
