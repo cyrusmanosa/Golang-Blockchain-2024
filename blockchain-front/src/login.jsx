@@ -49,21 +49,11 @@ export default function InputWithIcon() {
         formData.append('message', message);
         formData.append('hash', hash);
 
-        console.log(hash);
-
-        await axios.post("http://localhost:8080/take", formData, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        await axios.post("http://localhost:8080/take", formData, {headers: {'Content-Type': 'application/json'}});
 
         if (file != null) {
             formFile.append('file', file);
-            await axios.post("http://localhost:8080/Upload", formFile, {
-                headers: {
-                    'Content-Type': 'application/pdf'
-                }
-            });
+            await axios.post("http://localhost:8080/Upload", formFile, {headers: {'Content-Type': 'application/pdf'}});
         }
     }
 
