@@ -20,9 +20,8 @@ type CommandLine struct {
 }
 
 const (
-	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
-	// outPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Svg/"
-	layout = "2006-01-02 15:04:05"
+	infPath = "/Users/cyrusman/Desktop/ProgrammingLearning/Project/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
+	layout  = "2006-01-02 15:04:05"
 )
 
 // / ----------------------------- Not Confirm or Text -----------------------------------

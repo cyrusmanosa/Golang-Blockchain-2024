@@ -13,10 +13,12 @@ func main() {
 		runtime.Goexit()
 	}
 
-	infPath := "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
-	controllers.DeleteAllFilesInFolder(infPath)
-	infPath2 := "/Users/cyrusman/Desktop/ProgrammingLearning/Golang-Blockchain-2024/blockchain-back/tmp"
-	controllers.DeleteAllFilesInFolder(infPath2)
+	UploadFilePath := "/Users/cyrusman/Desktop/ProgrammingLearning/Project/Golang-Blockchain-2024/blockchain-back/dsl/Original/"
+	controllers.DeleteAllFilesInFolder(UploadFilePath)
+
+	ChainDataPath := "/Users/cyrusman/Desktop/ProgrammingLearning/Project/Golang-Blockchain-2024/blockchain-back/tmp"
+	controllers.DeleteAllFilesInFolder(ChainDataPath)
+
 	switch os.Args[1] {
 	case "print":
 		controllers.Cli()
@@ -26,5 +28,3 @@ func main() {
 		runtime.Goexit()
 	}
 }
-
-// 2024-11-08
