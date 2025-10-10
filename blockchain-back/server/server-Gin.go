@@ -39,8 +39,7 @@ func Gin() {
 	// Svg
 	r.GET("/svg/:Cname", func(c *gin.Context) {
 		trace.Log(c.Request.Context(), "Handler", "/svg/:Cname - Start")
-		Cname := c.Param("Cname")
-		Svg := controllers.TakeBlock(c, Cname)
+		Svg := controllers.TakeBlock(c, c.Param("Cname"))
 		c.Header("Content-Type", "svg+xml")
 		c.Data(http.StatusOK, "svg+xml", Svg)
 		trace.Log(c.Request.Context(), "Handler", "/svg/:Cname - End")
@@ -49,8 +48,7 @@ func Gin() {
 	// Pdf
 	r.GET("/pdf/:Cname", func(c *gin.Context) {
 		trace.Log(c.Request.Context(), "Handler", "/pdf/:Cname - Start")
-		Cname := c.Param("Cname")
-		PdfData := controllers.TakeBlock(c, Cname)
+		PdfData := controllers.TakeBlock(c, c.Param("Cname"))
 		c.Header("Content-Type", "application/pdf")
 		c.Header("Content-Disposition", "inline; filename=example.pdf")
 		c.Data(http.StatusOK, "application/pdf", PdfData)
@@ -75,11 +73,7 @@ func Gin() {
 		trace.Log(c.Request.Context(), "Handler", "/Check/:name - End")
 	})
 
-	srv := &http.Server{
-		Addr:    ":8080",
-		Handler: r,
-	}
-
+	srv := &http.Server{Addr: ":8080", Handler: r}
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 

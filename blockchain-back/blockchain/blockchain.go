@@ -93,16 +93,21 @@ func (chain *BlockChain) AddBlockForGuest(data models.InputData) error {
 	return err
 }
 
-func InitBlockChainForGuest() (*BlockChain, error) {
-	var lastHash []byte
+func InitBlockChainDB() *badger.DB {
 	opts := badger.DefaultOptions(dbPath)
 
 	db, err := badger.Open(opts)
 	if err != nil {
-		return nil, fmt.Errorf("InitBlockChainForGuest badger Open error: %w", err)
+		fmt.Errorf("InitBlockChainForGuest badger Open error: %w", err)
+		return nil
 	}
+	return db
+}
 
-	err = db.Update(func(txn *badger.Txn) error {
+func InitBlockChainForGuest() (*BlockChain, error) {
+	var lastHash []byte
+	db := InitBlockChainDB()
+	err := db.Update(func(txn *badger.Txn) error {
 		if _, err := txn.Get([]byte("lh")); err == badger.ErrKeyNotFound {
 			GenesisForGuest := GenesisForGuest()
 			err = txn.Set(GenesisForGuest.Hash, GenesisForGuest.Serialize())
@@ -110,10 +115,11 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 				return fmt.Errorf("InitBlockChainForGuest txn set error: %w", err)
 			}
 			err = txn.Set([]byte("lh"), GenesisForGuest.Hash)
+			if err != nil {
+				return fmt.Errorf("InitBlockChainForGuest Hash set error: %w", err)
+			}
 			lastHash = GenesisForGuest.Hash
 			return err
-		} else if err != nil {
-			return fmt.Errorf("InitBlockChainForGuest txn Get error: %w", err)
 		} else {
 			item, err := txn.Get([]byte("lh"))
 			if err != nil {
@@ -131,7 +137,6 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 	})
 
 	if err != nil {
-		db.Close()
 		return nil, fmt.Errorf("InitBlockChainForGuest db Update error: %w", err)
 	}
 
@@ -140,17 +145,10 @@ func InitBlockChainForGuest() (*BlockChain, error) {
 }
 
 // /----------------------------------------- Doc ------------------------------------------------------
-func InitBlockChainForDoc() *BlockChain {
+func InitBlockChainForDoc() (*BlockChain, error) {
 	var lastHash []byte
-
-	opts := badger.DefaultOptions(dbPath)
-
-	db, err := badger.Open(opts)
-	if err != nil {
-		log.Println("InitBlockChainForDoc badger Open error: ", err)
-	}
-
-	err = db.Update(func(txn *badger.Txn) error {
+	db := InitBlockChainDB()
+	err := db.Update(func(txn *badger.Txn) error {
 		if _, err := txn.Get([]byte("lh")); err == badger.ErrKeyNotFound {
 			fmt.Println("No existing blockchain found")
 
@@ -163,28 +161,33 @@ func InitBlockChainForDoc() *BlockChain {
 			}
 
 			err = txn.Set([]byte("lh"), GenesisForGuest.Hash)
+			if err != nil {
+				return fmt.Errorf("InitBlockChainForGuest Hash set error: %w", err)
+			}
+
 			lastHash = GenesisForGuest.Hash
 			return err
 		} else {
 			item, err := txn.Get([]byte("lh"))
 			if err != nil {
-				log.Println("InitBlockChainForDoc txn Get error: ", err)
+				return fmt.Errorf("InitBlockChainForDoc txn Get error: %w", err)
 			}
 
 			err = item.Value(func(val []byte) error {
 				lastHash = val
 				return nil
 			})
+
 			return err
 		}
 	})
 
 	if err != nil {
-		log.Println("InitBlockChainForDoc db Update error: ", err)
+		return nil, fmt.Errorf("InitBlockChainForGuest db Update error: %w", err)
 	}
 
 	blockchain := BlockChain{lastHash, db}
-	return &blockchain
+	return &blockchain, nil
 }
 
 func (chain *BlockChain) AddBlockForDoc(data string) {
@@ -201,20 +204,24 @@ func (chain *BlockChain) AddBlockForDoc(data string) {
 		})
 		return err
 	})
+
 	if err != nil {
 		log.Println("AddBlockForDoc db View error: ", err)
 	}
-	newBlock := CreateBlockForDoc(data, lastHash)
 
+	newBlock := CreateBlockForDoc(data, lastHash)
 	err = chain.Database.Update(func(txn *badger.Txn) error {
 		err := txn.Set(newBlock.Hash, newBlock.Serialize())
 		if err != nil {
 			log.Println("AddBlockForDoc txn Set error: ", err)
 		}
+
 		err = txn.Set([]byte("lh"), newBlock.Hash)
+		if err != nil {
+			return fmt.Errorf("AddBlockForDoc Hash set error: %w", err)
+		}
 
 		chain.LastHash = newBlock.Hash
-
 		return err
 	})
 

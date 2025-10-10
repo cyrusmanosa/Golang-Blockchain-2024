@@ -108,18 +108,6 @@ func AddBlockForGinConfirm(ctx *gin.Context) {
 			dataMsg, _ := dataMap["message"].(string)
 			dataHash, _ := dataMap["hash"].(string)
 
-			/// --- svg ---
-			// r := RandomString()
-			// outPath2 := fmt.Sprint(outPath, r, ".svg")
-			// svgData, err := dsl.PdfToSvg(infPath, outPath2)
-			// if err != nil {
-			// 	ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))
-			// 	return
-			// }
-
-			// svgBase64 := base64.StdEncoding.EncodeToString(svgData)
-
-			/// --- pdf ---
 			fileLocation, err := GetUniquePDF(infPath)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, ErrorResponse(err))

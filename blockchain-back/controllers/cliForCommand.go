@@ -27,7 +27,10 @@ func (cli *CommandLine) CommandRun() {
 }
 
 func Cli() {
-	chain := blockchain.InitBlockChainForDoc()
+	chain, err := blockchain.InitBlockChainForDoc()
+	if err != nil {
+		log.Fatalf("InitBlockChainForDoc have a error: %w", err)
+	}
 	defer chain.Database.Close()
 
 	cli := CommandLine{chain}

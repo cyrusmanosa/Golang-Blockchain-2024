@@ -47,8 +47,6 @@ func CreateBlockForGuest(data models.InputData, prevHash []byte) *Block {
 
 	block := &Block{[]byte{}, []byte(jsonData), prevHash, 0}
 	pow := NewProof(block)
-	///------ ************************************ ------
-	// if len(data.File) > 1024*1024 {
 	switch data.Hash {
 	case "sha256", "":
 		// nonce, hash := pow.Sha256Run()
@@ -99,7 +97,6 @@ func GenesisForGuest() *Block {
 		CompanyName: "",
 		Message:     "",
 		Hash:        "",
-		// File:        "",
 		File:     nil,
 		Status:   "New One",
 		SendTime: time,
