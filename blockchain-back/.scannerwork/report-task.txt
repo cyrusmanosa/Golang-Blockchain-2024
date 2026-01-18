@@ -1,0 +1,6 @@
+projectKey=Golang
+serverUrl=http://localhost:9000
+serverVersion=25.12.0.117093
+dashboardUrl=http://localhost:9000/dashboard?id=Golang
+ceTaskId=b20868e9-dcfb-4543-96d7-738610b2bd38
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b20868e9-dcfb-4543-96d7-738610b2bd38

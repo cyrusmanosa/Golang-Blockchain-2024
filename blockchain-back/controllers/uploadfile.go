@@ -7,12 +7,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	toolkit "github.com/cyrusmanosa/Toolkit/v2"
+	UploadTools "github.com/Base-module/golang-base-module/uploadFile"
 	"github.com/gin-gonic/gin"
 )
 
 func UploadOneFiles(c *gin.Context) {
-	t := toolkit.Tools{
+	t := UploadTools.UploadTools{
 		MaxFileSize:      1024 * 1024 * 1024,
 		AllowedFileTypes: []string{"application/pdf", "image/jpeg", "image/png"},
 	}
